@@ -1,4 +1,4 @@
-# Mitul Savani [he/him]
+# Sohail Mahmud
 
 _Software developer based in San Francisco, California_ <br>
 _(kem chao, maja ma? 🙏🏽)_
