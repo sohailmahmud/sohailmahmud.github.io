@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    {% include head.html %}
+    <div id="particles-js" text-align="center"></div>
+    {% include google_analytics.html %}
+    {% include navigation.html %}
+    {% include js.html %}
+</head>
+{% include 00_about.html %}
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <section id="research" class="container content-section">
+          <div class="col-lg-10 col-lg-offset-1">
+                {% include 01_research.html %}
+          </div>
+    </section>
+
+    <section id="notes_main" class="container content-section">
+        <div class="col-lg-64 col-lg-offset-0">
+            {% include 02_notes_main.html %}
+        </div>
+    </section>
+
+    <section id="experience" class="container content-section">
+          <div class="col-lg-64 col-lg-offset-0">
+                {% include 03_experience.html %}
+          </div>
+    </section>
+</body>
+</html>

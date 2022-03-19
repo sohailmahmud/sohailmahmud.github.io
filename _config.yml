@@ -1,1 +1,19 @@
-theme: jekyll-theme-minimal
+url: http://sohailmahmud.github.io
+baseurl: ""
+
+# Site Settings
+title: Sohail Mahmud
+description: "Let's do good with code"
+keywords: "Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Interpretability, Explainability, Causal Inference"
+collections:
+ blog:
+    name: blog
+    output: true
+ notes:
+    name: Notes
+    documentation: https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+    output: true
+markdown: kramdown
+
+highlighter: rouge
+exclude: ["Rakefile", "LICENSE", "readme.md"]

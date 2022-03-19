@@ -1,0 +1,43 @@
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                {% if page.url contains 'notes' or page.url contains 'blog' or page.url contains 'pres'%}
+                    <a class="navbar-brand page-scroll" href="{{site.url}}" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                {% else %}
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                        Sohail Mahmud
+                    </a>
+                {% endif %}
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    {% if page.url contains 'notes' or page.url contains 'projects' or page.url contains 'blog' or page.url contains 'ovw' or page.url contains 'pres'%}
+                        <li><a class="page-scroll" href="{{site.baseurl}}/#research">Research</a></li>
+                        <li><a class="page-scroll" href="{{site.baseurl}}/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="{{site.baseurl}}/#experience">Experience</a></li>
+
+                    {% else %}
+                        <li><a class="page-scroll" href="#research">Research</a></li>
+                        <li><a class="page-scroll" href="#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="#experience">Experience</a></li>
+                    {% endif %}
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
