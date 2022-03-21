@@ -14,9 +14,9 @@
                 decision-rule development</a>. Clinical decision rules (especially those used in emergency medicine), need
             to be extremely transparent so they can be readily audited and used by physicians making split-second decisions.
             To this end, we have developed methodology for enhancing decision trees. For example, replacing the standard
-            CART algorithm with a novel <a href="https://arxiv.org/abs/2201.11931">greedy algorithm</a> for tree-sums can
+            CART algorithm with a novel <a href="#">greedy algorithm</a> for tree-sums can
             substantially improve predictive performance without sacrificing predictive performance. Additionally, <a
-                    href="https://arxiv.org/abs/2202.00858">hierarchical regularization</a> can improve the predictions of
+                    href="#">hierarchical regularization</a> can improve the predictions of
             an already fitted model without altering its interpretability. Despite their effectiveness, transparent models
             such as these often get overlooked in favor of black-box models; to address this issue, we&#39;ve spent a lot of
             time curating <a href="https://github.com/sohailmahmud/imodels">imodels</a>, an open-source package for fitting
@@ -24,19 +24,19 @@
         <p>🌀 My second line of my work focuses on interpreting and improving black-box models, such as neural networks, for
             the cases when a transparent model simply can&#39;t predict well enough. Here, I work closely on real-world
             problems such as analyzing imaging data from <a href="">cell biology</a> and <a
-                    href="https://arxiv.org/abs/2003.01926">cosmology</a>. Interpretability in these contexts demands more
+                    href="#">cosmology</a>. Interpretability in these contexts demands more
             nuanced information than standard notions of &quot;feature importance&quot; common in the literature. As a result, we
             have developed methods to characterize and summarize the <a
-                    href="https://arxiv.org/abs/1806.05337">interactions</a> in a neural network, particularly in <a
-                    href="https://arxiv.org/abs/2003.01926">transformed domains</a> (such as the Fourier domain), where
+                    href="#">interactions</a> in a neural network, particularly in <a
+                    href="#">transformed domains</a> (such as the Fourier domain), where
             domain interpretations can be more natural. I&#39;m particularly interested in how we can ensure that these
             interpretations are <em>useful</em>, either by using them to <a
-                    href="http://proceedings.mlr.press/v119/rieger20a.html">embed prior knowledge</a> into a model or
+                    href="#">embed prior knowledge</a> into a model or
             identify when it can be trusted.</p>
         <p>🤝 There is a lot more work to do on bridging the gap between transparent models and black-box models in the real
             world. One promising avenue is distillation, whereby we can use a black-box model to build a better transparent
             model. For example, in <a
-                    href="https://proceedings.neurips.cc/paper/2021/hash/acaa23f71f963e96c8847585e71352d6-Abstract.html">one
+                    href="#">one
                 work</a> we were able to distill state-of-the-art neural networks in cell-biology and cosmology into
             transparent wavelet models with &lt;40 parameters. Despite this huge size reduction, these models actually <em>improve</em>
             prediction performance. By incorporating close domain knowledge into models and the way we approach problems, I
@@ -160,7 +160,7 @@
             <td>developing reliable clinical decision rules: a case study in identifying blunt abdominal trauma in
                 children
             </td>
-            <td>kornblith*, singh* et al.</td>
+            <td>izanz*, sm* et al.</td>
             <td class="med">🔎🌳💊</td>
             <td class="center"><a href="#">SAEM abstract</a></td>
             <td class="big"><a href="https://github.com/sohailmahmud/iai-clinical-decision-rule"><i
@@ -186,7 +186,7 @@
         <tr>
             <td class="center">'22</td>
             <td>Fast Interpretable Greedy-Tree Sums (FIGS)</td>
-            <td>tan*, singh*, nasseri, agarwal, & yu</td>
+            <td>tan*, sm*, nasseri, zs, & zebin</td>
             <td class="med">🔎🌳</td>
             <td class="center"><a href="https://arxiv.org/abs/2201.11931">arxiv</a></td>
             <!--            <td></td>-->
@@ -201,7 +201,7 @@
         <tr>
             <td class="center">'22</td>
             <td>Hierarchical shrinkage: improving accuracy and interpretability of tree-based methods</td>
-            <td>agarwal*, tan*, ronen, singh, & yu</td>
+            <td>tan*, ronen, sm, & kane</td>
             <td class="med">🔎🌳</td>
             <td class="center"><a href="https://arxiv.org/abs/2202.00858">arxiv</a></td>
             <!--            <td></td>-->
@@ -218,7 +218,7 @@
         <tr>
             <td class="center">'22</td>
             <td>VeridicalFlow: a Python package for building trustworthy data science pipelines with PCS</td>
-            <td>duncan*, kapoor*, agarwal*, singh*, & yu</td>
+            <td>duncan*, mansoor*, sm*, & rajesh</td>
             <td class="med">💻🔍</td>
             <td class="center"><a href="https://joss.theoj.org/papers/10.21105/joss.03895">joss</a></td>
             <!--            <td></td>-->
@@ -232,7 +232,7 @@
         <tr>
             <td class="center">'21</td>
             <td>imodels: a python package for fitting interpretable models</td>
-            <td>singh*, nasseri*, et al.</td>
+            <td>sm*, nasseri*, et al.</td>
             <td class="med">💻🔍🌳</td>
             <td class="center"><a href="https://joss.theoj.org/papers/10.21105/joss.03192">joss</a></td>
             <!--            <td></td>-->
@@ -247,7 +247,7 @@
         <tr>
             <td class="center">'21</td>
             <td>Adaptive wavelet distillation from neural networks through interpretations</td>
-            <td>ha, singh, et al.</td>
+            <td>ha, sm, et al.</td>
             <td class="med">🔍🌀🌳</td>
             <td class="center"><a href="https://arxiv.org/abs/2107.09145">neurips</a></td>
             <!--            <td></td>-->
@@ -263,7 +263,7 @@
         <tr>
             <td class="center">'21</td>
             <td>Matched sample selection with GANs for mitigating attribute confounding</td>
-            <td>singh, balakrishnan, & perona</td>
+            <td>sm & zs</td>
             <td class="med">🌀</td>
             <td class="center"><a href="https://arxiv.org/abs/2103.13455">cvpr workshop</a></td>
             <!--            <td></td>-->
@@ -277,7 +277,7 @@
         <tr>
             <td class="center">'21</td>
             <td>Revisiting complexity and the bias-variance tradeoff</td>
-            <td>dwivedi*, singh*, yu & wainwright</td>
+            <td>dwivedi*, sm* & wainwright</td>
             <td class="med">🌀</td>
             <td class="center"><a href="https://arxiv.org/abs/2006.10189">topml workshop</a></td>
             <td class="big"><a href="https://github.com/sohailmahmud/mdl-complexity"><i class="fa fa-github fa-fw"></i></a></td>
@@ -303,7 +303,7 @@
         <tr>
             <td class="center">'20</td>
             <td>transformation importance with applications to cosmology</td>
-            <td>singh*, ha*, lanusse, boehm, liu & yu</td>
+            <td>sm*, ha*, lanusse, boehm, liu & yu</td>
             <td class="med">🔎🌀🌌</td>
             <td class="center"><a href="https://arxiv.org/abs/2003.01926">iclr workshop (spotlight)</a></td>
             <td class="big"><a href="https://github.com/sohailmahmud/transformation-importance"><i class="fa fa-github fa-fw"></i></a>
@@ -315,7 +315,7 @@
         <tr>
             <td class="center">'20</td>
             <td>interpretations are useful: penalizing explanations to align neural networks with prior knowledge</td>
-            <td>rieger, singh, murdoch & yu</td>
+            <td>rieger, sm, murdoch & yu</td>
             <td class="med">🔎🌀</td>
             <td class="center"><a href="http://proceedings.mlr.press/v119/rieger20a.html">icml</a>
             </td>
@@ -326,7 +326,7 @@
         <tr>
             <td class="center">'19</td>
             <td>hierarchical interpretations for neural network predictions</td>
-            <td>Singh*, Murdoch*, & Yu</td>
+            <td>SM*, Murdoch*, & Yu</td>
             <td class="med">🔍🌀</td>
             <td class="center"><a href="https://arxiv.org/abs/1806.05337">ICLR</a></td>
             <td class="big"><a href="https://github.com/sohailmahmud/acd"><i class="fa fa-github fa-fw"></i></a></td>
@@ -339,7 +339,7 @@
         <tr>
             <td class="center">'19</td>
             <td>interpretable machine learning: definitions, methods, and applications</td>
-            <td>Murdoch*, Singh*, et al.</td>
+            <td>Murdoch*, SM*, et al.</td>
             <td class="med">🔍🌳🌀</td>
             <td class="center"><a href="https://arxiv.org/abs/1901.04592">pnas</a></td>
             <td></td>
@@ -351,7 +351,7 @@
         <tr>
             <td class="center">'19</td>
             <td>disentangled attribution curves for interpreting random forests and boosted trees</td>
-            <td>devlin, singh, murdoch & yu</td>
+            <td>devlin, sm, murdoch & yu</td>
             <td class="med">🔍🌳</td>
             <td class="center"><a href="https://arxiv.org/abs/1905.07631">arxiv</a></td>
             <td class="big"><a href="https://github.com/sohailmahmud/disentangled_attribution_curves"><i
@@ -372,7 +372,7 @@
         <tr>
             <td class="center">'18</td>
             <td>linearization of excitatory synaptic integration at no extra cost</td>
-            <td>Morel, Singh, & Levy</td>
+            <td>Morel, SM, & More</td>
             <td class="med">🧠</td>
             <td class="center"><a href="http://rdcu.be/FDUo">J Comp Neuro</a></td>
             <td class="big"><a href="https://senselab.med.yale.edu/modeldb/ShowModel.cshtml?model=237594"><i
@@ -384,7 +384,7 @@
         <tr>
             <td class="center">'17</td>
             <td>a consensus layer V pyramidal neuron can sustain interpulse-interval coding</td>
-            <td>Singh & Levy</td>
+            <td>SM & Levy</td>
             <td class="med">🧠</td>
             <td class="center"><a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0180839">Plos
                 One</a></td>
@@ -399,7 +399,7 @@
             <td>a constrained, weighted-l1 minimization approach for joint discovery of heterogeneous neural connectivity
                 graphs
             </td>
-            <td>Singh, Wang, & Qi</td>
+            <td>SM, Wang, & Qi</td>
             <td class="med">🧠</td>
             <td class="center"><a href="https://arxiv.org/abs/1709.04090">neurips Workshop</a></td>
             <td class="big"><a href="https://cran.r-project.org/web/packages/simule/index.html"><i
