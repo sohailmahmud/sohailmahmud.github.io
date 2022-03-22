@@ -3,7 +3,7 @@ baseurl: ""
 
 # Site Settings
 title: Sohail Mahmud
-description: "Let's do good with code"
+description: "Let's do good with tech"
 keywords: "Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"
 collections:
  blog:
