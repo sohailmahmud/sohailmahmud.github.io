@@ -1,4 +1,4 @@
-url: http://sohailmahmud.github.io
+url: https://sohailmahmud.github.io
 baseurl: ""
 
 # Site Settings
@@ -17,3 +17,5 @@ markdown: kramdown
 
 highlighter: rouge
 exclude: ["Rakefile", "LICENSE", "readme.md"]
+encoding: UTF-8
+timezone: Asia/Dhaka
