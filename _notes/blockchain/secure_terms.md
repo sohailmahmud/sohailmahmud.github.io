@@ -1,7 +1,7 @@
 ---
 layout: notes
-title: comp neuro
-category: neuro
+title: secure terms
+category: blockchain
 ---
 
 {:toc}
@@ -48,18 +48,20 @@ category: neuro
 ## types of models
 
 - three types
-  1. *descriptive* brain model - encode / decode external stimuli
-  2. *mechanistic* brian cell / network model - simulate the behavior of a single neuron / network
-  3. *interpretive* (or normative) brain model - why do brain circuits operate how they do
 
-- *receptive field* - the things that make a neuron fire
+  1. _descriptive_ brain model - encode / decode external stimuli
+  2. _mechanistic_ brian cell / network model - simulate the behavior of a single neuron / network
+  3. _interpretive_ (or normative) brain model - why do brain circuits operate how they do
+
+- _receptive field_ - the things that make a neuron fire
 - retina has on-center / off-surround cells - stimulated by points
 - then, V1 has differently shaped receptive fields
-- *efficient coding hypothesis* - learns different combinations (e.g. lines) that can efficiently represent images
-  
+- _efficient coding hypothesis_ - learns different combinations (e.g. lines) that can efficiently represent images
+
   1. sparse coding (Olshausen and Field 1996)
   2. ICA (Bell and Sejnowski 1997)
   3. Predictive Coding (Rao and Ballard 1999)
+
   - brain is trying to learn faithful and efficient representations of an animal's natural environment
     - same goes for auditory cortex
 
@@ -82,7 +84,7 @@ category: neuro
 
 ## simplified model neurons
 
-- *integrate-and-fire* neuron
+- _integrate-and-fire_ neuron
   - passive membrane (neuron charges)
   - when V = V$_{thresh}$, a spike is fired
   - then V = V$_{reset}$
@@ -93,7 +95,7 @@ category: neuro
 - modeling multiple variables
   - also model a K current
   - can capture things like resonance
-- *theta neuron* (Ermentrout and Kopell)
+- _theta neuron_ (Ermentrout and Kopell)
   - ![](../assets/5_3_1.png)
   - often used for periodically firing neurons (it fires spontaneously)
 
@@ -108,10 +110,10 @@ category: neuro
   - if branches obey a certain branching ratio, can replace each pair of branches with a single cable segment with equivalent surface area and electrotonic length
     - $d_1^{3/2} = d_{11}^{3/2} + d_{12}^{3/2}$
 - dendritic computation (London and Hausser 2005)
-  - hippocampus - when inputs arrive at soma, similiar shape no matter where they come in = *synaptic scaling*
+  - hippocampus - when inputs arrive at soma, similiar shape no matter where they come in = _synaptic scaling_
   - where inputs enter influences how they sum
   - dendrites can generate spikes (usually calcium) / backpropagating spikes
-- ex. *Jeffress model*  - sound localized based on timing difference between ears
+- ex. _Jeffress model_ - sound localized based on timing difference between ears
 - ex. direction selectivity in retinal ganglion cells - if events arive at dendrite far -> close, all get to soma at same time and add
 
 ## circuit-modeling basics
@@ -191,7 +193,6 @@ category: neuro
     - some reactions happen too fast to average spikes (e.g. 30 ms)
   - estimating information rate: bits (usually better than snr - can calculate between them) - usually 2-3 bits/spike
 
-
 # neural coding
 
 ## neural encoding
@@ -212,13 +213,13 @@ category: neuro
 - intracellular - can use patch electrodes
 - raster plot
   - replay a movie many times and record from retinal ganglion cells during movie
-- *encoding*: P(response \| stimulus)
-  - *tuning curve* - neuron's response (ex. firing rate) as a function of stimulus
+- _encoding_: P(response \| stimulus)
+  - _tuning curve_ - neuron's response (ex. firing rate) as a function of stimulus
   - orientation / color selective cells are distributed in organized fashion
   - some neurons fire to a concept, like "Pamela Anderson"
   - retina (simple) -> V1 (orientations) -> V4 (combinations) -> ?
   - also massive feedback
-- *decoding*: P(stimulus \| response)
+- _decoding_: P(stimulus \| response)
 
 ### simple encoding
 
@@ -227,25 +228,26 @@ category: neuro
   - stimulus := s
 - simple linear model
 
-  - r(t) = c * s(t)
-- *weighted linear model* - takes into account previous states weighted by f
-  1. *temporal filtering*
-    - r(t) = $f_0 \cdot s_0 + ... + f_t \cdot s_t =  \sum s_{t-k} f_k$ where f weights stimulus over time
-    - could also make this an integral, yielding a convolution:
-    - r(t) = $\int_{-\infty}^t d\tau \: s(t-\tau) f(\tau)$
-    - a linear system can be thought of as a system that searches for portions of the signal that resemble its filter f
-    - leaky integrator - sums its inputs with f decaying exponentially into the past
-    - flaws
-      - no negative firing rates
-      - no extremely high firing rates
-      - can add a nonlinear function g of the linear sum can fix this
-        - r(t) = $g(\int_{-\infty}^t d\tau \: s(t-\tau) f(\tau))$
-  2. *spatial filtering*
-    - r(x,y) = $\sum_{x',y'} s_{x-x',y-y'} f_{x',y'}$ where f again is spatial weights that represent the spatial field
-    - could also write this as a convolution
-    - for a retinal center surround cell, f is positive for small $\Delta x$ and then negative for large $\Delta x$
-      - can be calculated as a narrow, large positive Gaussian + spread out negative Gaussian
-  - can combine above to make *spatiotemporal filtering*
+  - r(t) = c \* s(t)
+
+- _weighted linear model_ - takes into account previous states weighted by f
+  1. _temporal filtering_
+  - r(t) = $f_0 \cdot s_0 + ... + f_t \cdot s_t =  \sum s_{t-k} f_k$ where f weights stimulus over time
+  - could also make this an integral, yielding a convolution:
+  - r(t) = $\int_{-\infty}^t d\tau \: s(t-\tau) f(\tau)$
+  - a linear system can be thought of as a system that searches for portions of the signal that resemble its filter f
+  - leaky integrator - sums its inputs with f decaying exponentially into the past
+  - flaws
+    - no negative firing rates
+    - no extremely high firing rates
+    - can add a nonlinear function g of the linear sum can fix this
+      - r(t) = $g(\int_{-\infty}^t d\tau \: s(t-\tau) f(\tau))$
+  2. _spatial filtering_
+  - r(x,y) = $\sum_{x',y'} s_{x-x',y-y'} f_{x',y'}$ where f again is spatial weights that represent the spatial field
+  - could also write this as a convolution
+  - for a retinal center surround cell, f is positive for small $\Delta x$ and then negative for large $\Delta x$
+    - can be calculated as a narrow, large positive Gaussian + spread out negative Gaussian
+  - can combine above to make _spatiotemporal filtering_
     - filtering = convolution = projection
 
 ### feature selection
@@ -255,23 +257,23 @@ category: neuro
   - stimulus can take on many values
   - need to keep track of stimulus over time
   - solution: sample P(response\|s) to many stimuli to characterize what in input triggers responses
-- find vector *f* that captures features that lead to spike
-  - dimensionality reduction - ex. discretize 
+- find vector _f_ that captures features that lead to spike
+  - dimensionality reduction - ex. discretize
   - value at each time $t_i$ is new dimension
   - commonly use Gaussian white noise
   - time step sets cutoff of highest frequency present
-  - *prior distribution* - distribution of stimulus
+  - _prior distribution_ - distribution of stimulus
     - multivariate Gaussian - Gaussian in any dimension, or any linear combination of dimensions
-  - look at where spike-triggering points are and calculate *spike-triggered average* *f* of features that led to spike
+  - look at where spike-triggering points are and calculate _spike-triggered average_ _f_ of features that led to spike
     - use this f as filter
-- determining the nonlinear input/output function *g*
+- determining the nonlinear input/output function _g_
   - replace stimulus in P(spike\|stimulus) with P(spike\|$s_1$), where s1 is our filtered stimulus
     - use bayes rule $g=P(spike\|s_1)=\frac{P(s_1\|spike)P(spike)}{P(s_1)}$
     - if $P(s_1\|spike) \approx P(s_1)$ then response doesn't seem to have to do with stimulus
-- incorporating many features *$f_1,...,f_n$*
+- incorporating many features _$f_1,...,f_n$_
   - here, each $f_i$ is a vector of weights
   - $r(t) = g(f_1\cdot s,f_2 \cdot s,...,f_n \cdot s)$
-  - could use *PCA* - discovers low-dimensional structure in high-dimensional data
+  - could use _PCA_ - discovers low-dimensional structure in high-dimensional data
   - each f represents a feature (maybe a curve over time) that fires the neuron
 
 ### variability
@@ -279,13 +281,15 @@ category: neuro
 - hidden assumptions about time-varying firing rate and single spikes
 
   - smooth function RFT can miss some stimuli
+
 - statistics of stimulus can effect P(spike\|stimulus)
 
   - Gaussian white noise is nice because no way to filter it to get structure
+
 - identifying good filter
   - want $P(s_f\|spike)$ to differ from $P(s_f)$ where $s_f$ is calculated via the filter
   - instead of PCA, could look for f that directly maximizes this difference (Sharpee & Bialek, 2004)
-  - *Kullback-Leibler divergence* - calculates difference between 2 distributions
+  - _Kullback-Leibler divergence_ - calculates difference between 2 distributions
     - $D_{KL}(P(s),Q(s)) = \int ds P(s) log_2 P(s) / Q(s)$
   - maximizing KL divergence is equivalent to maximizing mutual info between spike and stimulus
     - this is because we are looking for most informative feature
@@ -301,14 +305,14 @@ category: neuro
     - $\lambda$ = spikes in some set time
       - mean = $\lambda$
       - var = $\lambda$
-    1. can test if distr is Poisson with *Fano factor*=mean/var=1
-      2. interspike intervals have exponential distribution	- if fires a lot, this can be bad assumption (due to refractory period)
+    1. can test if distr is Poisson with _Fano factor_=mean/var=1
+    2. interspike intervals have exponential distribution - if fires a lot, this can be bad assumption (due to refractory period)
 - generalized linear model adds explicit spike-generation / post-spike filter (Pillow et al. 2008)
   - ![](../assets/2_4_1.png)
   - post-spike filter models refractory period
-  - *Paninski* showed that using exponential nonlinearity allows this to be optimized
+  - _Paninski_ showed that using exponential nonlinearity allows this to be optimized
   - could add in firing of other neurons
-  - *time-rescaling theorem* - tests how well we have captured influences on spiking (Brown et al 2001)
+  - _time-rescaling theorem_ - tests how well we have captured influences on spiking (Brown et al 2001)
     - scaled ISIs ($t_{i-1}-t_i$) r(t) should be exponential
 
 ## neural decoding
@@ -321,12 +325,12 @@ category: neuro
   - when dots all move in same direction (100% coherence), easy
     - neuron recorded in MT - tracks dots
     - count firing rate when monkey tracks in right direction
-    - count firing rate when  monkey tracks in wrong direction
+    - count firing rate when monkey tracks in wrong direction
     - as coherence decreases, these firing rates blur
   - need to get P(+ or - \| r)
     - can set a threshold on r by maximizing likelihood
       - P(r\|+) and P(r\|-) are likelihoods
-    - *Neyman-Pearson lemma* - likelihood ratio test is the most efficient statistic, in that is has the most power for a given size
+    - _Neyman-Pearson lemma_ - likelihood ratio test is the most efficient statistic, in that is has the most power for a given size
       - $\frac{p(r\|+)}{p(r\|-)} > 1?$
 - accumulated evidence - we can accumulate evidence over time by multiplying these probabilities
   - instead we take sum the logs, and compare to 0
@@ -351,17 +355,17 @@ category: neuro
 
 ### population coding and bayesian estimation
 
-- *population vector* - sums vectors for cells that point in different directions weighted by their firing rates
+- _population vector_ - sums vectors for cells that point in different directions weighted by their firing rates
   - ex. cricket cercal cells sense wind in different directions
   - since neuron can't have negative firing rate, need overcomplete basis so that can record wind in both directions along an axis
   - can do the same thing for direction of arm movement in a neural prosthesis
   - not general - some neurons aren't tuned, are noisier
-  - not *optimal* - making use of all information in the stimulus/response distributions
-- *bayesian inference*
+  - not _optimal_ - making use of all information in the stimulus/response distributions
+- _bayesian inference_
   - $p(s\|r) = \frac{p(r\|s)p(s)}{p( r)}$
   - ![](../assets/3_2_1.png)
-  - maximum likelihood: s* which maximizes p(r\|s)
-  - MAP = maximum $a\:posteriori$: s* which mazimizes p(s\|r)
+  - maximum likelihood: s\* which maximizes p(r\|s)
+  - MAP = maximum $a\:posteriori$: s\* which mazimizes p(s\|r)
 - simple continuous stimulus example
   - setup
     - s - orientation of an edge
@@ -370,11 +374,11 @@ category: neuro
     - assume receptive fields of neurons span s: $\sum r_a (s)$ is const
     - ![](../assets/3_2_2.png)
   - solving
-    - maximizing log-likelihood with respect to s			- take derivative and set to 0
+    - maximizing log-likelihood with respect to s - take derivative and set to 0
       - soln $s^* = \frac{\sum r_a s_a / \sigma_a^2}{\sum r_a / \sigma_a^2}$
       - if all the $\sigma$ are same, $s^* = \frac{\sum r_a s_a}{\sum r_a}$
         - this is the population vector
-    - maximum *a posteriori*
+    - maximum _a posteriori_
       - $ln \: p(s\|r) = ln \: P(r\|s) + ln \: p(s) = ln \: P(r )$
       - $s^* = \frac{T \sum r_a s_a / \sigma^2_a + s_{prior} / \sigma^2_{prior}}{T \sum r_a / \sigma^2_a + 1/\sigma^2_{prior}}$
       - this takes into account the prior
@@ -392,16 +396,16 @@ category: neuro
   - if spike-triggered average looks exponential, can never have smooth downwards stimulus
   - could use 2 neurons (like in H1) and replay the second with negative sign
 - LGN neurons can reconstruct a video, but with noise
-- recreated 1 sec long movies - (*Jack Gallant* - Nishimoto et al. 2011, Current Biology)
+- recreated 1 sec long movies - (_Jack Gallant_ - Nishimoto et al. 2011, Current Biology)
   1. voxel-based encoding model samples ton of prior clips and predicts signal
-    - get p(r\|s)
-    - pick best p(r\|s) by comparing predicted signal to actual signal
-    - input is filtered to extract certain features
-    - filtered again to account for slow timescale of BOLD signal
+  - get p(r\|s)
+  - pick best p(r\|s) by comparing predicted signal to actual signal
+  - input is filtered to extract certain features
+  - filtered again to account for slow timescale of BOLD signal
   2. decoding
-    - maximize p(s\|r) by maximizing p(r\|s) p(s), and assume p(s) uniform
-    - 30 signals that have highest match to predicted signal are averaged 
-    - yields pretty good pictures
+  - maximize p(s\|r) by maximizing p(r\|s) p(s), and assume p(s) uniform
+  - 30 signals that have highest match to predicted signal are averaged
+  - yields pretty good pictures
 
 ## information theory
 
@@ -419,7 +423,7 @@ category: neuro
   - noise entropy: $H(R\|S=+) = -q log q - (1-q) log (1-q)$
   - mutual info I(S;R) = $H(R ) - H(R\|S) $ = total entropy - average noise entropy
     - = $D_{KL} (P(R,S), P(R )P(S))$
-- *grandma's famous mutual info recipe*
+- _grandma's famous mutual info recipe_
   - for each s
     - P(R\|s) - take one stimulus and repeat many times (or run for a long time)
     - H(R\|s) - noise entropy
@@ -429,39 +433,46 @@ category: neuro
 ### information in spike trains
 
 1. information in spike patterns
-  - divide pattern into time bins of 0 (no spike) and 1 (spike)
-  - binary words w with letter size $\Delta t$, length T (Reinagel & Reid 2000)
-    - can create histogram of each word
-    - can calculate entropy of word 
-  - look at distribution of words for just one stimulus
-    - distribution should be narrower
-  - calculate $H_{noise}$ - average over time with random stimuli and calculate entropy
-    - varied parameters of word: length of bin (dt) and length of word (T)
-    - there's some limit to dt at which information stops increasing
-      - this represents temporal resolution at which jitter doesn't stop response from identifying info about the stimulus
-    - corrections for finite sample size (Panzeri, Nemenman,...)
+
+- divide pattern into time bins of 0 (no spike) and 1 (spike)
+- binary words w with letter size $\Delta t$, length T (Reinagel & Reid 2000)
+  - can create histogram of each word
+  - can calculate entropy of word
+- look at distribution of words for just one stimulus
+  - distribution should be narrower
+- calculate $H_{noise}$ - average over time with random stimuli and calculate entropy
+  - varied parameters of word: length of bin (dt) and length of word (T)
+  - there's some limit to dt at which information stops increasing
+    - this represents temporal resolution at which jitter doesn't stop response from identifying info about the stimulus
+  - corrections for finite sample size (Panzeri, Nemenman,...)
+
 2. information in single spikes - how much info does single spike tell us about stimulus
-  - don't have to know encoding, mutual info doesn't care
-  1. calculate entropy for random stimulus
-    - $p=\bar{r} \Delta t$ where $\bar{r}$ is the mean firing rate
-  2. calculate entropy for specific stimulus
-  - let $P(r=1\|s) = r(t) \Delta t$
-  - let $P(r=0\|s) = 1 - r(t) \Delta t$
-  - get r(t) by having simulus on for long time
-  - *ergodicity* - a time average is equivalent to averging over the s ensemble
-  - ![](../assets/4_2_1.png)
-  - info per spike $I(r,s) = \frac{1}{T} \int_0^T dt \frac{r(t)}{\bar{r}} log \frac{r(t)}{\bar{r}}$
-    - timing precision reduces r(t)
-    - low mean spike rate -> high info per spike
-  - ex. rat runs through place field and only fires when it's in place field
-    - spikes can be sharper, more / less frequent
+
+- don't have to know encoding, mutual info doesn't care
+
+1. calculate entropy for random stimulus
+
+   - $p=\bar{r} \Delta t$ where $\bar{r}$ is the mean firing rate
+
+2. calculate entropy for specific stimulus
+
+- let $P(r=1\|s) = r(t) \Delta t$
+- let $P(r=0\|s) = 1 - r(t) \Delta t$
+- get r(t) by having simulus on for long time
+- _ergodicity_ - a time average is equivalent to averging over the s ensemble
+- ![](../assets/4_2_1.png)
+- info per spike $I(r,s) = \frac{1}{T} \int_0^T dt \frac{r(t)}{\bar{r}} log \frac{r(t)}{\bar{r}}$
+  - timing precision reduces r(t)
+  - low mean spike rate -> high info per spike
+- ex. rat runs through place field and only fires when it's in place field
+  - spikes can be sharper, more / less frequent
 
 ### coding principles
 
 - natural stimuli
   - huge dynamic range - variations over many orders of magnitude (ex. brightness)
   - power law scaling - structure at many scales (ex. far away things)
-- *efficient coding* - in order to have maximum entropy output, a good encoder should match its outputs to the distribution of its inputs
+- _efficient coding_ - in order to have maximum entropy output, a good encoder should match its outputs to the distribution of its inputs
   - want to use each of our "symbols" (ex. different firing rates) equally often
   - should assign equal areas of input stimulus PDF to each symbol
 - adaptataion to stimulus statistics
@@ -471,17 +482,16 @@ category: neuro
     - at low light levels surround becomes weaker
 - coding sechemes
   1. redundancy reduction
-    - population code $P(R_1,R_2)$
-    - entropy $H(R_1,R_2) \leq H(R_1) + H(R_2)$ - being independent would maximize entropy
+  - population code $P(R_1,R_2)$
+  - entropy $H(R_1,R_2) \leq H(R_1) + H(R_2)$ - being independent would maximize entropy
   2. correlations can be good
-    - error correction and robust coding
-    - correlations can help discrimination
-    - retina neurons are redundant (Berry, Chichilnisky)
+  - error correction and robust coding
+  - correlations can help discrimination
+  - retina neurons are redundant (Berry, Chichilnisky)
   3. more recently, sparse coding
-    - penalize weights of basis functions
-    - instead, we get localized features
+  - penalize weights of basis functions
+  - instead, we get localized features
 - we ignored the behavioral feedback loop
-
 
 # computing with networks
 
@@ -505,7 +515,7 @@ category: neuro
   - pick filter (ex. K(t) ~ exponential)
   - $g_s = g_{s,max} \sum K(t-t_i)$
 - network of integrate-and-fire neurons
-  - if 2 neurons inhibit each other, get *synchrony* (fire at the same time
+  - if 2 neurons inhibit each other, get _synchrony_ (fire at the same time
 
 ## intro to network models
 
@@ -529,7 +539,7 @@ category: neuro
   - if static inputs (input doesn't change) - this is like artificial neural network, where F is sigmoid
     - $\nu_{\infty} = F(\mathbf{w} \cdot \mathbf{u})$
     - could make these all vectors to extend to multiple output neurons
-- recurrent networks 
+- recurrent networks
   - $\tau \frac{d\mathbf{v}}{dt} = -\mathbf{v} + F(W\mathbf{u} + M \mathbf{v})$
     - $-\mathbf{v}$ is decay
     - $W\mathbf{u}$ is input
@@ -568,7 +578,7 @@ category: neuro
   - can have eigenvalues > 1 but stable due to rectification
   - can perform selective "attention"
     - network performs "winner-takes-all" input selection
-  - *gain modulation* - adding constant amount to input h multiplies the output
+  - _gain modulation_ - adding constant amount to input h multiplies the output
   - also maintains memory
 - non-symmetric recurrent networks
   - ex. excitatory and inhibitory neurons
@@ -591,7 +601,6 @@ category: neuro
   - transformer finds similarity between each key with each query then takes softmax - this provides weights for each of the inputs, as context for the original input
     - in transformer, these weights are used to weight the values but in hopfield nets we would take a weighted sum of the keys and feed it back as the input
   - as we update becomes more skewed towards the things that match the most
-
 
 # learning
 
@@ -648,20 +657,20 @@ category: neuro
 
 - if 2 spikes keep firing at same time, get LTP - long-term potentiation
   - if input fires, but not B then could get LTD - long-term depression
-- *Hebb rule* $\tau_w \frac{d\mathbf{w}}{dt} = \mathbf{x}v$
+- _Hebb rule_ $\tau_w \frac{d\mathbf{w}}{dt} = \mathbf{x}v$
   - $\mathbf{x}$ - input
   - $v$ - output
   - translates to $\mathbf{w}_{i+1}=\mathbf{w}_i + \epsilon \cdot \mathbf{x}v$
   - average effect of the rule is to change based on correlation matrix $\mathbf{x}^T\mathbf{x}$
-- *covariance rule*: $\tau_w \frac{d\mathbf{w}}{dt} = \mathbf{x}(v-E[v])$
+- _covariance rule_: $\tau_w \frac{d\mathbf{w}}{dt} = \mathbf{x}(v-E[v])$
   - includes LTD as well as LTP
-- *Oja's rule*: $\tau_w \frac{d\mathbf{w}}{dt} = \mathbf{x}v- \alpha v^2 \mathbf{w}$ where $\alpha>0$
+- _Oja's rule_: $\tau_w \frac{d\mathbf{w}}{dt} = \mathbf{x}v- \alpha v^2 \mathbf{w}$ where $\alpha>0$
 - stability
   - Hebb rule - derivative of w is always positive $\implies$ w grows without bound
   - covariance rule - derivative of w is still always positive $\implies$ w grows without bound
     - could add constraint that $\|\|w\|\|=1$ and normalize w after every step
   - Oja's rule - $\|\|w\|\| = 1/\sqrt{alpha}$, so stable
-- solving *Hebb rule* $\tau_w \frac{d\mathbf{w}}{dt} = Q w$ where Q represents correlation matrix
+- solving _Hebb rule_ $\tau_w \frac{d\mathbf{w}}{dt} = Q w$ where Q represents correlation matrix
   - write w(t) in terms of eigenvectors of Q
   - lets us solve for $\mathbf{w}(t)=\sum_i c_i(0)exp(\lambda_i t / \tau_w) \mathbf{e}_i$
   - when t is large, largest eigenvalue dominates
@@ -673,12 +682,12 @@ category: neuro
 
 - ![](../assets/7_2_1.png)
   - most active neuron is the one whose w is closest to x
-- *competitive learning*
+- _competitive learning_
   - updating weights given a new input
     1. pick a cluster (corresponds to most active neuron)
     2. set weight vector for that cluster to running average of all inputs in that cluster
-      - $\Delta w = \epsilon \cdot (\mathbf{x} - \mathbf{w})$
-  - related to *self-organizing maps* = kohonen maps
+    - $\Delta w = \epsilon \cdot (\mathbf{x} - \mathbf{w})$
+  - related to _self-organizing maps_ = kohonen maps
     - in self-organizing maps also update other neurons in the neighborhood of the winner
     - update winner closer
     - update neighbors to also be closer
@@ -696,7 +705,7 @@ category: neuro
 - if you assume Gausian noise, maximizing likelihood = minimizing squared error
 - generative model
   - images X
-  - causes 
+  - causes
   - likelihood P(X=x\|C=c)
     - Gaussian
     - proportional to $exp(x-Gc)$
@@ -708,7 +717,7 @@ category: neuro
     - then P(C ) = $k \cdot \prod exp(g(C_i))$
   - can implement sparse coding in a recurrent neural network
   - Olshausen & Field, 1996 - learns receptive fields in V1
-- sparse coding is a special case of *predicive coding*
+- sparse coding is a special case of _predicive coding_
   - ![](../assets/7_3_1.png)
   - there is usually a feedback connection for every feedforward connection (Rao & Ballard, 1999)
 
@@ -749,7 +758,7 @@ category: neuro
   - in terms of optimization, smooth near zero
   - there is a network implementation
   - $a_i$are calculated by solvin optimization for each image, $\phi$ is learned more slowly
-  - **can you get $a_i$ closed form soln?** 
+  - **can you get $a_i$ closed form soln?**
 - wavelets invented in 1980s/1990s for sparsity + compression
 - these tuning curves match those of real v1 neurons
 - applications
@@ -760,7 +769,7 @@ category: neuro
   - sparse coding to neural recordings - finds spikes in neurons
     - learns that different layers activate together, different frequencies come out
     - found place cell bases for LFP in hippocampus
-  - nonnegative matrix factorization - like sparse coding but enforces nonnegative 
+  - nonnegative matrix factorization - like sparse coding but enforces nonnegative
   - can explicitly enforce nonnegativity
 - LCA algorithm lets us implement sparse coding in biologically plausible local manner
 - explaining away - neural responses at the population should be decodable (shouldn't be ambiguous)
@@ -796,6 +805,7 @@ category: neuro
 # ml analogies
 
 ## Brain theories
+
 - Computational Theory of Mind
 - Classical associationism
 - Connectionism
@@ -806,16 +816,15 @@ category: neuro
 - Have ~6 layers
 
 ## brain as a computer
--	Brain as a Computer – Analog VLSI and Neural Systems by Mead (VLSI – very large scale integration)
--	Brain Computer Analogy
+
+- Brain as a Computer – Analog VLSI and Neural Systems by Mead (VLSI – very large scale integration)
+- Brain Computer Analogy
   -Process info
   -Signals represented by potential
   -Signals are amplified = gain
   -Power supply
   -Knowledge is not stored in knowledge of the parts, but in their connections
-  -Based on electrically charged entities interacting with energy barriers
-  -http://en.wikipedia.org/wiki/Computational_theory_of_mind
-  -http://scienceblogs.com/developingintelligence/2007/03/27/why-the-brain-is-not-like-a-co/
+  -Based on electrically charged entities interacting with energy barriers -http://en.wikipedia.org/wiki/Computational_theory_of_mind -http://scienceblogs.com/developingintelligence/2007/03/27/why-the-brain-is-not-like-a-co/
   -Brain’ storage capacity is about 2.5 petabytes (Scientific American, 2005)
   -Electronics
   -Voltage can be thought of as water in a reservoir at a height
@@ -826,7 +835,7 @@ category: neuro
   -Conductance = 1/ resistance = mho, siemens
   -We could also say the word is a computer with individuals being the processors – with all the wasted thoughts we have – the solution is probably to identify global problems and channel people’s focus towards working on them
   -Brain chip: http://www.research.ibm.com/articles/brain-chip.shtml
-  -Differences: What Can AI Get from Neuroscience? 
+  -Differences: What Can AI Get from Neuroscience?
   -Brains are not digital
   -Brains don’t have a CPU
   -Memories are not separable from processing
@@ -841,16 +850,16 @@ category: neuro
 
 ## Brain v. Deep Learning
 
--	http://timdettmers.com/
-  -	problems with brain simulations:
-    -	Not possible to test specific scientific hypotheses (compare this to the large hadron collider project with its perfectly defined hypotheses)
-    -	Does not simulate real brain processing (no firing connections, no biological interactions)
-    -	Does not give any insight into the functionality of brain processing (the meaning of the simulated activity is not assessed)
-  -	Neuron information processing parts
-    -	Dendritic spikes are like first layer of conv net
-    -	Neurons will typically have a genome that is different from the original genome that you were assigned to at birth. Neurons may have additional or fewer chromosomes and have sequences of information removed or added from certain chromosomes.
-    -	http://timdettmers.com/2015/03/26/convolution-deep-learning/
-    -	The adult brain has 86 billion neurons, about 10 trillion synapse, and about 300 billion dendrites (tree-like structures with synapses on them
+- http://timdettmers.com/
+- problems with brain simulations:
+  - Not possible to test specific scientific hypotheses (compare this to the large hadron collider project with its perfectly defined hypotheses)
+  - Does not simulate real brain processing (no firing connections, no biological interactions)
+  - Does not give any insight into the functionality of brain processing (the meaning of the simulated activity is not assessed)
+- Neuron information processing parts
+  - Dendritic spikes are like first layer of conv net
+  - Neurons will typically have a genome that is different from the original genome that you were assigned to at birth. Neurons may have additional or fewer chromosomes and have sequences of information removed or added from certain chromosomes.
+  - http://timdettmers.com/2015/03/26/convolution-deep-learning/
+  - The adult brain has 86 billion neurons, about 10 trillion synapse, and about 300 billion dendrites (tree-like structures with synapses on them
 
 # probabilistic models + inference
 
@@ -860,7 +869,7 @@ category: neuro
 </details>
 - gaussians are everywhere because of CLT, max entropy (subject to power constraint)
 
-  - for gaussian function, $d/dx f(x) = -x f(x)$
+- for gaussian function, $d/dx f(x) = -x f(x)$
 
 ## boltzmann machines
 
@@ -896,4 +905,3 @@ category: neuro
   - learn the distribution of pixels in 3x3 patches
   - then maximize this distribution - can yield textures
 - reducing the dimensionality of data with neural networks
-
