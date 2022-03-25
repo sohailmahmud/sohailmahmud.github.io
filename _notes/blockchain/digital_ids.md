@@ -1,7 +1,7 @@
 ---
 layout: notes
 title: digital ids
-category: neuro
+category: blockchain
 ---
 
 {:toc}
@@ -300,7 +300,9 @@ notes from Neuroscience, 5th edition + Intro to neurobiology course at UVA
 - ![](../assets/21_4.png)
 - parasympathetic works against sympathetic
 - divisions
+
   1. _sympathetic_ - fight-or-flight (_adrenaline_)
+
   - functions
     - neurons to smooth muscle
     - pupils dilate
@@ -315,8 +317,11 @@ notes from Neuroscience, 5th edition + Intro to neurobiology course at UVA
       - all outgoing connections are adrenergic
   - beta-adrenergic drugs block adrenaline
     - beta agonist - activates adrenaline receptors (do this before EKG)
+
   2. _parasympathetic_ - relaxing (_ACh_)
+
   - location
+
     1. brainstem
     1. _edinger westphal nucleus_ - pupil-constriction
     1. _salivatory nucleus_
@@ -324,16 +329,22 @@ notes from Neuroscience, 5th edition + Intro to neurobiology course at UVA
     1. _nucleus ambiguous_ - heart
     1. **nucleus of the solitary tract**
 
+       - all input/output goes through this
 
-        - all input/output goes through this
-        1. *rostral* part (front) - taste neurons
-        2. *caudal* part (back) contains all sensory information of viscera (ex. BP, heart rate, sexual
-    2. _sacral_ spinal cord (bottom) - gut/bladder/genitals
+       1. _rostral_ part (front) - taste neurons
+       2. _caudal_ part (back) contains all sensory information of viscera (ex. BP, heart rate, sexual
+
+    1. _sacral_ spinal cord (bottom) - gut/bladder/genitals
+
     - not parallel to sympathetic – poor design - may cause stress-associated diseases
+
   - hard to make drugs with ACh
+
   3. _enteric_ nervous system - in your gut
+
   - takes input through _vagus nerve_ from vagus nucleus
   - also has sensory neurons and sends afferents back to brainstem
+
 - pathway
   - _insular cortex_ - what you care about
   - _amygdala_ - contains emotional memories
