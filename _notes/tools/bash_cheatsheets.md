@@ -1,3 +1,4 @@
+<!--
 ---
 layout: notes
 title: bash cheatsheets
