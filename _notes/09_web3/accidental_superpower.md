@@ -1,6 +1,6 @@
 ---
 layout: notes
-title: accidant superpower
+title: ethereum cheatsheets
 category: web3
 ---
 
