@@ -1,7 +1,7 @@
 ---
 layout: notes
-title: software engineering
-category: sde
+title: Solidity Terms
+category: web3
 ---
 
 {:toc}

@@ -1,7 +1,7 @@
 ---
 layout: notes
-title: software engineering
-category: sde
+title: Ethereum Cheatsheets
+category: web3
 ---
 
 {:toc}
