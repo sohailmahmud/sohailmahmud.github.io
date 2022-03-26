@@ -1,4 +1,10 @@
-[toc]
+---
+layout: notes
+title: accidant superpower
+category: web3
+---
+
+{:toc}
 
 # 1. the world we think we know
 
