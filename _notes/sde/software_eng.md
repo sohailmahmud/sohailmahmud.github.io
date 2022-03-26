@@ -1,7 +1,7 @@
 ---
 layout: notes
 title: software engineering
-category: sde
+category: 01. sde
 ---
 
 {:toc}
