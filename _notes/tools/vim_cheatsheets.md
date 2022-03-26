@@ -1,4 +1,3 @@
-<!--
 ---
 layout: notes
 title: vim cheatsheets

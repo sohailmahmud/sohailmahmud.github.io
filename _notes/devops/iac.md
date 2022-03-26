@@ -1,6 +1,6 @@
 ---
 layout: notes
-title: Infrastructure as a Code
+title: Infras as a Code
 category: devops
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: notes
-title: Continuous Deployment
+title: Continuous Deploy
 category: devops
 ---
 

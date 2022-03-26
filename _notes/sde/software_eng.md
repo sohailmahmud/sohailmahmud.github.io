@@ -1,12 +1,8 @@
-<!--
-
+---
 layout: notes
 title: software engineering
 category: sde
-
 ---
-
--->
 
 {:toc}
 
