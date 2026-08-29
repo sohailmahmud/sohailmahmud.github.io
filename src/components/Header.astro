@@ -1,0 +1,86 @@
+---
+const navItems = [
+  { label: 'About', href: '/' },
+  { label: 'Experience', href: '/experience' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Writing', href: '/writing' },
+  { label: 'Talks', href: '/talks' },
+];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === '/') {
+    return currentPath === '/' || currentPath === '';
+  }
+  return currentPath.startsWith(href) && href !== '/';
+}
+---
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-zinc-200/60 mb-8 sm:mb-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14 sm:h-16">
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-2 hover:no-underline group h-full">
+        <span class="text-emerald-500 font-mono font-bold text-base sm:text-lg tracking-tighter transition-transform group-hover:scale-105">&lt;sm/&gt;</span>
+        <span class="font-bold text-zinc-900 text-base sm:text-lg tracking-tight">Sohail Mahmud</span>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="hidden md:flex items-center h-full gap-6 lg:gap-8">
+        {navItems.map(item => {
+          const active = isActive(item.href);
+          return (
+            <a 
+              href={item.href} 
+              class:list={[
+                "h-full flex items-center text-[13px] font-semibold transition-all hover:no-underline border-b-2 -mb-[2px]",
+                active 
+                  ? "text-emerald-500 border-emerald-500" 
+                  : "text-zinc-600 hover:text-zinc-900 border-transparent hover:border-zinc-300"
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Resume Action Button -->
+      <div class="flex items-center h-full gap-3">
+        <a 
+          href="https://linkedin.com/in/sohailmahmud" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-semibold px-4 py-2.5 rounded-lg inline-flex items-center gap-1.5 transition-all shadow-xs hover:no-underline group"
+        >
+          <span>Resume</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Nav Menu -->
+  <div class="flex md:hidden items-center justify-center gap-4 h-12 border-t border-zinc-200/50 px-4 overflow-x-auto">
+    {navItems.slice(0, 4).map(item => {
+      const active = isActive(item.href);
+      return (
+        <a 
+          href={item.href} 
+          class:list={[
+            "h-full flex items-center text-xs font-medium whitespace-nowrap hover:no-underline border-b-2 -mb-[2px]",
+            active 
+              ? "text-emerald-500 border-emerald-500" 
+              : "text-zinc-600 hover:text-zinc-900 border-transparent"
+          ]}
+        >
+          {item.label}
+        </a>
+      );
+    })}
+  </div>
+</header>

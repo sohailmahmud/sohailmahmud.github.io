@@ -1,0 +1,365 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/04_ml/nlp.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | nlp</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> nlp </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/04_ml/nlp.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/04_ml/nlp.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<p>Some notes on natural language processing, focused on modern improvements based on deep learning.</p>
+
+<h1 id="nlp-basics">nlp basics</h1>
+
+<ul>
+  <li>basics come from book “Speech and Language Processing”</li>
+  <li><strong>language models</strong> - assign probabilities to sequences of words
+    <ul>
+      <li>ex. <strong>n-gram model</strong> - assigns probs to shorts sequences of words, known as n-grams
+        <ul>
+          <li>for full sentence, use markov assumption</li>
+        </ul>
+      </li>
+      <li>eval: <strong>perplexity (PP)</strong> - inverse probability of the test set, normalized by the number of words (want to minimize it)
+        <ul>
+          <li>$PP(W_{test}) = P(w_1, …, w_N)^{-1/N}$</li>
+          <li>can think of this as the weighted average branching factor of a language</li>
+          <li>should only be compared across models w/ same vocab</li>
+        </ul>
+      </li>
+      <li>vocabulary
+        <ul>
+          <li>sometimes closed, otherwise have unkown words, which we assign its own symbol</li>
+          <li>can fix training vocab, or just choose the top words and have the rest be unkown</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>topic models (e.g. LDA)</strong> - apply unsupervised learning on large sets of text to learn sets of associated words</li>
+  <li><strong>embeddings</strong> - vectors for representing words
+    <ul>
+      <li>ex. <strong>tf-idf</strong> - defined as counts of nearby words (big + sparse)
+        <ul>
+          <li>pointwise mutual info - instead of counts, consider whether 2 words co-occur more than we would have expected by chance</li>
+        </ul>
+      </li>
+      <li>ex. <strong>word2vec</strong> - short, dense vectors
+        <ul>
+          <li>intuition: train classifier on binary prediction: is word $w$ likely to show up near this word? (algorithm also called skip-gram)
+            <ul>
+              <li>the weights are the embeddings</li>
+            </ul>
+          </li>
+          <li>also <strong>GloVe</strong>, which is based on ratios of word co-occurrence probs</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>some tasks
+    <ul>
+      <li>tokenization</li>
+      <li>pos tagging</li>
+      <li>named entity recognition
+        <ul>
+          <li>nested entity recognition - not just names (but also Jacob’s brother type entity)</li>
+        </ul>
+      </li>
+      <li>sentiment classification</li>
+      <li>language modeling (i.e. text generation)</li>
+      <li>machine translation</li>
+      <li>hardest: coreference resolution</li>
+      <li>question answering</li>
+      <li><a href="https://www.aclweb.org/anthology/P19-1334.pdf">natural language inference</a> - does one sentence entail another?</li>
+    </ul>
+  </li>
+  <li>most popular datasets
+    <ul>
+      <li>(by far) WSJ</li>
+      <li>then twitter</li>
+      <li>then Wikipedia</li>
+    </ul>
+  </li>
+  <li><a href="https://eli5.readthedocs.io/en/latest/libraries/sklearn.html#library-scikit-learn">eli5</a> has nice text highlighting for interp</li>
+</ul>
+
+<h1 id="dl-for-nlp">dl for nlp</h1>
+
+<ul>
+  <li>some recent topics based on <a href="http://jalammar.github.io/">this blog</a></li>
+  <li>rnns
+    <ul>
+      <li>when training rnn, accumulate gradients over sequence and then update all at once</li>
+      <li><strong>stacked rnns</strong> have outputs of rnns feed into another rnn</li>
+      <li>bidirectional rnn - one rnn left to right and another right to left (can concatenate, add, etc.)</li>
+    </ul>
+  </li>
+  <li>standard seq2seq
+    <ul>
+      <li>encoder reads input and outputs context vector (the hidden state)</li>
+      <li>decoder (rnn) takes this context vector and generates a sequence</li>
+    </ul>
+  </li>
+  <li>misc papers
+    <ul>
+      <li><a href="https://arxiv.org/abs/1706.05125">Deal or No Deal? End-to-End Learning for Negotiation Dialogues</a> - controversial FB paper where agents “make up their own language”</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="attention--transformers">attention / transformers</h2>
+
+<ul>
+  <li>
+    <p>self-attention layer <a href="https://github.com/mertensu/transformer-tutorial">implementation</a> and <a href="https://homes.cs.washington.edu/~thickstn/docs/transformers.pdf">mathematics</a></p>
+  </li>
+  <li>**self-attention ** - layer that lets word learn its relation to other layers
+    <ul>
+      <li>for each word, want score telling how much importance to place on each other word (queries $\cdot$ keys)</li>
+      <li>we get an encoding for each word
+        <ul>
+          <li>the encoding of each word returns a weighted sum of the values of the words (the current word gets the highest weight)</li>
+          <li>softmax this and use it to do weighted sum of values<img src="../assets/attention.png" alt="Screen Shot 2019-08-17 at 2.51.53 PM" /></li>
+        </ul>
+      </li>
+      <li>(optional) implementation details
+        <ul>
+          <li><strong>multi-headed attention</strong> - just like having many filters, get many encodings for each word
+            <ul>
+              <li>each one can take input as the embedding from the previous attention layer</li>
+            </ul>
+          </li>
+          <li><strong>position vector</strong> - add this into the embedding of each word (so words know how far apart they are) - usually use sin/cos rather than actual position number</li>
+          <li><strong>padding mask</strong> - add zeros to the end of the sequence</li>
+          <li><strong>look-ahead mask</strong> - might want to mask to only use previous words (e.g. if our final task is decoding)</li>
+          <li><strong>residual + normalize</strong> - after self-attention layer, often have residual connection to previous input, which gets added then normalized</li>
+        </ul>
+      </li>
+      <li>decoder - each word only allowed to attend to previous positions</li>
+      <li>3 components
+        <ul>
+          <li>queries</li>
+          <li>keys</li>
+          <li>values</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>attention</strong>
+    <ul>
+      <li>encoder reads input and ouputs context vector after each word</li>
+      <li>decoder at each step uses a different weighted combination of these context vectors
+        <ul>
+          <li>specifically, at each step, decoder concatenates its hidden state w/ the attention vector (the weighted combination of the context vectors)</li>
+          <li>this is fed to a feedforward net to output a word</li>
+          <li><img src="../assets/nmt.png" alt="Screen Shot 2019-04-11 at 7.57.14 PM" /></li>
+        </ul>
+      </li>
+      <li>at a high level we have $Q, K, V$ and compute $softmax(QK^T)V$
+        <ul>
+          <li>instead could simplify it and do $softmax(XX^T)V$ - this would then be based on kernel</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>transformer</strong>
+    <ul>
+      <li>uses many self-attention layers</li>
+      <li>many stacked layers in encoder + decoder (not rnn: self-attention + feed forward)</li>
+      <li>details
+        <ul>
+          <li>initial encoding: each word -&gt; vector</li>
+          <li>each layer takes a list of fixed size (hyperparameter e.g. length of longest sentence) and outputs a list of that same fixed size (so one output for each word)
+            <ul>
+              <li>can easily train with a masked word to predict the word at the predicted position in the encoding</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>multi-headed attention has several of each of these (then just concat them)</li>
+    </ul>
+  </li>
+  <li>recent papers
+    <ul>
+      <li><a href="https://arxiv.org/abs/1706.03762">attention is all you need paper</a> - proposes transformer</li>
+      <li><a href="https://arxiv.org/abs/1511.01432">Semi-supervised Sequence Learning</a> (by <a href="https://twitter.com/iamandrewdai">Andrew Dai</a> and <a href="https://twitter.com/quocleix">Quoc Le</a>)</li>
+      <li><a href="https://arxiv.org/abs/1802.05365">ELMo</a> (by <a href="https://twitter.com/mattthemathman">Matthew Peters</a> and researchers from <a href="https://allenai.org/">AI2</a> and <a href="https://www.engr.washington.edu/about/bldgs/cse">UW CSE</a>) - no word embeddings - train embeddings w/ bidirectional lstm (on language modelling)</li>
+      <li>context vector is weighted sum of context vector at each word</li>
+      <li><a href="https://arxiv.org/abs/1801.06146">ULMFiT</a> (by fast.ai founder <a href="https://twitter.com/jeremyphoward">Jeremy Howard</a> and <a href="https://twitter.com/seb_ruder">Sebastian Ruder</a>), the</li>
+      <li><a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">OpenAI transformer</a> (by OpenAI researchers <a href="https://twitter.com/alecrad">Radford</a>, <a href="https://twitter.com/karthik_r_n">Narasimhan</a>, <a href="https://twitter.com/timsalimans">Salimans</a>, and <a href="https://twitter.com/ilyasut">Sutskever</a>)</li>
+      <li><a href="BERT">BERT</a> - semi-supervised learning (predict masked word - this is bidirectional) + supervised finetuning</li>
+      <li><a href="https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a> (small released model, full trained model, even larger model from Nvidia)</li>
+      <li><a href="https://arxiv.org/abs/1906.08237">XLNet</a></li>
+      <li><a href="https://arxiv.org/abs/1907.11692">roberta</a></li>
+    </ul>
+  </li>
+  <li>these ideas are <a href="https://arxiv.org/abs/1904.09925">starting to be applied to vision cnns</a></li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

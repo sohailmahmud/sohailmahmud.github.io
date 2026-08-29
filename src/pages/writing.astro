@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => (b.data.pubDate?.valueOf() || 0) - (a.data.pubDate?.valueOf() || 0));
+---
+
+<Layout title="Writing">
+  <section class="py-12">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-zinc-200 pb-8">
+      <h1 class="text-3xl font-bold tracking-tight">Writing & Notes</h1>
+      <div class="relative max-w-sm w-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="search-input"
+          placeholder="Search writing & notes..." 
+          class="w-full pl-10 pr-4 py-2.5 bg-zinc-100 border border-transparent focus:border-emerald-500 focus:bg-white:bg-zinc-900 rounded-lg outline-none transition-colors text-sm text-zinc-900 placeholder:text-zinc-500"
+        />
+      </div>
+    </div>
+    
+    <div class="space-y-12" id="posts-container">
+      {posts.map(post => (
+        <article class="group search-item" data-title={post.data.title.toLowerCase()} data-desc={post.data.description?.toLowerCase() ?? ''}>
+          <a href={`/writing/${post.id}`} class="hover:no-underline block">
+            <h2 class="text-xl font-semibold mb-2 group-hover:text-emerald-600:text-emerald-400 transition-colors">{post.data.title}</h2>
+            <p class="text-zinc-600 mb-2">{post.data.description}</p>
+            {post.data.pubDate && (
+              <time class="text-sm text-zinc-500 font-medium">
+                {post.data.pubDate.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            )}
+          </a>
+        </article>
+      ))}
+    </div>
+    
+    <div id="no-results" class="hidden text-zinc-500 py-8 text-center">
+      No posts found matching your search.
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const searchInput = document.getElementById('search-input');
+  const items = document.querySelectorAll('.search-item');
+  const noResults = document.getElementById('no-results');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      // @ts-ignore
+      const searchTerm = e.target.value.toLowerCase();
+      let hasResults = false;
+
+      items.forEach(item => {
+        const title = item.getAttribute('data-title') || '';
+        const desc = item.getAttribute('data-desc') || '';
+        
+        if (title.includes(searchTerm) || desc.includes(searchTerm)) {
+          // @ts-ignore
+          item.style.display = 'block';
+          hasResults = true;
+        } else {
+          // @ts-ignore
+          item.style.display = 'none';
+        }
+      });
+
+      if (noResults) {
+        noResults.style.display = hasResults ? 'none' : 'block';
+      }
+    });
+  }
+</script>

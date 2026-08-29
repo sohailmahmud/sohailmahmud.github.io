@@ -1,0 +1,1266 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/research_ovws/ovw_causal_inference.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | causal inference</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> causal inference </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/research_ovws/ovw_causal_inference.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/research_ovws/ovw_causal_inference.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<p>Some good packages: msft <a href="https://github.com/microsoft/EconML">econML</a>, uber <a href="https://github.com/uber/causalml">causalml</a>, msft <a href="https://github.com/microsoft/dowhy">dowhy</a></p>
+
+<h1 id="classic-studies">classic studies</h1>
+
+<ul>
+  <li><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12187">Descriptive Representation and Judicial Outcomes in Multiethnic Societies</a> (Grossman et al. 2016)
+    <ul>
+      <li>judicial outcomes of arabs depended on whether there was an Arab judge on the panel</li>
+    </ul>
+  </li>
+  <li><a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.554.9675">Using Maimonides’ Rule to Estimate the Effect of Class Size on Scholastic Achievement</a> (angrist &amp; lavy 1999)
+    <ul>
+      <li>reducing class size induces a signicant and substantial increase in test scores for fourth and 5th graders, although not for third graders.</li>
+    </ul>
+  </li>
+  <li><a href="https://academic.oup.com/jnci/article/22/1/173/912572">Smoking and Lung Cancer: Recent Evidence and a Discussion of Some Questions</a> (cornfield et al. 1959)
+    <ul>
+      <li>not a traditional statistics paper</li>
+      <li>most of it is a review of various scientific evidence about smoking and cancer</li>
+      <li>small methodology section that describes an early version of sensitivity analysis</li>
+      <li>describes one of the most important contributions causal inference has made to science</li>
+    </ul>
+  </li>
+  <li><a href="https://www.tandfonline.com/doi/abs/10.1198/jasa.2009.ap06589">Attributing Effects to a Cluster-Randomized Get-Out-the-Vote Campaign</a> (hansen &amp; bowers 2009)
+    <ul>
+      <li>about a randomized experiment</li>
+      <li>proved complex to analyze and led to some controversy in political science</li>
+      <li>resolves that controversy using well-chosen statistical tools.</li>
+      <li>Because randomization is present in the design I think the assumptions are much less of a stretch than in many settings (this is also the case in the Angrist, Imbens, Rubin paper)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="natural-experiments">natural experiments</h2>
+
+<ul>
+  <li><a href="https://alondoninheritance.com/london-characters/john-snow-soho-cholera-outbreak-1864/">John Snow on cholera</a> - natural experiment - change of water pollution allowed for computing effect of the water pollution on cholera</li>
+  <li><a href="http://www.hangartner.net/files/passportapsr.pdf">Who Gets a Swiss Passport? A Natural Experiment in Immigrant Discrimination</a> (Hainmueller &amp; Hangartner 2013)
+    <ul>
+      <li>naturalization decisions vary with immigrants’ attributes</li>
+      <li>is there immigration against immigrants based on country of origin?</li>
+      <li>citizenship requires voting by municipality</li>
+    </ul>
+  </li>
+  <li><a href="http://sekhon.berkeley.edu/papers/SekhonTitiunik.pdf">When Natural Experiments Are Neither Natural nor Experiments</a> (sekhon &amp; titunik 2012)
+    <ul>
+      <li>even when natural interventions are randomly assigned, some of the treatment–control comparisons made available by natural experiments may not be valid</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="instrumental-variables">instrumental variables</h2>
+
+<ul>
+  <li><a href="https://www.jstor.org/stable/2291629?seq=1#metadata_info_tab_contents">Identification of Causal Effects Using Instrumental Variables</a> (angrist, imbens, &amp; rubin 1996)
+    <ul>
+      <li>bridges the literature of instrumental variables in econometrics and the literature of causal inference in statistics</li>
+      <li>applied paper with delicate statistics</li>
+      <li>carefully discuss the assumptions</li>
+      <li>instrumental variables - regression w/ constant treatment effects</li>
+      <li>effect of veteran status on mortality, using lottery number as instrument</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="matching">matching</h2>
+
+<ul>
+  <li><a href="https://www.ncbi.nlm.nih.gov/pubmed/12933551">Matching and thick description in an observational study of mortality after surgery.</a> (rosenbaum &amp; silber 2001)
+    <ul>
+      <li>spends a lot of time discussing links between quantitative and qualitative analyses</li>
+      <li>takes the process of checking assumptions very seriously, and it deals with an important scientific problem</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="paradoxes">“paradoxes”</h2>
+
+<ul>
+  <li><strong>simpson’s paradox</strong> = <strong>yule-simpson paradox</strong> - trend appears in several different groups but disappears/reverses when groups are combined
+    <ul>
+      <li><a href="https://homepage.stat.uiowa.edu/~mbognar/1030/Bickel-Berkeley.pdf">Sex Bias in Graduate Admissions: Data from Berkeley</a> (bickel et al. 1975)</li>
+      <li>e.g. overall men seemed to have higher acceptance rates, but in each dept. women seemed to have higher acceptance rates - explanation is that women selectively apply to harder depts.
+        <pre><code class="language-mermaid">graph LR
+A(Gender) --&gt;B(Dept Choice)
+B --&gt; C(Acceptance rate)
+A --&gt; C
+</code></pre>
+      </li>
+    </ul>
+  </li>
+  <li>monty hall problem: why you should switch
+    <pre><code class="language-mermaid">graph LR
+A(Your Door) --&gt;B(Door Opened)
+C(Location of Car) --&gt; B
+</code></pre>
+  </li>
+  <li>berkson’s paradox - diseases in hospitals are correlated even when they are not in the general population
+    <ul>
+      <li>possible explanation - only having both diseases together is strong enough to put you in the hospital</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="problems-beyond-ate">problems beyond ATE</h1>
+
+<h2 id="causal-mechanisms">causal mechanisms</h2>
+
+<ul>
+  <li>treatment effect variation?</li>
+  <li>principal stratification</li>
+  <li>interference</li>
+</ul>
+
+<h3 id="mediation-analysis">mediation analysis</h3>
+
+<p><em>Mediation analysis aims to identify a mechanism through which a cause has an effect. Direct effects measure when the treatment varies as mediators are held constant.</em></p>
+
+<ul>
+  <li>
+    <p>if there are multiple possible paths by which a variable can exert influence, can figure out which path does what, even with just observational data</p>
+  </li>
+  <li>
+    <p>cannot just condition on $M$! This can lead to spurious associations</p>
+  </li>
+  <li>
+    <p>which pathway do causes flow through from X to Y (direct/indirect?)</p>
+  </li>
+  <li>
+    <p><img src="../assets/mediation_graph-5770090.png" alt="mediation_graph" /></p>
+  </li>
+  <li>
+    <p>consider potential outcomes with hypothetical intervention on $T$:</p>
+
+    <ul>
+      <li>${M(t), Y(t)}$</li>
+    </ul>
+  </li>
+  <li>
+    <p>hypothetical intervention on $T$ and $M$:</p>
+
+    <ul>
+      <li>${Y(t, m)}$</li>
+    </ul>
+  </li>
+  <li>hypothetical intervention on $T$ fixing $M$ to $M(t’) = M_{t’}$ (nested potential outcome, robs &amp; greenland, 1992; pearl, 2001)
+    <ul>
+      <li>${Y(t, M_{t’})}$</li>
+      <li>has also been called a priori counterfactual (frangakis &amp; rubin, 2002)</li>
+      <li>when $t \neq t’$, this can’t be observed and can’t be falsified</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>total effect</strong> $\tau=E{Y(1)-Y(0)} = \textrm{NDE + NIE}$</p>
+
+    <ul>
+      <li>assumes composition assumption $Y(1, M_1) = Y(1)$, very reasonable</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>natural direct effect</strong> $\mathrm{NDE}=E\left{Y\left(1, M_{0}\right)-Y\left(0, M_{0}\right)\right}$</p>
+
+    <ul>
+      <li><strong>controlled direct effect</strong> $\mathrm{CDE}=E\left{Y\left(1, m\right)-Y\left(0, m\right)\right}$ is simpler: sets mediator to some assumed value $m$ rather than the actual value seen in the data $M_0$</li>
+      <li>w/ composition: $=E\left{Y\left(1, M_{0}\right)-Y\left(0\right)\right}$</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>natural indirect effect</strong> $\mathrm{NIE}=E\left{Y\left(1, M_1\right)-Y\left(1, M_{0}\right)\right}$</p>
+  </li>
+  <li>
+    <p>w/ composition: $=E\left{Y\left( 1 \right)-Y\left(1, M_0\right)\right}$</p>
+  </li>
+  <li>
+    <p><strong>mediation formula</strong></p>
+
+    <ul>
+      <li>
+        <p>can condition effects on $x$</p>
+
+        <ul>
+          <li>$\operatorname{NDE}(x)=E\left{Y\left(1, M_{0}\right)-Y\left(0, M_{0}\right) \mid X=x\right}$</li>
+          <li>$\operatorname{NIE}(x)=E\left{Y\left(1, M_{1}\right)-Y\left(1, M_{0}\right) \mid X=x\right}$</li>
+        </ul>
+      </li>
+      <li>
+        <p>estimators</p>
+
+        <ul>
+          <li>$\widehat{NDE}(x) = E\left{Y\left(t, M_{t^{\prime}}\right) \mid X=x\right}=\sum_{m} E(Y \mid T=t, M=m, X=x) \operatorname{pr}\left(M=m \mid T=t^{\prime}, X=x\right)$</li>
+          <li>$\widehat{NIE}(x) = E\left{Y\left(t, M_{t^{\prime}}\right)\right}=\sum_{x} E\left{Y\left(t, M_{t^{\prime}}\right) \mid X=x\right} P(X=x)$</li>
+        </ul>
+      </li>
+      <li>
+        <p>estimators depend on 4 assumptions</p>
+
+        <ol>
+          <li>
+            <p>no treatment-outcome confounding: $T \perp Y(t, m) \mid X$</p>
+          </li>
+          <li>
+            <p>no mediator-outcome confounding: $M \perp Y(t, m) \mid (X, T)$</p>
+          </li>
+          <li>
+            <p>assumption 3: no treatment-mediator confounding: $T \perp M(t) \mid X$</p>
+          </li>
+          <li>
+            <p>no cross-world independence between potential outcomes and potential mdediators: $Y(t, m) \perp M(z’) \; \forall \; t, t’, m$</p>
+          </li>
+        </ol>
+      </li>
+      <li>assumption notes
+        <ul>
+          <li>1 + 2 are equivalent to $T, M) \perp Y(t, m) \mid X$</li>
+          <li>first three essentially assume that $T$ and $M$ are both randomized</li>
+          <li>1-3 are very strong but hold with squentially randomized treatment + mediator</li>
+          <li>4 cannot be verified</li>
+        </ul>
+      </li>
+      <li>baron-kenny method (assumes linear models): <img src="../assets/baron_kenny.png" alt="baron_kenny" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="heterogenous-treatment-effects">heterogenous treatment effects</h2>
+
+<p><em>Heterogenous treatment effects refer to effects which differ for different subgroups / individuals in a population and requires more refined modeling.</em></p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>conditional average treatment effect (CATE)</strong> - get treatment effect for each individual conditioned on its covariates $\mathbb E [y</td>
+          <td>x, t=1] - \mathbb E[y</td>
+          <td>x, t=0]$ (different from ITE $Y^{T=1}_i - Y^{T=0}_i$)</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>meta-learners - break down CATE into regression subproblems
+        <ul>
+          <li>e.g. S-learner (hill 11) - “S” stands for “single” and fits a single statistical model for $\mu_1 - \mu_0$
+            <ul>
+              <li>can be biased towards 0</li>
+            </ul>
+          </li>
+          <li>e.g. T-learner (foster et al. 2011) - “T” stands for “two” because we fit 2 models:  one model for conditional expectation of each potential outcome: $\hat \mu_1(x), \hat \mu_0(x)$
+            <ul>
+              <li>can have issues, e.g. different effects are regularized differently</li>
+              <li>doesn’t do well with variation in the propensity score. If $e(x)$ varies considerably, then our estimates of $\hat \mu(0)$ will be driven by data in areas with many control units (i.e., with $e(x)$ closer to 0), and those of $\hat \mu (1)$ by regions with more treated units (i.e., with e(x) closer to 1).</li>
+            </ul>
+          </li>
+          <li>e.g. X-learner (<a href="https://www.pnas.org/content/116/10/4156.short">kunzel et al. 19</a>) - “X” stands for crossing between estimates and conditional outcomes for each group
+            <ul>
+              <li>first, fit $\hat \mu_1(x), \hat \mu_0(x)$</li>
+              <li>second, compute effects using all the data $\begin{aligned} \hat{\tau}<em>{1, i} &amp;=Y</em>{i}(1)-\hat{\mu}<em>{0}\left(x</em>{i}\right) \ \hat{\tau}<em>{0, i} &amp;=\hat{\mu}</em>{1}\left(x_{i}\right)-Y_{i}(0) \end{aligned}$</li>
+              <li>finally, combine effects $\hat{\tau}(x)=g(x) \hat{\tau}<em>{0}(x)+(1-g(x)) \hat{\tau}</em>{1}(x)$
+                <ul>
+                  <li>$g(x)$ is weighting function, e.g. estimated propensity score</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>e.g. R-learner (<a href="https://www.jstor.org/stable/1912705?casa_token=MIFpVeGtg_AAAAAA%3ASw_iZBgtJwx_P6jezFPxHXy8USBdJugzBzt5S9I2sc1j83K_dmYJmskt-l8cTxMBHffbZFTjPCO7KQzrPGkr4SyAAOID7engZqQrMLQy2fv2yQ-C0rs&amp;seq=1#metadata_info_tab_contents">robinson, 1988</a>; nie-wager, 20) - regularized semiparametric learner
+            <ul>
+              <li>$\hat{\tau}<em>{R}(\cdot)=\operatorname{argmin}</em>{\hat \tau}\left{\frac{1}{n} \sum_{i=1}^{n}\left(\underbrace{Y_{i}-\hat \mu\left(X_{i}\right)}<em>{\text{Y residual}}-\left(T</em>{i}-\hat e\left(X_{i}\right)\right) \hat \tau\left(X_{i}\right)\right)^{2}\right. \left.+ \underbrace{\Lambda_{n}\left(\hat \tau(\cdot)\right)}_{\text{regularization}}\right}$
+                <ul>
+                  <li>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>$\hat \mu(x) = E[Y_i</td>
+                          <td>X=x]$</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </li>
+                  <li>use cross-fitting to estimate $\hat \tau$ and $\hat \mu$</li>
+                  <li>$\tau$ takes a form, e.g. LASSO</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>tree-based methods
+        <ul>
+          <li>e.g. causal tree (<a href="https://www.pnas.org/content/113/27/7353.short">athey &amp; imbens, 16</a>) - like decision tree, but change splitting criterion for differentiating 2 outcomes + compute effects for each leaf on out-of-sample data</li>
+          <li>e.g. causal forest (<a href="https://www.tandfonline.com/doi/full/10.1080/01621459.2017.1319839">wager &amp; athey, 18</a>) - extends causal tree to forest</li>
+          <li>e.g. BART (<a href="https://arxiv.org/abs/0806.3286">hill, 12</a>) - takes treatment as an extra input feature</li>
+        </ul>
+      </li>
+      <li>neural-net based methods
+        <ul>
+          <li>e.g. TARNet (<a href="https://arxiv.org/abs/1606.03976">shalit et al. 2017</a>) - full notes below, use data from both groups</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>validation
+    <ul>
+      <li>can cross-validate CATE on R-loss (sampling variability is high, but may not always be an issue (<a href="https://www.tandfonline.com/doi/full/10.1080/01621459.2020.1727235?casa_token=vqv0KlGeZcIAAAAA:l-UnVbnUT6r_klyrqTnjPnfrlE_XsywwRC08mOgBWtB_qeuSXsN2wXSKyGJP_pmYW_3Ucp1N4nLM">wager, 2020</a>))</li>
+      <li>indirect approach - use CATE to identify subgroups, and then use out-of-sample data to evaluate these subgroups</li>
+      <li>fit $\hat \tau$ then rerun semiparametric model and see if coefficient for $\hat \tau$ ends up close to 1</li>
+      <li>more discussion in (<a href="https://arxiv.org/abs/1902.07409">athey &amp; wager, 2019</a>) and (<a href="https://arxiv.org/abs/1712.04802">chernozhukov et al. 2017</a>)</li>
+    </ul>
+  </li>
+  <li><strong>subgroup analysis</strong> - identify subgroups with treatment effects far from the average
+    <ul>
+      <li>generally easier than CATE</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/pdf/2008.10109.pdf">staDISC</a> (dwivedi, tan et al. 2020) - learn stable / interpretable subgroups for causal inference
+    <ul>
+      <li>CATE - estimate with a bunch of different models
+        <ul>
+          <li>meta-learners: T/X/R/S-learners</li>
+          <li>tree-based methods: causal tree/forest, BART</li>
+          <li><strong>calibration</strong> to evaluate subgroup CATEs
+            <ul>
+              <li>main difficulty: hard to do model selection / validation (especially with imbalanced data)
+                <ul>
+                  <li>often use some kind of proxy loss function</li>
+                </ul>
+              </li>
+              <li>solution: compare average CATE within a bin to CATE on test data in bin
+                <ul>
+                  <li>actual CATE doesn’t seem to generalize</li>
+                  <li>but ordering of groups seems pretty preserved</li>
+                </ul>
+              </li>
+              <li>stability: check stability of this with many CATE estimators</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>subgroup analysis
+        <ul>
+          <li>use CATE as a stepping stone to finding subgroups</li>
+          <li>easier, but still linked to real downstream tasks (e.g. identify which subgroup to treat)</li>
+          <li>main difficulty: can quickly overfit</li>
+          <li><strong>cell-search</strong> - sequential
+            <ul>
+              <li>first prune features using feature importance</li>
+              <li>target: maximize a cell’s true positive - false positive (subject to using as few features as possible)</li>
+              <li>sequentially find cell which maximizes target
+                <ul>
+                  <li>find all cells which perform close to as good as this cell</li>
+                  <li>remove all cells contained in another cell</li>
+                  <li>pick one randomly, remove all points in this cell, then continue</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>stability: rerun search multiple times and look for stable cells / stable cell coverage</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1606.03976">Estimating individual treatment effect: generalization bounds and algorithms</a> (shalit, johansson, &amp; sontag, 2017)
+    <ul>
+      <li>bound the ITE estimation error using (1) generalization err of the repr. and (2) the distance between the treated and control distrs., e.g. MMD</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="reinforcement-policy-learning">reinforcement (policy) learning</h2>
+
+<ul>
+  <li>rather than estimating a treatment effect, find a policy that maximizes some expected utility (e.g. can define utility as the potential outcome $\mathbb E[Y_i(\pi(X_i))]$)</li>
+  <li>in this case, policy is like an intervention</li>
+</ul>
+
+<h2 id="causal-discovery">causal discovery</h2>
+
+<p><em>Causal discovery aims to identify causal relationships (sometimes under some smoothness / independence assumptions. This is often impossible in general. Also called causal relation learning, causal search.</em></p>
+
+<ul>
+  <li>a lot of our science does not actually rest on experiments (e.g. physics, geology)
+    <ul>
+      <li>hume (1739) - all we can observe is association, never actual counterfactuals or causes (“necesary connexion”)</li>
+      <li>requires careful model selection</li>
+      <li>rvw: <a href="https://www.frontiersin.org/articles/10.3389/fgene.2019.00524/full">Review of Causal Discovery Methods Based on Graphical Models</a></li>
+    </ul>
+  </li>
+  <li><strong>constraint-based algorithms</strong> - use conditional indep. checks to determine graphs up to markov equivalence
+    <ul>
+      <li><em>faithfulness</em> means the statistical dependence between variables estimated from the data does not violate the independence defined by any causal graph which generates the data</li>
+      <li>extensions to more general distrs., unobserved confounders</li>
+      <li><strong>peter-clark (PC) algorithm</strong> - first learns undirected graph, then detects edge directions and returns equivalence class
+        <ul>
+          <li>assumes that there is no confounder (unobserved direct common cause of two measured variables)</li>
+        </ul>
+      </li>
+      <li>fast causal inference (FCI) (spirtes et al. 200)
+        <ul>
+          <li>can deal with confounders - instead of edge/no edge have 3 possibilities: edge, no edge, confounding by unobserved missing common cause (+possibly another possibility for “unknown”)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>score-based algorithms</strong> - replace conditional indep. tests with godness of fit tests (e.g. BIC)
+    <ul>
+      <li>assume there are no confounders</li>
+      <li>still can only determine graphs up to markov equivalence</li>
+      <li>optimizing goodness of fit is NP-hard, so often use heuristics such as greedy equivalence search (GES) (<a href="https://www.jmlr.org/papers/v3/chickering02b.html">chickering, 2002</a>)</li>
+    </ul>
+  </li>
+  <li><strong>functional causal models</strong> - assume a variable can be written as a function of its direct causes and some noise term
+    <ul>
+      <li>can distinguish between different DAGs in same equivalence class</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>e.g. (hyavarinen &amp; zhang, 2016) assume additive noise and that $p(E</td>
+              <td>C)$ can be modeled while $P(C</td>
+              <td>E)$ cannot</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>e.g. LiNGAM (Shimizu et al., 2006), ICA-LINGAM - linear relations between different variables and noise</li>
+      <li>additive noise models ANM (Hoyer et al., 2009) relax the linear restriction
+        <ul>
+          <li>ANM-MM (Hu et al., 2018)</li>
+        </ul>
+      </li>
+      <li>post-nonlinear models PNL (Zhang and Hyvarinen, 2009) expand the functional space with non-linear relations between the variables and the noise</li>
+    </ul>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>many models assume the generating cause distribution $p(C)$ is in some sense “independent” to the mechanism $P(E</td>
+          <td>C)$</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>e.g. IGCI (Janzing et al., 2012) uses orthogonality in information space to express the independence between the two distributions</li>
+      <li>e.g. KCDC (Mitrovic et al., 2018) uses  invariance of Kolmogorov complexity of conditional distribution</li>
+      <li>e.g. RECI (Blobaum et al., 2018) extends IGCI to the setting with small noise, and proceeds by comparing the regression errors in both possible directions</li>
+    </ul>
+  </li>
+  <li>check variables which reduce entropy the most
+    <ul>
+      <li><a href="https://link.springer.com/article/10.1007/s10115-017-1130-5">Origo : causal inference by compression</a> (budhathoki &amp; vreekan, 2017) - similar intuition as ICM: causal directions are more easily compressible</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://proceedings.neurips.cc/paper/2018/hash/78631a4bb5303be54fa1cfdcb958c00a-Abstract.html">Learning and Testing Causal Models with Interventions</a> (acharya et al. 2018)</p>
+
+    <ul>
+      <li>given DAG, want to learn distribution on interventions with minimum number of interventions, variables intevened on, numper of samples draw per intervention</li>
+    </ul>
+  </li>
+  <li><a href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Lopez-Paz_Discovering_Causal_Signals_CVPR_2017_paper.pdf">Discovering Causal Signals in Images</a> (lopez-paz et al. 2017)
+    <ul>
+      <li>C(A, B) - count number of images in which B would disappear if A was removed</li>
+      <li>we say A <em>causes</em> B when C(A, B) is (sufficiently) greater than the converse C(B, A)</li>
+      <li>basics
+        <ul>
+          <li>given joint distr. of (A, B), we want to know if A -&gt; B, B-&gt; A
+            <ul>
+              <li>with no assumptions, this is nonidentifiable</li>
+            </ul>
+          </li>
+          <li>requires 2 assumptions
+            <ul>
+              <li>ICM: independence between cause and mechanism (i.e. the function doesn’t change based on distr. of X) - this usually gets violated in anticausal direction</li>
+              <li>causal sufficiency - we aren’t missing any vars</li>
+            </ul>
+          </li>
+          <li>ex. <img src="../assets/learning_causal_pattern.png" alt="Screen Shot 2019-05-20 at 10.04.03 PM" />
+            <ul>
+              <li>here noise is indep. from x (causal direction), but can’t be independent from y (non-causal direction)</li>
+              <li>in (c), function changes based on input</li>
+            </ul>
+          </li>
+          <li>can turn this into binary classification and learn w/ network: given X, Y, does X-&gt;Y or Y-X?</li>
+        </ul>
+      </li>
+      <li>on images, they get scores for different objects (w/ bounding boxes)
+        <ul>
+          <li>eval - when one thing is erased, does the other also get erased?</li>
+        </ul>
+      </li>
+      <li><a href="https://www.technologyreview.com/s/613502/deep-learning-could-reveal-why-the-world-works-the-way-it-does/?fbclid=IwAR3LF2dc_3EvWXzEHhtrsqtH9Vs-4pjPALfuqKCOma9_gqLXMKDeCWrcdrQ">link to iclr talk</a> (bottou 2019)</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1412.2309">Visual Causal Feature Learning</a> (chalupka, perona, &amp; eberhardt, 2015)
+    <ul>
+      <li>assume the behavior $T$ is a function of some hidden causes $H_i$ and the image
+        <ul>
+          <li><img src="../assets/hidden_graphical_node.png" alt="Screen Shot 2020-02-03 at 2.27.27 PM" /></li>
+        </ul>
+      </li>
+      <li><strong>Causal Coarsening Theorem</strong> - causal partition is coarser version of the observational partition
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>observational partition - divide images into partition where each partition has constant prediction $P(T</td>
+                  <td>I)$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>causal partition - divide images into partition where each partition has constant $P(T</td>
+                  <td>man(I))$</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul>
+              <li>$man(I)$ does visual manipulation which changes $I$, while keeping all $H_i$ fixed and $T$ fixed
+                <ul>
+                  <li>ex. turn a digit into a 7 (or turn a 7 into not a 7)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>can further simplify the problem into $P(T</td>
+              <td>I) = P(T</td>
+              <td>C, S)$</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>$C$ are the causes and $S$ are the spurious correlates</li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>any other variable $X$ such that $P(T</td>
+                  <td>I) = P(T</td>
+                  <td>X)$ has Shannon entropy $H(X) \geq H(C, S)$ - these are the simplest descriptions of $P(T</td>
+                  <td>I$)</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>causal effect prediction
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>first, create causal dataset of $P(T</td>
+                  <td>man(I))$ and train, so the model can’t learn spurious correlations</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>then train on this - very similar to adversarial training</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1911.11893">Visual Physics: Discovering Physical Laws from Videos</a>
+    <ul>
+      <li>3 steps
+        <ul>
+          <li>Mask R-CNN finds bounding box of object and center of bounding box is taken to be location</li>
+          <li>$\beta-VAE$ compresses the trajectory to some latent repr. (while also being able to predict held-out points of the trajectory)</li>
+          <li><strong>Eureqa</strong> package does eq. discovery on latent repr + trajectory
+            <ul>
+              <li>includes all basic operations, such as addition, mult., sine function</li>
+              <li>R-squared value measures goodness of fit</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>see also SciNet -  <a href="https://arxiv.org/abs/1807.10300">Discovering physical concepts with neural networks</a> (iten et al. 2020)</li>
+      <li>see also the field of symbolic regression
+        <ul>
+          <li>genetic programming is the most pervalent method here</li>
+          <li>alternatives: sparse regression, dimensional function synthesis</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Causal Mosaic: Cause-Effect Inference via Nonlinear ICA and Ensemble Method (<a href="https://arxiv.org/abs/2001.01894">wu &amp; fukumizu, 2020</a>)
+    <ul>
+      <li>focus on bivariate case</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="stableinvariant-predictors">stable/invariant predictors</h2>
+
+<p><em>Under certain assumptions, invariance to data perturbations (i.e. interventions) can help us identify causal effects.</em></p>
+
+<h3 id="invariance-hierarchies">invariance hierarchies</h3>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/1905.11374">The Hierarchy of Stable Distributions and Operators to Trade Off Stability and Performance</a> (subbaswamy, chen, &amp; saria 2019)
+    <ul>
+      <li>different predictors learn different things</li>
+      <li>only pick the stable parts of what they learn (in a graph representation)</li>
+      <li>there is a tradeoff between stability to all shifts and average performance on the shifts we expect to see</li>
+      <li>different types of methods
+        <ul>
+          <li><em>transfer learning</em> - given unlabelled test data, match training/testing representations</li>
+          <li><em>proactive methods</em> - make assumptions about possible set of target distrs.</li>
+          <li><em>data-driven methods</em> - assume independence of cause and mechanism, like ICP, and use data from different shifts to find invariant subsets</li>
+          <li><em>explicit graph methods</em> - assume explicit knowledge of graph representing the data-generating process</li>
+        </ul>
+      </li>
+      <li>hierarchy
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>level 1 - invariant conditional distrs. of the form $P(Y</td>
+                  <td>\mathbf Z)$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>level 2 - conditional interventional distrs. of the form $P(Y</td>
+                  <td>do(\mathbf W), \mathbf Z)$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>level 3 - distributions corresponding to counterfactuals</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1911.10500">Causality for Machine Learning</a> (scholkopf 19)
+    <ul>
+      <li>most of ml is built on the iid assumption and fails when it is violated (e.g. cow on a beach)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="invariance-algorithms">invariance algorithms</h3>
+
+<ul>
+  <li>algorithms overview (see papers for more details) + <a href="https://github.com/facebookresearch/InvarianceUnitTests">implementations</a>
+    <ul>
+      <li><em>ICP</em> - invariant causal prediction - find feature set where, after conditioning, loss is the same for all environments
+        <ul>
+          <li>fails when distr. of residuals varies across environments</li>
+        </ul>
+      </li>
+      <li><em>IRM</em> - invariant risk minimization (v1) - find a feature repr. such that the optimal classifier, on top of that repr., is the identity function for all environments</li>
+      <li><em>GroupDRO</em> - distributionally robust optimization (e.g. encourage strict equality between err of each group)</li>
+      <li><em>ERM</em> - empirical risk minimization - minimize total training err</li>
+      <li><em>domain-adversarial techniques</em>: find a repr. which does not differ across environments, then predict
+        <ul>
+          <li>fails when distr. of causes changes across environments</li>
+        </ul>
+      </li>
+      <li><em>AND-mask</em> - minimize the err only in directions where the sign of the gradient of the loss is the same for most environments</li>
+      <li><a href="">IGA</a> - inter-environmental gradient alignment - ERM + reduce variance of the gradient of the loss per environment: $\lambda \operatorname{trace}\left(\operatorname{Var}\left(\nabla_{\theta} L_{\mathcal{E}}(\theta)\right)\right)$</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1812.08233">Invariance, Causality and Robustness</a> - ICP (buhlmann 18)
+    <ul>
+      <li>predict $Y^e$ given $X^e$ such that the prediction “works well” or is “robust” for all $e ∈ \mathcal F$ based on data from much fewer environments $e \in \mathcal E$
+        <ul>
+          <li><strong>key assumption (<em>invariance</em>)</strong>: there exists a subset of “causal” covariates - when conditioning on these covariates, the loss is the same across all environments $e$</li>
+          <li>assumption: ideally $e$ changes only the distr. of $X^e$ (so doesn’t act directly on $Y^e$ or change the mechanism between $X^e$ and $Y^e$)</li>
+          <li>when these assumptions are satisfied, then minimizing a worst-case risk over environments $e$ yields a causal parameter</li>
+        </ul>
+      </li>
+      <li>identifiability issue: we typically can’t identify the causal variables without very many perturbations $e$
+        <ul>
+          <li><strong>Invariant Causal Prediction (ICP)</strong> only identifies variables as causal if they appear in all invariant sets (see also <a href="https://arxiv.org/abs/1501.01332">Peters, Buhlmann, &amp; Meinshausen, 2015</a>)</li>
+          <li>brute-force feature selection</li>
+        </ul>
+      </li>
+      <li>anchor regression model helps to relax assumptions</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1907.02893">Invariant Risk Minimization</a> - IRM (arjovsky, bottou, gulrajani, &amp; lopez-paz 2019)
+    <ul>
+      <li>idealized formulation: $\begin{array}{ll}\min <em>{\Phi: \mathcal{X} \rightarrow \mathcal{H}} &amp; \sum</em>{e \in \mathcal{E}<em>{\mathrm{tr}}} R^{e}(w \circ \Phi) \ \text { subject to } &amp; w \in \underset{\bar{w}: \mathcal{H} \rightarrow \mathcal{Y}}{\arg \min  } : R^{e}(\bar{w} \circ \Phi), \text { for all } e \in \mathcal{E}</em>{\mathrm{tr}}\end{array}$
+        <ul>
+          <li>$\Phi$ is repr., $w \circ \Phi$ is predictor</li>
+        </ul>
+      </li>
+      <li>practical formulation: $\min <em>{\Phi: \mathcal{X} \rightarrow \mathcal{Y}} \sum</em>{e \in \mathcal{E}<em>{\mathrm{tr}}} R^{e}(\Phi)+\lambda \cdot\left|\nabla</em>{w \mid w=1.0} R^{e}(w \cdot \Phi)\right|^{2}$</li>
+      <li>random splitting causes problems with our data</li>
+      <li>what to perform well under different distributions of X, Y</li>
+      <li>can’t be solved via robust optimization</li>
+      <li>a correlation is spurious when we do not expect it to hold in the future in the same manner as it held in the past
+        <ul>
+          <li>i.e. spurious correlations are unstable</li>
+        </ul>
+      </li>
+      <li>assume we have infinite data, and know what kinds of changes our distribution for the problem might have (e.g. variance of features might change)
+        <ul>
+          <li>make a model which has the minimum test error regardless of the distribution of the problem</li>
+        </ul>
+      </li>
+      <li>adds a penalty inspired by invariance (which can be viewed as a stability criterion)</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/2009.00329">Learning explanations that are hard to vary</a> - AND-mask (parascandolo…sholkopf, 2020)
+    <ul>
+      <li>basically, gradients should be consistent during learning
+        <ul>
+          <li>after learning, they should be consistent within some epsilon ball</li>
+        </ul>
+      </li>
+      <li>practical algorithm: AND-mask
+        <ul>
+          <li>like zeroing out those gradient components with respect to weights that have <em>inconsistent signs</em> across environments
+            <ul>
+              <li>basically same complexity as normal GD</li>
+            </ul>
+          </li>
+          <li>previous works used cosine similarity between weights in different settings</li>
+          <li>experiments
+            <ul>
+              <li>real data is spiral but each env is linearly separable - still able to learn spiral</li>
+              <li>cifar - with real labels, performance unaffected; with random labels, training acc drops significantly
+                <ul>
+                  <li>each example is its own environment</li>
+                  <li>with noisy labels, imposes good regularization</li>
+                </ul>
+              </li>
+              <li>rl - works well on coinrun</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>propose <strong>invariant learning consistency</strong> (ILC)- measures expected consistency of the soln found by an algorithm given a hypothesis class
+        <ul>
+          <li>consistency - what extent a minimum of the loss surface appears <strong>only when data from different envs</strong> are pooled</li>
+        </ul>
+      </li>
+      <li>given algorithm $\mathcal A$, maximize this: $\mathrm{ILC}\left(\mathcal{A}, p_{\theta^{0}}\right):= \underbrace{-\mathbb{E}<em>{\theta^{0} \sim p\left(\theta^{0}\right)}}</em>{\text{expectation over reinits}}\left[\mathcal{I}^{\epsilon} (\underbrace{\mathcal{A}<em>{\infty}(\theta^{0}, \mathcal{E}}</em>{\hat \theta}) \right]$
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td><strong>inconsistency score</strong> for a solution $\hat \theta$ given environments $e$: $\mathcal{I}^{\epsilon}(\hat \theta):=\overbrace{\max <em>{\left(e, e^{\prime}\right) \in \mathcal{E}^{2}} }^{\text{env. pairs}} \underbrace{\max _{\theta \in N</em>{e, \hat \theta}^{\epsilon}}}<em>{\text{low-loss region around $\hat \theta$}} \overbrace{\mid \mathcal{L}</em>{e^{\prime}}(\theta)-\mathcal{L}_{e}(\theta)</td>
+                  <td>}^{\text{loss between envs.}}$</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul>
+              <li>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>$N_{e, \hat \theta}^{\epsilon}$ is path-connected region around $\hat \theta$ where $\left{\theta \in \Theta\right.$ s.t. $\left</td>
+                      <td>\mathcal{L}<em>{e}(\theta)-\mathcal{L}</em>{e}\left(\hat \theta\right)\right</td>
+                      <td>\leqslant \epsilon$</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://arxiv.org/abs/2002.04692">Invariant Risk Minimization Games</a> (ahuja et al. 2020) - pose IRM as finding the Nash equilibrium of an ensemble game among several environments</p>
+  </li>
+  <li><a href="https://arxiv.org/abs/2003.09772">Invariant Rationalization</a> (chang et al. 2020) - identify a small subset of input features – the rationale – that best explains or supports the prediction
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>key assumption: $Y \perp E</td>
+              <td>Z$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>$\max <em>{\boldsymbol{m} \in \mathcal{S}} I(Y ; \boldsymbol{Z}) \quad$ s.t. $\boldsymbol{Z}= \overbrace{\boldsymbol{m}}^{\text{binary mask}} \odot \boldsymbol{X}, \quad \underbrace{Y \perp E \mid \boldsymbol{Z}}</em>{\text{this part is invariance}}$
+        <ul>
+          <li>solve this via 3 nets with adv. penalty to approximate invariance</li>
+          <li>standard maximum mutual info objective is just $\max _{\boldsymbol{m} \in \mathcal{S}} I(Y ; \boldsymbol{Z}) \quad$ s.t. $\boldsymbol{Z}= \overbrace{\boldsymbol{m}}^{\text{binary mask}} \odot \boldsymbol{X}$ (see <a href="https://arxiv.org/abs/1606.04155">lei et al. 2016</a>)</li>
+          <li>ex. $X$ is text reviews for beer, $Y$ is aroma, $E$ could be beer brand</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://www.cmu.edu/dietrich/causality/CameraReadys-accepted%20papers/32%5CCameraReady%5Cdatasets.pdf">Linear unit-tests for invariance discovery</a>  (aubin et al. 2020) - a set of 6 simple settings where current IRM procedures fail
+    <ul>
+      <li>test 1 (colormnist-style linear regr): $x_{inv}  \to \tilde y \to x_{spu}$
+        <ul>
+          <li>$\tilde y \to y$</li>
+        </ul>
+      </li>
+      <li>test 2 (cows vs camels binary classification): $y=mean(x_{inv})&gt;0$, but $x_{inv} \propto x_{spu}$</li>
+      <li>test 3 (small invariant margin): $y_i\sim Bern(1/2)$, $x_{inv} = \pm 0.1+$noise, $x_{spu} = \pm \mu^e$ + noise, where $\mu^e ~ N(0, 1)$</li>
+      <li>scrambling: apply random rotation matrix to inputs</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="misc-problems">misc problems</h2>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/1907.13258">Incremental causal effects</a> (rothenhausler &amp; yu, 2019)
+    <ul>
+      <li>instead of considering a treatment, consider an infinitesimal change in a continuous treatment</li>
+      <li>use assumption of local independence and can prove some nice things
+        <ul>
+          <li>local ignorability assumption states that potential outcomes are independent of the current treatment assignment in a neighborhood of observations</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>probability of necessity</strong> $PN(t, y) = P(Y^{T=t’}=y’</td>
+          <td>T=t, Y=y)$ = “probability of causation” (Robins &amp; Greenland, 1989)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li>
+        <p>find the probability that $Y$ would be $y′$ had $T$ been $t’$, given that, in reality, $Y$ is actually $y$ and $T$ is $t$</p>
+      </li>
+      <li>
+        <p>If $Y$ is monotonic relative to $T$ $i.e ., Y^{T=1}(x) \geq Y^{T=0}(x),$ then $\mathrm{PN}$ is identifiable whenever the causal effect $P(y \mid d o(t))$ is identifiable and, moreover,
+\(\mathrm{PN}=\underbrace{\frac{P(y \mid t)-P\left(y \mid t^{\prime}\right)}{P(y \mid t)}}_{\text{excess risk ratio}}+\underbrace{\frac{P\left(y \mid t^{\prime}\right)-P\left(y \mid d o\left(t^{\prime}\right)\right)}{P(t, y)}}_{\text{confounding adjustment}}\)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>causal transportability</strong> - seeks to identify conditions under which causal knowledge learned from experiments can be reused in different domains with observational data only</p>
+  </li>
+  <li>
+    <p><a href="https://ftp.cs.ucla.edu/pub/stat_ser/r502.pdf">Radical Empiricism and Machine Learning Research</a> (pearl 2021)</p>
+
+    <ul>
+      <li>contrast the “data fitting” vs. “data interpreting” approaches to data-science</li>
+      <li>current research is too empiricist (data-fitting based) - should include man-made models of how data are generated</li>
+      <li>3 reasons: expediency, transparency, explainability
+        <ul>
+          <li>expediency: we often have to ask fast (e.g. covid) and use our knowledge to guide future experiments</li>
+          <li>transparency: need repr.d with right level off abstraction</li>
+          <li>explainability: humans must understand inferences</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="transferring-out-of-sample">transferring out-of-sample</h2>
+
+<ul>
+  <li><a href="https://naokiegami.com/paper/external_full.pdf">Elements of External Validity: Framework, Design, and Analysis</a>
+    <ul>
+      <li>external validity - when do results from an RCT generalize to new settings?</li>
+      <li>X-, T-, Y -, and C-validity (units, treatments, outcomes, and contexts)</li>
+      <li>two goals: effect-generalization + sign-generalization</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="different-assumptions--experimental-designs">different assumptions / experimental designs</h1>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>unconfoundedness $T_i \perp (Y_i(0), Y_i(1))</td>
+          <td>X_i$ is strong</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>sometimes we may perfer $T_i \perp (Y_i(0), Y_i(1))</td>
+              <td>X_i, Z_i$ for some unobserved $Z_i$ that we need to figure out</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1805.06826">The Blessings of Multiple Causes</a> (wang &amp; blei, 2019) - having multiple causes can help construct / find all the confounders
+    <ul>
+      <li><strong>deconfounder algorithm</strong>
+        <ul>
+          <li>fit a factor model of causes</li>
+          <li>estimate a repr $Z_i$ of data point $A_i$ - $Z_i$ renders the causes conditionally independent</li>
+          <li>now, $Z_i$ is a substitute for unobserved confounders</li>
+        </ul>
+      </li>
+      <li>assumptions
+        <ul>
+          <li>no causal arrows among causes $A_i$</li>
+          <li>no unobserved single-cause confounders: any missing confounder affects multiple observed variables
+            <ul>
+              <li>–&gt; can check the fit of the factor model, but won’t check perfectly</li>
+            </ul>
+          </li>
+          <li>the substitute confounder: there is enough information in the data to learn the variable $Z$ which renders causes conditionally independent
+            <ul>
+              <li>strong assumption!</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>thm
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>with observed covariates X, weak unconfoundedness: $A_1, …A_m \perp Y(a)</td>
+                  <td>Z, X$ (i.e. $Z$ contains all multi-cause confounders, $X$ contains all single-cause confounders)</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>replaces an uncheckable search for possible confounders with the checkable goal of building a good factor model of observed casts.</li>
+      <li>controversial whether this works in general</li>
+      <li><a href="https://arxiv.org/abs/2003.04948">Towards Clarifying the Theory of the Deconfounder</a> (wang &amp; blei, 2020)</li>
+      <li><a href="https://arxiv.org/abs/1902.10286">On Multi-Cause Causal Inference with Unobserved Confounding: Counterexamples, Impossibility, and Alternatives</a> (d’amour 2019)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="synthetic-controlinterventions">synthetic control/interventions</h2>
+
+<ul>
+  <li>synthetic control
+    <ul>
+      <li>Using Synthetic Controls rvw paper (<a href="https://economics.mit.edu/files/17847">abadie 2020</a>)
+        <ul>
+          <li>setting: treatment occurs at time t0 on multiple units (e.g. policy in california)</li>
+          <li>goal: estimate effect of treatment (e.g. effect of policy in california)</li>
+          <li>approach: impute counterfactual (california time-series without policy) by weighted combination on observed outcomes for other observations (e.g. average other “similar” states)
+            <ul>
+              <li>per-observation weights are learned during pre-intervention period with cross-validation procedure
+                <ul>
+                  <li>per-feature weights are also learned (bc matching on some features is more important than others)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>The Economic Costs of Conflict: A Case Study of the Basque Country (<a href="https://economics.mit.edu/files/11870">Abadie &amp; G, 2003</a>)</li>
+      <li>Synthetic Control Methods for Comparative Case Studies: Estimating the Effect of California’s Tobacco Control Program (<a href="https://economics.mit.edu/files/11859">abadie et al. 2010</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="solutions-to-basic-problems">solutions to basic problems</h1>
+
+<h2 id="learning-causal-representations">learning “causal representations”</h2>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/1605.03661">Learning Representations for Counterfactual Inference</a> (johansson et al. 2016)
+    <ul>
+      <li><img src="../assets/learning_causal_repr.png" alt="learning_causal_repr" /></li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>assumption similar to ignorability: the treatment assignment information (and any info which predicts it) should not influence the ITE: $T \perp !!! \perp { Y^{T=1}, Y^{T=0}}</td>
+              <td>X$</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>often not the case, e.g. medical symptoms lead doctors to give a treatment more</li>
+          <li>in this case, we will lose info that can help us predict the CATE</li>
+        </ul>
+      </li>
+      <li>also an extra loss: penalty that encourages counterfactual preds to be close to nearest observed outcome from the same set</li>
+      <li>fit linear ridge regression on top of representation $\phi$</li>
+      <li>not exactly the same as the setting in <a href="http://www.cs.toronto.edu/~zemel/documents/fair-icml-final.pdf">fair repr. learning</a> or <a href="https://www.jmlr.org/papers/volume17/15-239/15-239.pdf">domain adversarial training</a> - MMD or Wasserstein distance instead of classification</li>
+      <li>same idea present in <a href="https://www.nature.com/articles/s41467-020-19784-9">Training confounder-free deep learning models for medical applications</a> (zhou et al. 2020)</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1606.03976">Estimating individual treatment effect: generalization bounds and algorithms</a> (shalit et al. 2017)
+    <ul>
+      <li><img src="../assets/ite_dnn.png" alt="ite_dnn" /></li>
+      <li>bound for estimating ITE $\tau(x)$ is uper bounded by error for learning $Y_1$ and $Y_0$ plus a term for the  Integral Probability Metric (IPM)</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>IPM measures distance between $p(x</td>
+              <td>T = 0)$ and $P(x</td>
+              <td>T = 1)$, and requires that they overlap at $x$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>In his foundational text about causality, Pearl (2009) writes: “Whereas in traditional learning tasks we attempt to generalize from one set of insteances to another, the causal modeling task is to generalize from behavior under one set of conditions to behavior under another set. <em>Causal models should therefore be chosen by a criterion that challenges their stability against changing conditions..</em>.”</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1802.08598">Learning Weighted Representations for Generalization Across Designs</a> (johansson et al. 2018)
+    <ul>
+      <li><img src="../assets/weighted_causal_repr.png" alt="weighted_causal_repr" /></li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/2010.12618">Counterfactual Representation Learning with Balancing Weights</a> (assaad et al. 2020)
+    <ul>
+      <li>combine balancing weights with representation learning: Balancing Weights Counterfactual Regression (BWCFR)
+        <ul>
+          <li>representation learning has trade-off between balance and predictive power (<a href="https://arxiv.org/abs/2001.04754">zhang, bellot, &amp; van der Schaar, 2020</a>)</li>
+          <li>weights are from propensity scores, unlike johansson et al. 2018</li>
+          <li>intuition: upweight regions with good overlap</li>
+        </ul>
+      </li>
+      <li>bounds on degree of imbalance as a function of propensity model</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1705.08821">Causal Effect Inference with Deep Latent-Variable Models</a> (louizos et al. 2017) - like vae but learn latent distr. that also changes based on treatment</li>
+  <li><a href="https://arxiv.org/abs/2011.12379">Invariant Representation Learning for Treatment Effect Estimation</a> (shi, veitch, &amp; blei, 2020)
+    <ul>
+      <li>Nearly Invariant Causal Estimation - uses IRM to learn repr. that strips out bad controls but preserves sufficient information to adjust for confounding
+        <ul>
+          <li>observe data from multiple environments</li>
+          <li>covariates contain some causal variables</li>
+          <li>covariates also contain some false confounders</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1802.05664">DeepMatch: Balancing Deep Covariate Representations for Causal Inference Using Adversarial Training</a> (kallus, 2018)
+    <ul>
+      <li>weighting and a discriminator network compete adversarially to minimize “discriminative discrepancy metric” for measuring covariate balance</li>
+      <li>this metric goes beyond just the original feature space</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="limitations">limitations</h2>
+
+<ul>
+  <li><a href="http://proceedings.mlr.press/v80/alaa18a.html">Limits of Estimating Heterogeneous Treatment Effects: Guidelines for Practical Algorithm Design</a> (alaa &amp; van der schaar, 2018)
+    <ul>
+      <li>over enforcing balance can be harmful, as it may inadvertently remove information that is predictive of outcomes</li>
+      <li>analyze optimal minimax rate for ITE using Bayesian nonparametric methods
+        <ul>
+          <li>with small sample size: selection bias matters</li>
+          <li>with large sample size: smoothness and sparsity of $\mathbb{E}\left[Y_{i}^{(0)} \mid X_{i}=x\right]$ and $\mathbb{E}\left[Y_{i}^{(1)} \mid X_{i}=x\right]$
+            <ul>
+              <li>suggests smoothness of mean function for each group should be different, so better to approximate each individually rather than their difference directly</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>algorithm: non-stationary Gaussian process w/ doubly-robust huperparameters</li>
+    </ul>
+  </li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

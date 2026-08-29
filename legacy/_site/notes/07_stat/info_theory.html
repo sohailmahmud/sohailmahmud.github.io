@@ -1,0 +1,632 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/07_stat/info_theory.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | info Theory</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> info theory </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/07_stat/info_theory.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/07_stat/info_theory.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<ul>
+  <li><em>material from</em> Cover “Elements of Information Theory”</li>
+</ul>
+
+<h1 id="overview">overview</h1>
+
+<ul>
+  <li>with small number of points, estimated mutual information is too high</li>
+  <li>founded with claude shannon 1948</li>
+  <li>
+    <p>set of principles that govern flow + transmission of info</p>
+  </li>
+  <li>X is a R.V. on (finite) discrete alphabet ~ won’t cover much continuous</li>
+</ul>
+
+<h1 id="entropy-relative-entropy-and-mutual-info">entropy, relative entropy, and mutual info</h1>
+
+<h2 id="entropy">entropy</h2>
+
+<ul>
+  <li>$H(X) = - \sum p(x) :\log p(x) = E[h(p)]$
+    <ul>
+      <li>$h(p)= - \log(p)$</li>
+      <li>$H(p)$ implies p is binary</li>
+      <li>usually for discrete variables only</li>
+      <li>assume 0 log 0 = 0</li>
+    </ul>
+  </li>
+  <li>intuition
+    <ul>
+      <li>higher entropy $\implies$ more uniform</li>
+      <li>lower entropy $\implies$ more pure
+        <ol>
+          <li>expectation of variable $W=W(X)$, which assumes the value $-log(p_i)$ with probability $p_i$</li>
+          <li>minimum, average number of binary questions (like is X=1?) required to determine value is between $H(X)$ and $H(X)+1$</li>
+          <li>related to asymptotic behavior of sequence of i.i.d. random variables</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>properties</p>
+
+    <ul>
+      <li>$H(X) \geq 0$ since $p(x) \in [0, 1]$</li>
+      <li>funtion of distr. only, not the specific values the RV takes (the support of the RV)</li>
+      <li>gaussian has max entropy s.t. variance constraint</li>
+    </ul>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$H(Y|X)=\sum p(x) H(Y|X=x) =- \sum_x p(x) \sum_y  p(y</td>
+          <td>x) \log : p(y</td>
+          <td>x)$</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li>$H(X,Y)=H(X)+H(Y|X) =H(Y)+H(X|Y)$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="relative-entropy--mutual-info">relative entropy / mutual info</h2>
+
+<ul>
+  <li><em>relative entropy</em> = <em>KL divergence</em> - measures distance between 2 distributions
+    <ul>
+      <li>
+\[D(p\|\|q) = \sum_x p(x) log \frac{p(x)}{q(x)} = \mathbb E_p log \frac{p(X)}{q(X)} = \mathbb E_p[-\log q(X)] - H(p)\]
+      </li>
+      <li>if we knew the true distribution p of the random variable, we could construct a code with average description length H(p).</li>
+      <li>If, instead, we used the code for a distribution q, we would need H(p) + D(p||q) bits on average to describe the random variable.</li>
+      <li>$D(p||q) \neq D(q||p)$</li>
+      <li>properties
+        <ul>
+          <li>nonnegative</li>
+          <li>not symmetric</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><em>mutual info I(X; Y)</em>: how much you can predict about one given the other</p>
+
+    <ul>
+      <li>$I(X; Y) = \sum_X \sum_y p(x,y) log \frac{p(x,y)}{p(x) p(y)} = D(p(x,y)||p(x) p(y))$</li>
+      <li>$I(X; Y) =  -H(X,Y) + H(X) + H(Y))$
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>$=I(Y</td>
+                  <td>X)$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>$I(X; X) = H(X)$ so entropy sometimes called <em>self-information</em></li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="../assets/entropy-venn-diagram.png" alt="entropy-venn-diagram" /></p>
+
+<ul>
+  <li>
+    <p>cross-entropy: $H_q(p) = -\sum_x p(x) : log : q(x)$</p>
+
+    <p><img src="../assets/cross_entropy.png" alt="Screen Shot 2018-07-02 at 11.26.42 AM" /></p>
+  </li>
+</ul>
+
+<h2 id="chain-rules">chain rules</h2>
+
+<ul>
+  <li><em>entropy</em> - $H(X_1, …, X_n) = \sum_i H(X_i | X_{i-1}, …, X_1) = H(X_n | X_{n-1}, …, X_1) + … + H(X_1)$</li>
+  <li><em>conditional mutual info</em> $I(X; Y|Z) = H(X|Z) - H(X|Y,Z)$
+    <ul>
+      <li>$I(X_1, …, X_n; Y) = \sum_i I(X_i; Y|X_{i-1}, … , X_1)$</li>
+    </ul>
+  </li>
+  <li><em>conditional relative entropy</em> $D(p(y|x) || q(y|x)) = \sum_x p(x) \sum_y p(y|x) log \frac{p(y|x)}{q(y|x)}$
+    <ul>
+      <li>$D(p(x, y)||q(x, y)) = D(p(x)||q(x)) + D(p(y|x)||q(y|x))$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="axiomatic-approach">axiomatic approach</h2>
+
+<ul>
+  <li><em>fundamental theorem of information theory</em> - it is possible to transmit information through a noisy channel at any rate less than channel capacity with an arbitrarily small probability of error
+    <ul>
+      <li>to achieve arbitrarily high reliability, it is necessary to reduce the transmission rate to the <em>channel capacity</em></li>
+    </ul>
+  </li>
+  <li>uncertainty measure axioms
+    <ol>
+      <li>H(1/M,…,1/M)=f(M) is a montonically increasing function of M</li>
+      <li>f(ML) = f(M)+f(L) where M,L $\in \mathbb{Z}^+$</li>
+      <li><em>grouping axiom</em></li>
+      <li>H(p,1-p) is continuous function of p</li>
+    </ol>
+  </li>
+  <li>$H(p_1,…,p_M) = - \sum p_i log p_i = E[h(p_i)]$
+    <ul>
+      <li>$h(p_i)= - log(p_i)$</li>
+      <li>only solution satisfying above axioms</li>
+      <li>H(p,1-p) has max at 1/2</li>
+    </ul>
+  </li>
+  <li><em>lemma</em> - Let $p_1,…,p_M$ and $q_1,…,q_M$ be arbitrary positive numbers with $\sum p_i = \sum q_i = 1$. Then $-\sum p_i log p_i \leq - \sum p_i log q_i$. Only equal if $p_i = q_i : \forall i$
+    <ul>
+      <li>intuitively, $\sum p_i log q_i$ is maximized when $p_i=q_i$, like a dot product</li>
+    </ul>
+  </li>
+  <li>$H(p_1,…,p_M) \leq log M$ with equality iff  all $p_i = 1/M$</li>
+  <li>$H(X,Y) \leq H(X) + H(Y)$ with equality iff X and Y are independent</li>
+  <li>$I(X,Y)=H(Y)-H(Y|X)$</li>
+  <li>sometimes allow p=0 by saying 0log0 = 0</li>
+  <li>information $I(x)=log_2 \frac{1}{p(x)}=-log_2p(x)$</li>
+  <li>reduction in uncertainty (amount of surprise in the outcome)</li>
+  <li>if the probability of event happening is small and it happens the info is large
+    <ul>
+      <li>entropy $H(X)=E[I(X)]=\sum_i p(x_i)I(x_i)=-\sum_i p(x_i)log_2 p(x_i)$</li>
+    </ul>
+  </li>
+  <li>
+    <p>information gain $IG(X,Y)=H(Y)-H(Y|X)$</p>
+
+    <ul>
+      <li>$=-\sum_j p(x_j) \sum_i p(y_i|x_j) log_2 p(y_i|x_j)$</li>
+    </ul>
+  </li>
+  <li>parts
+    <ol>
+      <li>random variable X taking on $x_1,…,x_M$ with probabilities $p_1,…,p_M$</li>
+      <li>code alphabet = set $a_1,…,a_D$ . Each symbol $x_i$ is assigned to finite sequence of code characters called <em>code word</em> associated with $x_i$</li>
+      <li><em>objective</em> - minimize the average word length $\sum p_i n_i$ where $n_i$ is average word length of $x_i$</li>
+    </ol>
+  </li>
+  <li>code is <em>uniquely decipherable</em> if every finite sequence of code characters corresponds to at most one message
+    <ul>
+      <li><em>instantaneous code</em> - no code word is a prefix of another code word</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="basic-inequalities">basic inequalities</h1>
+
+<h2 id="jensens-inequality">jensen’s inequality</h2>
+
+<ul>
+  <li><em>convex</em> - function lies below any chord
+    <ul>
+      <li>has positive 2nd deriv</li>
+      <li>linear functions are both convex and concave</li>
+    </ul>
+  </li>
+  <li><em>Jensen’s inequality</em> - if f is a convex function and X is an R.V., $f(E[X]) \leq E[f(X)]$
+    <ul>
+      <li>if f strictly convex, equality $\implies X=E[X]$</li>
+    </ul>
+  </li>
+  <li>implications
+    <ul>
+      <li><em>information inequality</em> $D(p||q) \geq 0$ with equality iff p(x)=q(x) for all x</li>
+      <li>$H(X) \leq log |X|$ where |X| denotes the number of elements in the range of X, with equality if and only X has a uniform distr</li>
+      <li>$H(X|Y) \leq H(X)$ - information can’t hurt</li>
+      <li>$H(X_1, …, X_n) \leq \sum_i H(X_i)$</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="mdl"><a href="https://homepages.cwi.nl/~pdg/ftp/mdlintro.pdf">mdl</a></h1>
+
+<ul>
+  <li>chapter 1: overview
+    <ul>
+      <li>explain data given limited observations</li>
+      <li>benefits
+        <ul>
+          <li>occam’s razor</li>
+          <li>no overfitting (can pick both form of model and params), without need for ad hoc penalties</li>
+          <li>bayesian interpretation</li>
+          <li>no need for underlying truth</li>
+        </ul>
+      </li>
+      <li>description - in terms of some description method
+        <ul>
+          <li>e.g. a python program which prints a sequence then halts = Kolmogorov complexity
+            <ul>
+              <li>invariance thm - as long as sequence is long enough, choice of programming language doesn’t matter) - (kolmogorov 1965, chaitin 1969, solomonoff 1964)</li>
+              <li>not computable in general</li>
+              <li>for small samples in practice, depends on choice of programming language</li>
+            </ul>
+          </li>
+          <li>in practice, we don’t use general programming languages but rather select a description method which we know we can get the length of the shortest description in that class (e.g. linear models)
+            <ul>
+              <li>trade-off: we may fail to minimally compress some sequences which have regularity</li>
+            </ul>
+          </li>
+          <li>knowing data-generating process can help compress (e.g. recording times for something to fall from a height, generating digits of $\pi$ via taylor expansion, compressing natural language based on correct grammar)</li>
+        </ul>
+      </li>
+      <li>simplest version - let $\theta$ be the model and $X$ be the data
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>2-part MDL: minimize $L(\theta) + L(X</td>
+                  <td>\theta)$</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul>
+              <li>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>$L(X</td>
+                      <td>\theta) = - \log P(X</td>
+                      <td>\theta)$  - Shannon code</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>$L(\theta)$ - hard to get this, basic problem with 2-part codes
+                <ul>
+                  <li>have to do this for each model, not model-class (e.g. different linear models with same number of parameters would have different $L(\theta)$</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>stochastic complexity (“refined mdl”): $\bar{L}(X</td>
+                  <td>\theta)$ - only construct one code</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul>
+              <li>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>ex. $\bar L(X</td>
+                      <td>\theta) =</td>
+                      <td>\theta</td>
+                      <td>_0 + L(X</td>
+                      <td>\theta)$ - like 2-part code but breaks up $\theta$ space into different sets (e.g. same number of parameters) and assigns them equal codelength</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            </ul>
+          </li>
+          <li>normalized maximum likelihood - most recent version - select from among a set of codes</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>chapter 2.2.1 background
+    <ul>
+      <li>in mdl, we only work with prefix codes (i.e. no codeword is a prefix of any other codeword)
+        <ul>
+          <li>these are uniquely decodable</li>
+          <li>in fact, any uniquely decodable code can be rewritten as a prefix code which achieves the same code length</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>chapter 2.2.2: <strong>probability mass functions correspond to codelength functions</strong></p>
+
+    <ul>
+      <li>coding: $x \sim P(X)$, codelengths $\ell(x)$
+        <ul>
+          <li><strong>Kraft inequality</strong>: $\sum_x 2^{-\ell(x)} \leq 1$</li>
+        </ul>
+      </li>
+      <li>given a code $C$ and a prob distr. $P$, we can construct a code so short codewords get high probs and vice versa
+        <ul>
+          <li>given $P$, $\exists C, \forall z : L_C(z) \leq \lceil -\log P(z) \rceil$</li>
+          <li>given $C’$, $\exists P’ : \forall z -\log P(z) = L_{C’}(z)$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>we redefine codelength so it doesn’t require actual integer lengths
+    <ul>
+      <li>we don’t care about the actual encodings, only the codelengths</li>
+      <li>
+        <p>given a sample space $\mathcal Z$, the set of all codelength functions $L_\mathcal Z$ is the set of functions $L$ on $\mathcal Z$ where $\exists \,Q$ (distr), such that $\sum_z Q(z) \leq 1$ and $\forall z,\; L(z) = -\log Q(z)$</p>
+      </li>
+      <li>uniform distr. - every codeword just has same length (fixed-length)</li>
+      <li>
+        <p>we usually assume we are encoding a sequence $x^n$ which is large, so the rounding becomes negligible</p>
+      </li>
+      <li>ex. encoding integers: send $\log k$ zeros, then add a 1, then uniform code from 0 to $2^{\log k}$</li>
+      <li>Given $P(X)$, the codelength function $L(X) = -\log P(X)$ minimizes expected code length for the variable $X$</li>
+    </ul>
+  </li>
+  <li>
+    <p>chapter 2.2.3 - <strong>the information inequality</strong>: $E_P[-\log Q(X)] &gt; E_P[-\log P(X)]$</p>
+
+    <ul>
+      <li>if $X$ was generated by $P$, then codes with length $-\log P(X)$ give the shortest encodings on average</li>
+      <li>not surprising - in a large sample, X will occur with frequency proportial to $P(X)$, so we want to give it a short codelength $-\log P(X)$</li>
+      <li>consequently, ideal mean length = $H(X)$</li>
+    </ul>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>chapter 2.4: crude mdl ex. pick order of markov chain by minimizing $L(H) + L(D</td>
+          <td>H)$ where $D$ is data, $H$ is hypothesis</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>we get to pick codes for $L(H)$ and $L(D</td>
+              <td>H)$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>let $L(x^n</td>
+              <td>H) = -\log P(x^n</td>
+              <td>H)$ (length of data is just negative log-likelihood)</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>for $L(H)$, describe length of chain $k$ with code for integers, then $k$ parameters between 0 and 1 by describing the counts generated by the params in n samples - this tends to be harder to do well</li>
+    </ul>
+  </li>
+  <li>
+    <p>chapter 2.5: universal codes + models</p>
+
+    <ul>
+      <li>
+        <p>note: these codes are only universal relative to the set of considered codes $\mathcal L$</p>
+      </li>
+      <li>
+        <p><em>universal model</em> - prob. distr corresponding to universal codes</p>
+
+        <ul>
+          <li>(different from how we use model in statistics)</li>
+        </ul>
+      </li>
+      <li>
+        <p>given a set of codes $\mathcal L = { L_1, L_2, … }$, given a squences $x^n$, one of the codes $L \in \mathcal L$ has the shortest length for that sequence $\bar L(x^n)$</p>
+
+        <ul>
+          <li>however, we have to pick one $L$, before we see $x^n$</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>universal code</strong> - one code such that no matter which $x^n$ arrives, length is not much longer than the shortest length among all considered codes</p>
+
+        <ul>
+          <li>ex. 2-part codes: first send bits to pick among codes, then use the selected code to encode $x^n$ - overhead is small because it doesn’t depend on $n$</li>
+          <li>among countably infinite codes, can still send $k$ to index the code, although $k$ can get very large</li>
+          <li>ex. bayesian universal model - assign prior distr to codes</li>
+        </ul>
+      </li>
+      <li>
+        <p>ex. <strong>nml</strong> is an optimal (minimizes worst-case regret) universal model</p>
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>$\bar P_{\text{nml}} (x^n) = \frac{P(x^n</td>
+                  <td>\hat \theta (x^n))}{\sum_{z^n \in \mathcal X^n} P(z^n</td>
+                  <td>\hat \theta (z^n))}$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>literally a normalized likelihood</li>
+          <li><strong>regret</strong> of $\bar P$ relative to $M$:  $−\log \bar P(x^n)− \min_{P \in M} -\log P(x^n )$
+            <ul>
+              <li>measures the performance of universal models relative to a set of candidate sources M</li>
+              <li>$\bar P$ is a probability distribution on $\mathcal X^n$ ($P$ is not necessarily in $M$)</li>
+              <li>when evaluating a code, we may look at the worst regret over all $x^n$, or the average</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

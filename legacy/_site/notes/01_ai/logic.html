@@ -1,0 +1,867 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/01_ai/logic.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | logic</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> logic </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/01_ai/logic.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/01_ai/logic.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                <p>Some notes on logic based on Berkeley’s CS 188 course and  “Artificial Intelligence” Russel &amp; Norvig 3rd Edition + <a href="https://dl.acm.org/citation.cfm?id=2788240">foundations of rule learning</a> (furnkranz et al. 2014)</p>
+
+<h1 id="logical-agents---71-77-omitting-752">logical agents - 7.1-7.7 (omitting 7.5.2)</h1>
+
+<ul>
+  <li><em>knowledge-based agents</em> - intelligence is based on <em>reasoning</em> that operates on internal <em>representations of knowledge</em></li>
+  <li><strong>deductive</strong> - general-to-specific</li>
+  <li><strong>inductive</strong> - specific-to-general</li>
+  <li>3 steps: given a percept, the agent
+    <ol>
+      <li>adds the percept to its knowledge base (KB)</li>
+      <li>asks the knowledge base for the best action</li>
+      <li>tells the knowledge base that it has taken that action</li>
+    </ol>
+  </li>
+  <li>2 approaches
+    <ul>
+      <li><em>declarative</em> approach - tell sentences until agent knows how to operate
+        <ul>
+          <li>know something, can verbalize it</li>
+        </ul>
+      </li>
+      <li><em>procedural</em> approach - encodes desired behaviors as program code
+        <ul>
+          <li>intuitively know how to do it (ex. riding a bike)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>ex. Wumpus World</li>
+  <li>logical <em>entailment</em> between sentences
+    <ul>
+      <li>$A \vDash B$ means B follows logically from A (A implies B)</li>
+      <li><em>logical inference</em> - showing entailment</li>
+    </ul>
+  </li>
+  <li><em>model checking</em> - try everything to see if A $\implies$ B
+    <ul>
+      <li>this is <em>sound</em> = <em>truth-preserving</em></li>
+      <li><em>complete</em> - can derive any sentence that is entailed</li>
+      <li>TT-ENTAILS
+        <ul>
+          <li>recursively enumerate all sentences by assigning true, false to each variable</li>
+          <li>check if these are valid within the KB
+            <ul>
+              <li>if they are, they must also match the query (otherwise return false)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><em>grounding</em> - connection between logic and real environment (usually sensors)</li>
+  <li>theorem properties
+    <ul>
+      <li><em>validity</em> - <em>tautalogy</em> - true under all models</li>
+      <li><em>satisfiable</em> - true under some model
+        <ul>
+          <li>ex. boolean-SAT</li>
+        </ul>
+      </li>
+      <li><em>monotonicity</em> - set of implications can only increase as info is added to the knowledge base
+        <ul>
+          <li>if $KB \implies A$ then $KB \land B \implies A$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="theorem-proving">theorem proving</h2>
+
+<ul>
+  <li><em>resolution rule</em> - resolves different rules with each other - leads to complete inference procedure</li>
+  <li><em>CNF</em> - <em>conjunctive normal form</em> - conjunction (and) of clauses (with ors)
+    <ul>
+      <li>ex: $ ( \neg A \lor  B) \land \neg C \land (D \lor E)$</li>
+      <li>anything can be expressed as this</li>
+    </ul>
+  </li>
+  <li><em>horn clause</em> - at most one positive
+    <ul>
+      <li><em>definite clause</em> - disjunction of literals with exactly one positive: ex. ($A \lor \neg B \lor \neg C$)</li>
+      <li><em>goal clause</em> - no positive: ex. ($\neg A \lor \neg B \lor \neg C$)</li>
+      <li>benefits
+        <ul>
+          <li>easy to understand</li>
+          <li>forward-chaining / backward-chaining are applicable</li>
+          <li>deciding entailment is linear in size (KB)</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>forward/backward chaining</strong>: checks if q is entailed by KB of definite clauses</p>
+
+        <ul>
+          <li><em>data-driven</em></li>
+          <li>keep adding until query is added or nothing else can be added</li>
+          <li>
+            <p><img src="../assets/logic_graph.png" alt="Screen Shot 2018-08-01 at 6.54.42 PM" /></p>
+          </li>
+          <li>backward chaining works backwards from the query
+            <ul>
+              <li><em>goal-driven</em></li>
+              <li>keep going until get back to known facts</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>checking satisfiability
+    <ul>
+      <li>complete backtracking
+        <ul>
+          <li><em>davis-putnam</em> algorithm = <em>DPLL</em> - like TT-entails with 3 improvements
+            <ol>
+              <li>early termination</li>
+              <li>pure symbol heuristic - <em>pure symbol</em> appears with same sign in all clauses, can just set it to the proper value</li>
+              <li>unit clause heuristic - clause with just one literal or one literal not already assigned false</li>
+            </ol>
+          </li>
+          <li>other improvements (similar to search)
+            <ol>
+              <li>component analysis</li>
+              <li>variable and value ordering</li>
+              <li>intelligent backtracking</li>
+              <li>random restarts</li>
+              <li>clever indexing</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>local search
+        <ul>
+          <li>evaluation function can just count number of unsatisfied clauses (MIN-CONFLICTS algorithm for CSPs)</li>
+          <li>WALKSAT - randomly chooses between flipping based on MIN-CONFLICTS and randomly
+            <ul>
+              <li>runs forever if no soln</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><em>underconstrained</em> problems are easy to find solns</li>
+      <li><em>satisfiability threshold conjecture</em> - for random clauses, probability of satisfiability goes to 0 or 1 based on ratio of clauses to symbols
+        <ul>
+          <li>hardest problems are at the threshold</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="agents-based-on-propositional-logic">agents based on propositional logic</h2>
+
+<ul>
+  <li><em>fluents</em> = state variables that change over time</li>
+  <li>can index these by time</li>
+  <li><em>effect axioms</em> - specify the effect of an action at the next time step</li>
+  <li><em>frame axioms</em> - assert that all propositions remain the same under actions</li>
+  <li><em>succesor-state axiom</em>: $F^{t+1} \iff  ActionCausesF^t \lor (F^t \land -ActionCausesNotF^t )$
+    <ul>
+      <li>ex. $HaveArrow^{t+1} \iff (HaveArrow^t \land \neg Shoot^t)$</li>
+      <li>makes things stay the same unles something changes</li>
+    </ul>
+  </li>
+  <li><em>state-estimation</em>: keep track of <em>belief state</em></li>
+  <li>can just use 1-CNF (conjunctions of literals: ex. $WumpusAlive \land L_2 \land B$)
+    <ul>
+      <li>1-CNF includes all states that are in fact possible given the full percept history</li>
+      <li><em>conservative approximation</em> - contains belief state, but also extraneous stuff</li>
+    </ul>
+  </li>
+  <li>planning
+    <ul>
+      <li>could use $A^*$ with entailment</li>
+      <li>otherwise, could use SATPLAN</li>
+    </ul>
+  </li>
+  <li><em>SATPLAN</em> - how to make plans for future actions that solve the goal by propositional inference</li>
+  <li>basic idea
+    <ul>
+      <li>make assertions</li>
+      <li>transitions up to some max time $t_{final}$</li>
+      <li>assert that goal is achieved at time $t_{final}$ (ex. havegold)</li>
+    </ul>
+  </li>
+  <li>present this to a SAT solver
+    <ul>
+      <li>must add <em>precondition axioms</em> - states that action occurrence requires preconditions to be satisfied
+        <ul>
+          <li>ex. can’t shoow without arrow</li>
+        </ul>
+      </li>
+      <li>must add <em>action exclusion axioms</em> - one action at a time
+        <ul>
+          <li>ex. can’t shoot and move at once</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="first-order-logic---81-833">first-order logic - 8.1-8.3.3</h1>
+
+<ul>
+  <li><img src="../assets/logic_table.png" alt="Screen Shot 2018-08-01 at 7.52.25 PM" /></li>
+  <li>basically added objects, relations, quantifiers ($\exists, \forall$)</li>
+  <li>declarative language - semantics based on a truth relation between sentences and possible worlds
+    <ul>
+      <li>has <em>compositionality</em> - meaning decomposes</li>
+      <li><em>sapir-whorf hypothesis</em> - understanding of the world is influenced by the language we speak</li>
+    </ul>
+  </li>
+  <li>3 elements
+    <ol>
+      <li>objects - john (cannot appear by itself, need boolean value)</li>
+      <li>relations - set of tuples (ex. brother(richard, john))</li>
+      <li>functions - only one value for given input (ex. leftLeg(john))</li>
+    </ol>
+  </li>
+  <li>
+    <p>sentences return true or false</p>
+
+    <ul>
+      <li>combine these things</li>
+    </ul>
+  </li>
+  <li>first-order logic assumes more about the world than propositional logic
+    <ul>
+      <li><em>epistemological commitments</em> - the possible states of knowledge that a logic allows with respect to each fact</li>
+      <li><em>higher-order logic</em> - views relations and functions as objects in themselves</li>
+    </ul>
+  </li>
+  <li>first-order consists of symbols
+    <ol>
+      <li><em>constant symbols</em> - stand for objects</li>
+      <li><em>predicate symbols</em> - stand for relations</li>
+      <li><em>function symbols</em> - stand for functions
+        <ul>
+          <li><em>arity</em> - fixes number of args</li>
+          <li><em>term</em> - logical expresision tha refers to an object</li>
+          <li><em>atomic sentence</em> - formed from a predicate symbol optionally followed by a parenthesized list of terms
+            <ul>
+              <li>true if relation holds among objects referred to by the args</li>
+              <li>ex. Brother(Richard, John)</li>
+            </ul>
+          </li>
+          <li><em>interpretation</em> - specifies exactly which objects, relations and functions are referred to by the symbols</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h1 id="inference-in-first-order-logic---91-94">inference in first-order logic - 9.1-9.4</h1>
+
+<ul>
+  <li><em>propositionalization</em> - can convert first-order logic to propositional logic and do propositional inference
+    <ul>
+      <li><em>universal instantiation</em> - we can infer any sentence obtained by substituting a ground term for the variable
+        <ul>
+          <li>replace “forall x” with a specific x</li>
+        </ul>
+      </li>
+      <li><em>existential instantiation</em> - variable is replaced by a new constant symbol
+        <ul>
+          <li>replace “there exists x” with a specific x that give a name (called the <em>Skolem constant</em>)</li>
+        </ul>
+      </li>
+      <li>only need finite subset of propositionalized KB - can stop nested functions at some depth
+        <ul>
+          <li><em>semidecidable</em> - algorithms exist that say yes to every entailed sentence, but no algorithm exists that also says no to every nonentailed sentence</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><em>generalized modus ponens</em></li>
+  <li><em>unification</em> - finding substitutions that make different logical expressions look identical
+    <ul>
+      <li>UNIFY(Knows(John,x), Knows(x,Elizabeth)) = fail .
+        <ul>
+          <li>use different x’s - <em>standardizing apart</em></li>
+          <li>want most general unifier</li>
+        </ul>
+      </li>
+      <li>need <em>occur check</em> - S(x) can’t unify with S(S(x))</li>
+    </ul>
+  </li>
+  <li>storage and retrieval
+    <ul>
+      <li>STORE(s) - stores a sentence s into the KB</li>
+      <li>FETCH(q) - returns all unifiers such that the query q unifies with some sentence in the KB
+        <ul>
+          <li>only try to unify reasonable facts using <em>indexing</em></li>
+          <li>query such as Employs(IBM, Richard)</li>
+          <li>all possible unifying queries form <em>subsumption lattice</em></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>forward chaining: start w/ atomic sentences + apply modus ponens until no new inferences can be made
+    <ul>
+      <li><em>first-order definite clauses</em> - (remember this is a type of Horn clause)</li>
+      <li><em>Datalog</em> - language restricted to first-order definite clauses with no function symbols</li>
+      <li>simple forward-chaining: FOL-FC-ASK - may not terminate if not entailed
+        <ol>
+          <li><em>pattern matching</em> is expensive</li>
+          <li>rechecks every rule</li>
+          <li>generates irrelevant facts</li>
+        </ol>
+      </li>
+      <li>efficient forward chaining (solns to above problems)
+        <ol>
+          <li><em>conjuct odering</em> problem - find an ordering to solve the conjuncts of the rule premise so the total cost is minimized
+            <ul>
+              <li>requires heuristics (ex. <em>minimum-remaining-values</em>)</li>
+            </ul>
+          </li>
+          <li>incremental forward chaining - ignore redundant rules
+            <ul>
+              <li>every new fact inferred on iteration t must be derived from at least one new fact inferred on iteration t-1</li>
+              <li><em>rete</em> algorithm was first to do this</li>
+            </ul>
+          </li>
+          <li>irrelevant facts can be ignored by backward chaining
+            <ul>
+              <li>could also use <em>deductive database</em> to keep track of relevant variables</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>backward-chaining
+    <ul>
+      <li>simple backward-chaining: FOL-BC-ASK
+        <ul>
+          <li>is a <em>generator</em> - returns multiple times, each giving one possible result</li>
+        </ul>
+      </li>
+      <li>like DFS - might go forever</li>
+      <li>logic programming: algorithm = logic + control
+        <ul>
+          <li>ex. <em>prolog</em></li>
+          <li>a lot more here</li>
+          <li>can have parallelism</li>
+          <li>redudant inference / infinite loops because of repeated states and infinite paths</li>
+          <li>can use <em>memoization</em> (similar to the dynamic programming that forward-chaining does)</li>
+          <li>generally easier than converting it into FOLD</li>
+        </ul>
+      </li>
+      <li><em>constraint logic programming</em> - allows variables to be constrained rather than <em>bound</em>
+        <ul>
+          <li>allows for things with infinite solns</li>
+          <li>can use <em>metarules</em> to determine which conjuncts are tried first</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="classical-planning-101-102">classical planning 10.1-10.2</h1>
+
+<ul>
+  <li><em>planning</em> - devising a plan of action to achieve one’s goals</li>
+  <li><em>Planning Domain Definition Language</em> (PDDL) - uses <em>factored representation</em> of world
+    <ul>
+      <li><em>closed-world</em> assumption - fluents that aren’t present are false</li>
+      <li>solving the frame problem: only specify result of action in terms of what changes</li>
+      <li>requires 4 things (like search w/out path cost function)
+        <ul>
+          <li>initial state</li>
+          <li>actions</li>
+          <li>transitions</li>
+          <li>goals</li>
+        </ul>
+      </li>
+      <li>no quantifiers</li>
+    </ul>
+  </li>
+  <li>set of ground (variable-free) actions can be represented by a single <em>action schema</em>
+    <ul>
+      <li>like a method with precond and effect</li>
+      <li>$Action(Fly(p, from, to))$:
+        <ul>
+          <li>PRECOND: $At(p, from) \land Plane(p) \land Airport(from) \land Airport(to)$</li>
+          <li>EFFECT: $\neg At(p, from) \land At(p, to)$
+            <ul>
+              <li>can only use variables in the precondition</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>problems
+    <ul>
+      <li>PlanSAT - try to find plan that solves a planning problem</li>
+      <li>Bounded PlanSAT - ask whether there is a soln of length k or less</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="algorithms-for-planning-as-state-space-search">algorithms for planning as state-space search</h2>
+
+<ul>
+  <li>forward (progression) state-space search
+    <ul>
+      <li>very inefficient</li>
+      <li>generally forward search is preferred because it’s easier to come up with good heuristics</li>
+    </ul>
+  </li>
+  <li>backward (regression) relevant-states search
+    <ul>
+      <li>PDLL makes it easy to regress from a state description to the predecessor state description</li>
+      <li>start with a set of things in the goal (and any other fluent can hae any value)
+        <ul>
+          <li>keep track of a set at all points</li>
+        </ul>
+      </li>
+      <li>in going backward, the effects that were added need not have been true before, but preconditions must have held before</li>
+    </ul>
+  </li>
+  <li>heuristics
+    <ul>
+      <li>ex. ignore preconditions</li>
+      <li>ex. ignore delete lists - remove all negative literals</li>
+      <li>ex. <strong>state abstractions</strong> - many-to-one mapping from states $\to$ abstract states
+        <ul>
+          <li>ex. ignore some fluents</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>decomposition
+    <ul>
+      <li>requires subgoal independence</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="fuzzy-logic-lofti-zadeh">fuzzy logic (lofti zadeh)</h1>
+
+<ul>
+  <li>ex <a href="https://towardsdatascience.com/a-very-brief-introduction-to-fuzzy-logic-and-fuzzy-systems-d68d14b3a3b8">blog post</a></li>
+  <li>fuzzy sets - instead of binary membership, can have partial membership $\in [0, 1]$
+    <ul>
+      <li>intersection of sets - usually take min over memberships</li>
+      <li>union of sets - usually take max over memberships</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="foundations-of-rule-learning-furnkranz-et-al-2014"><a href="https://dl.acm.org/citation.cfm?id=2788240">foundations of rule learning</a> (furnkranz et al. 2014)</h1>
+
+<ul>
+  <li>terminology - rule has a condition (conjunctive of binary features) + a conclusion = implication
+    <ul>
+      <li>rule has 2 parts
+        <ul>
+          <li><em>antecedent</em> = <em>body</em> - consists of <strong>conditions</strong> = binary features e.g. $X_1 &gt; 0$, $X_2=0$</li>
+          <li><strong>conclusion</strong> = consequent* = <em>head</em></li>
+        </ul>
+      </li>
+      <li>rule $r$ has length <em>L</em></li>
+      <li>$P, N$ - total positives / negatives in the data</li>
+      <li>$TP =\hat P, FP =\hat N$ - positives / negatives covered (predicted) by a rule</li>
+      <li>$FN, TN$ - positives / negatives not covered by a rule</li>
+      <li>$\frac{TP}{P}$ = true positive rate = sensitivity</li>
+      <li>$\frac{TN}{N}$ = true negative rate = specificity</li>
+      <li>rules evaluated with a heuristic $H(\hat P, \hat N)$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="categorization-of-tasks-ch-1">categorization of tasks (ch 1)</h2>
+
+<ul>
+  <li>historically, a lot of this was developed in the data mining community and gave rise to packages such as WEKA, RAPID-I, KNIME, ORANGE
+    <ul>
+      <li>historical algos: AQ2 (michalski, 1969), PRISM (cendrowska, 1987), CN2 (Clar &amp; nibett, 1989), FOIL (quinlan, 1990), RIPPER (cohen 1995), PROGOL (muggleton, 1995), <a href="http://www.comlab.ox.ac.uk/oucl/research/areas/machlearn/Aleph/aleph.pl">ALEPH</a> (srinivasan, 1999) - entire rule workbench in one prolog file, OPUS (webb, 1955), CBA (lui et al. 1998)</li>
+    </ul>
+  </li>
+  <li>predictive rules
+    <ul>
+      <li><strong>propositional learning</strong> (just propositional logic) v <strong>relational learning</strong> (first-order logic) = relational data mining = inductive logic programming</li>
+      <li><strong>concept learning</strong> - binary classification task</li>
+      <li><strong>complete</strong> rule set $\mathcal R$ - covers all positive examples (recall = 1)</li>
+      <li><strong>consistent</strong> - rule set $\mathcal R$ - covers no negative examples (precision = 1)</li>
+    </ul>
+  </li>
+  <li>descriptive data mining - usually unsupervised, just learn patterns
+    <ul>
+      <li>associative rule learning is unsupervised descriptive (e.g. APRIORI)
+        <ul>
+          <li>here, both the conditions + conclusions can have many features</li>
+        </ul>
+      </li>
+      <li>subgroup discovery is descriptive, but has a supervised label, so is actually like supervised clustering - goal is to learn subgroups with a significantly different class distribution than the entire population</li>
+    </ul>
+  </li>
+  <li>relational learning - when data doesn’t fit in a table but is associated (e.g. customers have many purchases each)</li>
+</ul>
+
+<h2 id="basics-of-learning-rules-ch-2">basics of learning rules (ch 2)</h2>
+
+<ul>
+  <li>finding rules is basically a search problem
+    <ul>
+      <li>want to find best rules (generally bigger coverage, less complexity, higher accuracy)</li>
+      <li>can thing of it as searching on a <strong>refinement graph</strong> - each rule is a node and refinement operators connect rules</li>
+    </ul>
+  </li>
+  <li>stopping criteria
+    <ul>
+      <li>threshold for some heuristic</li>
+    </ul>
+  </li>
+  <li>making final prediction
+    <ul>
+      <li>final predictions can be made via majority vote, using most accurate rule, or averaging predictions.</li>
+    </ul>
+  </li>
+  <li>algorithms
+    <ul>
+      <li>sequential covering (remove covered points after each rule)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="binary-split-features-ch-4">(binary split) features (ch 4)</h2>
+
+<ul>
+  <li>here, feature means something binary that we split on</li>
+  <li>selector is smth of the form $A_i \sim v_{i, j}$ where relation $\sim$ is like $=, &gt;=, &lt;=$
+    <ul>
+      <li>can also be attribute sets (internal disjunctions) $A_i \in {v_1, v_2, v_3 }$, intervals (range operators), or attribute sets (internal conjunctions)</li>
+      <li>can also be simple combinations of binary variables</li>
+    </ul>
+  </li>
+  <li>relational features - function between features (e.g. length &gt; height)
+    <ul>
+      <li>can have splits that are functions of previous splits (like a residual DNN connection)</li>
+    </ul>
+  </li>
+  <li>many algorithms start by making a covering table = table of binary values for all possible (reasonable) splits for all features
+    <ul>
+      <li>split on all categorical features</li>
+      <li>split between all values of continuous features (or ordered discrete)</li>
+      <li>can compute relational features (e.g. $A_1 - A_2$) by just adding these as features</li>
+    </ul>
+  </li>
+  <li>feature relevancy
+    <ul>
+      <li>$pn-pair$: pair of training examples where one is positive and one is negative</li>
+      <li>totally irrelevant features - don’t distinguish between any positive/negative examples</li>
+      <li>a feature $f_1$ is <strong>more relevant</strong> than another $f_2$ if it separates all the $pn$-pairs that $f_2$ does and more</li>
+      <li>can also manually set thresholds on TP, FP to decide irrelevance</li>
+    </ul>
+  </li>
+  <li>missing values
+    <ul>
+      <li>different types
+        <ul>
+          <li>missing - was not measured but should have been</li>
+          <li>not applicable - e.g. pregnant for a male</li>
+          <li>don’t care - could be anything</li>
+        </ul>
+      </li>
+      <li>basic strategies
+        <ul>
+          <li>delete incomplement examples</li>
+          <li>treat missing as special value</li>
+          <li>impute w/ mean/median/linear prediction</li>
+          <li>fill in prob distr. over missing val</li>
+          <li>pessimistic value strategy - imputed values shouldn’t differentiate between classes - set value so it doesn’t get used (e.g. false for positive class and true for neg class)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>imprecise values - continuous values with noise
+    <ul>
+      <li>might want to test variables with $\pm \delta$ handled with pessimistic value strategy</li>
+      <li><strong>fuzzy rules</strong> - probabilistically split</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="relational-features-ch-5">relational features (ch 5)</h2>
+
+<ul>
+  <li>these kinds of task use relational background knowledge + databases
+    <ul>
+      <li>ex. from knowledge about things like <em>female(X)</em>, <em>parent(X, Y)</em>, learn that <em>daughter(X, Y):= female(X) , parent(Y, X)</em></li>
+      <li>allow $\forall, \exists$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="learning-single-rules-ch-6">learning single rules (ch 6)</h2>
+
+<ul>
+  <li>search problem to maximize some criteria subject to some constraints
+    <ul>
+      <li>top-down - start with large cover then go to small</li>
+      <li>bottom-up - start with high-sensitivity, low cover rules then go larger</li>
+    </ul>
+  </li>
+  <li><img src="../assets/find_best_rule.png" alt="find_best_rule" /></li>
+  <li>search algos
+    <ul>
+      <li>exhaustive search</li>
+      <li>hill-climbing = local-search - can make less myopic by considering multiple refinements at a time</li>
+      <li>beam-search - keep k best candidates</li>
+      <li>best-first search - beam search but keep all candidates</li>
+      <li>ordered search - prune the search space based on knowledge (e.g. order splitting values)</li>
+      <li>level-wise search (e.g. apriori) - generate in parallel all rules with a certain minimum quality</li>
+      <li>stochastic search - involves randomness</li>
+    </ul>
+  </li>
+  <li>search directions: combine top-down (specialization) with bottom-up (generalization)</li>
+</ul>
+
+<h2 id="rule-evaluation-measures-ch-7">rule evaluation measures (ch 7)</h2>
+
+<ul>
+  <li>sometimes we only evaluate the quality of covered rules (e.g. rule list) whereas sometimes we evaluate quality of disjoint sets (e.g. both sides of decision tree split)</li>
+  <li>common heuristics are rules that cover a lots of samples or rules that are simple</li>
+  <li><strong>equivalent heuristics</strong>: <em>compatible</em> heuristics $H$, $G$ rank rules in the same order (<em>antagonistic</em> rank rules in opposite order)</li>
+  <li>axes to evaluate rules (want to be close to top-left): <img src="../assets/posneg.png" alt="posneg" /></li>
+  <li>list of metrics (to maximize), all basically trade of recall / precision
+    <ul>
+      <li>$Specificity = TN / N$</li>
+      <li>$Sensitivity = Recall = TP / P$
+        <ul>
+          <li>$Support = TP / (P + N)$</li>
+        </ul>
+      </li>
+      <li>$CovDiff = TP - FP$
+        <ul>
+          <li>equivalent to classification $Accuracy=(TP + TN) / (P + N)$</li>
+          <li>$Coverage = (TP + FN) / (P + N)$ - fraction of points covered</li>
+        </ul>
+      </li>
+      <li>$RateDiff = TP / P - FP / N$
+        <ul>
+          <li>this is equivalent to more general weighted relative accuracy $LinCost = a \cdot TP - b \cdot FP$</li>
+        </ul>
+      </li>
+      <li>$Precision = TP / \underbrace{(TP + FP)}_{\text{predicted pos}}$ (sometimes called confidence or rule accuracy)
+        <ul>
+          <li>RIPPER’s pruning heuristic $(TP - FP) / (TP + FP)$ is equivalent to precision</li>
+          <li>covering ratio $TP / FP$ is equivalent to precision</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>information-theoretic measures
+    <ul>
+      <li>$Info = -\log_2 Precision$</li>
+      <li>$Entropy = - (Prec \cdot \log_2 Prec +  (1-Prec) \cdot \log_2 (1-Prec))$
+        <ul>
+          <li>when $TP \leq FN$, same as precision and when  $TP &gt; FN$ opposite of precision</li>
+          <li>originally developed for case where we aren’t covering positive examples but rather predicting with majority class</li>
+          <li>also KL-divergence and Gini index</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>$Laplace(r) = (TN + 1)/(TP+1+FP+1)$ - pad all the values by 1 to adjust scores when numbers are small</li>
+  <li><em>likelihood ratio statistic</em> - compare distr in rule to distr in full dataset</li>
+  <li>complexity-based heuristics
+    <ul>
+      <li>$Length$</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$MDL(r) = I(r) + I(\epsilon</td>
+              <td>r)$</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>hard to compute</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

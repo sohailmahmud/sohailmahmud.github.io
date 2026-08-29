@@ -1,0 +1,669 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/05_blockchain/data_sense.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | data sense</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> data sense </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/05_blockchain/data_sense.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/05_blockchain/data_sense.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<p>notes from Neuroscience, 5th edition + Intro to neurobiology course at UVA</p>
+
+<h1 id="22-early-development">22 early development</h1>
+
+<ul>
+  <li>ways to study
+    <ol>
+      <li>top-down: rosy retrospection</li>
+      <li>bottom-up: e.g. LTP/LTD</li>
+      <li>human disease: stroke-by-stroke</li>
+      <li>development=<em>ontogeny</em></li>
+    </ol>
+  </li>
+  <li>timeframe
+    <ul>
+      <li>month 1 - gastrulation
+        <ul>
+          <li>most sensitive time for mom</li>
+        </ul>
+      </li>
+      <li>month 2-5 - cells being born</li>
+      <li>up to year 2 - axon guidance / synapse formation</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li><em>gastrulation</em> - process by which early embryo undergoes folds = shapes of NS
+    <ul>
+      <li>diseases
+        <ul>
+          <li><em>spina bifida</em> - neural tube fails to seal
+            <ul>
+              <li>vitamin B12 can fix this</li>
+            </ul>
+          </li>
+          <li><em>anencephaly</em> - neural tube fails to close higher up</li>
+        </ul>
+      </li>
+      <li>parts
+        <ol>
+          <li><em>roofplate</em> at top (back)</li>
+          <li><em>floorplate</em> on bottom (stomach)</li>
+          <li><em>neural crest</em> - pinches off top of roofplate</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li><em>neuroblasts</em> = classic stem cells
+    <ul>
+      <li>assymetric division - cells generate themselves and differentiated progeny</li>
+      <li>ultimate stem cell - fertilized eggs</li>
+    </ul>
+  </li>
+  <li><em>differentiation</em>
+    <ul>
+      <li>cells made by neuroblasts decide what they are going to become</li>
+      <li><em>morphogens</em>
+        <ul>
+          <li><em>BMP</em> - roofplate
+            <ul>
+              <li><em>cyclopia</em> - fatal defect in BMP</li>
+            </ul>
+          </li>
+          <li><em>Hedge hogs</em> - at floor plate</li>
+          <li><em>Retinoids</em> - axial, affect skin
+            <ul>
+              <li>affected by <em>thalidomide</em> - helps morning sickness but causes missing limb segments</li>
+              <li>also affected by <em>accutane</em></li>
+            </ul>
+          </li>
+          <li><em>FGFs</em> - axial symmetry</li>
+          <li><em>Wnts</em> - skin, gut, hair
+            <ul>
+              <li>loss of wnts is loss of hair</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>floor plate loses function after embryogenesis except glioblastoma</li>
+      <li>measure BMP and HH gradient to figure out where you are
+        <ul>
+          <li>treat ALS by adding HH to make more alpha motor neurons
+    1. dorsal direction</li>
+          <li>roofplate makes BMP</li>
+          <li>low HH - interneurons, sensory neurons (ex. nociceptors)</li>
+          <li>even BMP/HH - sympathetic</li>
+          <li>high HH - more motor neurons</li>
+          <li><em>floorplate</em> makes HH (hedge hog)
+            <ol>
+              <li>axial specification (anterior/posterior)</li>
+            </ol>
+          </li>
+          <li>tube swells into bulbs that become cerebellum, superior colliculus, cortex</li>
+        </ul>
+      </li>
+      <li><em>homeotic genes</em> = <em>hox genes</em> - set of genes (transcription factors) in order on chromosome
+        <ul>
+          <li>order corresponds to order of your body parts</li>
+          <li><em>rhombomeres</em> - segments in brainstem made by hox gene patterns</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><em>lineages</em>
+    <ul>
+      <li>when neuroblast is born, starts producing progeny (family tree of neuron types)</li>
+      <li>very often, cells are produced in certain order</li>
+      <li>timing: cell-cell interations and tyrosine kinases determine order</li>
+      <li>first alpha neurons, then GABAergic to control those, last is glia</li>
+      <li>neural crest function
+        <ul>
+          <li>migratory - moves out and divides: <img src="../assets/22_1.png" alt="" /></li>
+          <li><em>neuroblastoma</em> - developed early - severe problem because missing parts of NS</li>
+          <li>makes DRG and associated glial cells (schwann cells)</li>
+          <li>makes sympathetic NS and target ganglia, enteric NS, parasympathetic NS targets</li>
+          <li>makes <em>melanocytes</em> - know how to migrate and divide but can make <em>melanoma</em> (cancer)</li>
+        </ul>
+      </li>
+      <li>cortex is made inside out (6-&gt;1)
+        <ul>
+          <li>starts with stem cells called <em>radial glia</em></li>
+          <li><em>cortical dysplasia</em> - missing a layer / duplicating a layer
+            <ul>
+              <li>small part with 2 layer 3s - severe epilepsy</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><em>cell death</em></p>
+
+    <ul>
+      <li>1/2 of cells die in development</li>
+    </ul>
+  </li>
+  <li><em>axon guidance</em> (ch 23)
+    <ul>
+      <li>each cell born and axon grows and are guided to a target</li>
+      <li>dendrite basically follows same rules</li>
+    </ul>
+  </li>
+  <li><em>synapse formation</em> (ch 23, 24)
+    <ul>
+      <li>pruning and plasticity</li>
+      <li>NMDA receptor type</li>
+      <li>form synapses and if they don’t look right - get rid of them</li>
+      <li>K1/K-1 synapses breaking and forming</li>
+      <li>after age 21, K-1 starts increasing and net loss of synapses</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="23-circuit-formation">23 circuit formation</h1>
+
+<ul>
+  <li><em>growth cone</em> - motile tip of axon
+    <ul>
+      <li><em>actin</em> tip
+        <ol>
+          <li><em>lamellipodium</em> - sheet (hand)</li>
+          <li><em>filopodium</em> - huge curves (fingers)
+            <ul>
+              <li>chemo attraction (actin assembly) and chemo repulsion (actin disassembly)</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li>microtubule shaft - <em>tubulin</em> is much more cemented in</li>
+      <li><em>mauthner cell</em> of tadpole - first recorded growth cone</li>
+      <li>can’t regrow (that’s why we can’t regrow spinal cord)</li>
+    </ul>
+  </li>
+  <li>signals in growing axons
+    <ol>
+      <li><em>pioneer axons</em> (Betz cells) are first - often die</li>
+      <li><em>follower axons</em> (other Betz cells) can jump onto these and connect before pioneer dies
+        <ul>
+          <li><em>trophic support</em> - neuron survives on contact</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>frog <em>tectum</em> (has superior colliculus) with map of retina: <img src="../assets/23_1.png" alt="" />
+    <ul>
+      <li><em>ephrin</em> (EPH) repulses axon
+        <ul>
+          <li>retinal NT -&gt; tectum AP</li>
+          <li>axons have different amount of EPH receptors (in retina temporal has more than nasal)</li>
+          <li>gradient of EPH (in tectum anterior has less than posterior)</li>
+          <li>if we flip eye upside down (on nasal-temporal axis), image will be upside down</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>3 classes of axon guidance molecules: <img src="../assets/23_2.png" alt="" />
+    <ol>
+      <li><em>ECM/integrins</em></li>
+      <li><em>NCAM</em> (homophilic—binds to another neuron that is NCAM),
+        <ul>
+          <li>follower neurons bind to pioneer through NCAM-NCAM interactions</li>
+        </ul>
+      </li>
+      <li><em>Cadherin</em> (homophilic)
+        <ul>
+          <li>involved in recognition of being some place</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>4 important ligands/receptors
+    <ol>
+      <li><em>ephrins/eph</em>
+        <ul>
+          <li>gradient of eph receptor</li>
+        </ul>
+      </li>
+      <li><em>netrin/dcc</em> = guidance moleculereceptor = DCC
+        <ul>
+          <li>attracts axons to floorplate (midline)</li>
+          <li>cells without DCC don’t cross midline</li>
+        </ul>
+      </li>
+      <li><em>slit/robo</em> - receptor is slit
+        <ul>
+          <li>chases axons off (away from midline)</li>
+          <li>axons not destined to cross midline are born expressing robo</li>
+          <li>axons destined to cross the midline only express robo after crossing</li>
+          <li>if DCC (-) and robo (-) will continue wandering around</li>
+          <li><em>robo 4</em> is associated with Tourette’s</li>
+        </ul>
+      </li>
+      <li><em>semaphorins/plexins</em>
+        <ul>
+          <li>combinatorial code - use combinations of these to guide axons</li>
+          <li>these are the same genes that move cancer around</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>synaptic formation
+    <ul>
+      <li><em>neuroexins</em> - further recognition
+        <ul>
+          <li>turn up in autism and schizophrenia</li>
+        </ul>
+      </li>
+      <li><em>DSCAM</em>
+        <ul>
+          <li>associated with Down’s syndrome</li>
+          <li>doesn’t use gradients</li>
+          <li>makes different kinds of proteins by differential slicing</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>competition
+    <ul>
+      <li><em>neurotrophins</em> are secreted by muscle
+        <ul>
+          <li>in early development, a muscle fiber has many alpha motor neurons innervating it</li>
+          <li>all innervating neurons suck up neurotrophin and whichever sucks up most, kills all the others</li>
+          <li>eventually, each muscle fiber is innervated by one alpha motor neuron</li>
+          <li>only enough neurotrophin in target cells for a certain number of synapses</li>
+        </ul>
+      </li>
+      <li>happens everywhere
+        <ul>
+          <li>ex. sympathetic ganglia</li>
+          <li>ex. sensory neurons in skin get axons to correct cell types based on neurotrophin
+            <ul>
+              <li>merkel - <strong>BDNF</strong></li>
+              <li>proprioceptor - <em>NT3</em></li>
+              <li>nociceptor - <em>NGF</em></li>
+            </ul>
+          </li>
+          <li>ex. muscles - produce NGF
+            <ul>
+              <li>treating ALS with NGF hyperactivates sensory neurons with trkA -&gt; causes chicken pox</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>signals/receptors
+        <ol>
+          <li>NGF - <em>trk a</em> (<em>Trk receptor</em> - survival signaling pathways)</li>
+          <li>BDNF - <em>trk b</em></li>
+          <li>NT3 - trk b and <em>c</em></li>
+          <li>NT4/5 - trk b
+            <ul>
+              <li>all bind <em>p75</em> (death receptor)</li>
+              <li>want to keep neurotrophins local, because there aren’t that many of them</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="24-plasticity-in-systems">24 plasticity in systems</h1>
+
+<ul>
+  <li>experience-dependent plasticity - <img src="../assets/24_1.png" alt="" />
+    <ul>
+      <li>ex. ducks imprinting is non-reversable</li>
+      <li>learning is crystallized during <em>critical period</em>
+        <ul>
+          <li><em>CREB</em> and protein synthesis</li>
+          <li><em>NMDA</em> receptors</li>
+          <li><em>epigenetics</em> - histones control transcription and other things</li>
+        </ul>
+      </li>
+      <li>follow <em>Hebb’s postulate</em> - fire together, wire together
+        <ul>
+          <li>different eyes firing together will sync up (NMDA receptors to strengthen synapses)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>systems
+    <ol>
+      <li><em>ocular dominance</em>
+        <ul>
+          <li>left/right neurons terminate in adjacent zones</li>
+          <li>LGN in cortex uses efferents just like superior colliculus</li>
+          <li>label injected into retina can make it into cortex</li>
+          <li>cat experiments
+            <ul>
+              <li>some cells see only one eye, some see both</li>
+              <li>cats need to form visual map in short critical period (&lt;6 days)</li>
+              <li>this is why you need cochlear implant early</li>
+              <li>both eyes open - equal OD columns
+                <ul>
+                  <li>one eye closed - unequal OD columns</li>
+                  <li>branches coming out of LGN neurons grow more branches based on relative light exposure (they compete for eye’s real estate)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><em>strabismus</em> = lazy eye - poor coordination with one of the muscles
+            <ul>
+              <li>one eye is not quite seeing</li>
+              <li>treat with patch on good eye -&gt; allows bad eye to catch up since eyes compete for ocular dominance columns</li>
+              <li>more stimulus = more branches</li>
+            </ul>
+          </li>
+          <li>dye from retina goes through thalamus into cortex
+            <ul>
+              <li>rabies virus does same thing: cell-&gt;ganglion-&gt;brain</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><em>tonotopic map</em>
+        <ul>
+          <li>connection between MSO and inferior/superior colliculus</li>
+          <li>playing one tone increases representation</li>
+          <li>playing white noise disorganizes map</li>
+          <li><em>birdsong</em>
+            <ul>
+              <li>hear song 10-20 times when young - crystallized</li>
+              <li>afterwards can’t learn new skills</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><em>stress</em>
+        <ul>
+          <li>early stress sets stress points later in life</li>
+          <li>uses serotonin</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>shifts
+    <ul>
+      <li><em>superior colliculus</em> - integrate visual, auditory, motor to get X,Y coordinate</li>
+      <li>auditory map - plastic (but only when young)</li>
+      <li>visual map - not plastic</li>
+      <li>if you shift visual map (with a prism), auditory map can shift over to meet the visual</li>
+      <li><em>optic neuritis</em> - ms optic nerve disease that shifts map</li>
+      <li>only young animals can shift unless they were shifted before and are now unadapting</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="25-repair-and-regeneration">25 repair and regeneration</h1>
+
+<ol>
+  <li>full repair - human <em>PNS</em> - skin, muscles
+    <ul>
+      <li>1-2 mm/day growth - speed of slow axonal transport</li>
+      <li>thinnest axons first (thermal receptors and nociceptors)</li>
+      <li>proprioceptors last</li>
+      <li>process
+        <ul>
+          <li><em>perinerium</em> / <em>schwann cells</em> surrounds axons - helps regeneration</li>
+          <li>growth cones that are cut form stumps -&gt; distal axons degenerate = <em>walerian degeneration</em></li>
+          <li>macrophages come in and eat up the damaged stuff</li>
+          <li>neurotrophins are involved</li>
+        </ul>
+      </li>
+      <li>miswiring is common - regrow and may not find right target
+        <ul>
+          <li><em>bell’s palsy</em> - loss of facial nerve - recovers with miswiring (salivary / tear)</li>
+        </ul>
+      </li>
+      <li><em>neuromuscular junctions</em> (NMJ)
+        <ul>
+          <li>damaged cells leave <em>synaptic ghost</em> = glia and protein matrix for nerve to regrow into</li>
+          <li>repairs easily after heavy training</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>no repair / glial scar - human <em>CNS</em>
+    <ul>
+      <li>no ghost because so spread out</li>
+      <li>glia cover wound (scar) but can’t develop further</li>
+      <li>has <em>astrocytes</em> and <em>oligodendrocytes</em> (types of glial cells)
+        <ul>
+          <li>don’t support regrowth</li>
+          <li>involved in scarring</li>
+        </ul>
+      </li>
+      <li><em>microglia</em> - from immune system
+        <ul>
+          <li>control inflammation</li>
+          <li>release cytokines</li>
+        </ul>
+      </li>
+      <li><em>nogo</em> - protein that blocks regrowth (but there are other proteins as well)</li>
+      <li>we try repairing with <em>shunts</em> - piece of sciatic nerve from other part of body with schwann cells from PNS to try to repair a connection in the CNS</li>
+    </ul>
+  </li>
+  <li>stem cell regeneration - put new neurons being formed, 2 places in humans
+    <ul>
+      <li>non-human examples
+        <ul>
+          <li>floor plate of lizards can make new tail</li>
+          <li>fish retina always making new cells</li>
+          <li>canary brain part has stem cells that learn new song every year</li>
+        </ul>
+      </li>
+      <li>small C14 incorporation after early development - suggests we don’t regenerate neurons - C14 was from nuclear testing</li>
+      <li>human areas that do regenerate
+        <ol>
+          <li><em>hippocampus</em>
+            <ul>
+              <li>memories you store temporarily</li>
+            </ul>
+          </li>
+          <li><em>subventricular zone</em> makes <em>glomeruli</em> in <em>olfactory bulb</em> cells
+            <ul>
+              <li>turnover daily</li>
+              <li>sensory neurons and their targets constantly die and regenerate</li>
+            </ul>
+          </li>
+          <li><em>niche</em> - places where stem cells stay alive
+            <ul>
+              <li>ex. places in CNS with WINT molecular signals</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>damage control - remove these signals for <em>apoptosis</em> = cell death
+    <ul>
+      <li><em>glutamate increase</em> - excitotoxicity
+        <ul>
+          <li>can stop with <em>NMDA blockers</em></li>
+          <li>induce a coma by cooling them down or <em>GABA drugs</em></li>
+        </ul>
+      </li>
+      <li><em>cytokines increase</em> - immune system (like neurotrophins), inflammation</li>
+      <li><em>hypoxia/stress</em></li>
+      <li><em>neurotrophin withdrawal</em>
+        <ul>
+          <li>in stress times neurotrophin goes down</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

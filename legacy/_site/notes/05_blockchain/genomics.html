@@ -1,0 +1,956 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/05_blockchain/genomics.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | genomics</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> genomics </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/05_blockchain/genomics.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/05_blockchain/genomics.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<p>notes from Neuroscience, 5th edition + Intro to neurobiology course at UVA</p>
+
+<h1 id="9--somatosensory">9- somatosensory</h1>
+
+<h2 id="cheat-sheet">cheat sheet</h2>
+
+<ul>
+  <li>vocab
+    <ul>
+      <li><em>nerve</em> - bundle of axons</li>
+      <li><em>tract</em> - bundle of axons in CNS</li>
+      <li><em>nucleus</em> - bundle of neurons related to some function</li>
+      <li><em>midline</em> - center of nervous system
+        <ul>
+          <li>brain tends to be lateralized - one side is given control</li>
+          <li>ex. speak almost exclusively from left side of brain</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>information processing
+    <ol>
+      <li>feedback (gain)
+        <ul>
+          <li>almost always with glutamatergic / GABA</li>
+        </ul>
+      </li>
+      <li>feedforward - anticipation
+        <ul>
+          <li>estimate things before they happen</li>
+          <li>adjust your behavior in advance of the world (ex. lean before you hit a table)</li>
+        </ul>
+      </li>
+      <li>center-surround inhibition (spatial gain)
+        <ul>
+          <li>if you touch yourself, brain enhances sensitivity of one point by suppressing information from around it</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="sensory-system-overview">sensory system overview</h2>
+
+<ul>
+  <li>we have dorsal root ganglia (DRG) on spinal cord
+    <ul>
+      <li>axon goes to CNS</li>
+      <li>dendrites go everywhere</li>
+      <li><em>pseudounipolar</em> - born polar but become uni-polar
+        <ul>
+          <li>dendrite goes straight into axon with cell body off to the side</li>
+        </ul>
+      </li>
+      <li>do very little processing</li>
+    </ul>
+  </li>
+  <li><em>dorsal horn</em> - top layer that controls sensory information</li>
+  <li>in the brain stem, these are called cranial ganglia
+    <ul>
+      <li>special one is trigeminal ganglia (sensory receptors for face)</li>
+    </ul>
+  </li>
+  <li>oxytocin important clinically</li>
+  <li>Trp channels - connected mechanically into membrane</li>
+  <li><em>dermatomes</em>
+    <ul>
+      <li>map of sensory parts to brain</li>
+      <li>segments of spinal cord correspond to stripes across your body</li>
+      <li>brain to feet: cervical, thoracic, lumbar, sacral</li>
+    </ul>
+  </li>
+  <li><em>shingles</em> - virus where you get stripes of sores - single DRG
+    <ul>
+      <li>pops out the skin on the dendrite of one DRG</li>
+    </ul>
+  </li>
+  <li>peripheral damage won’t give you stripes of pain</li>
+  <li>feeling resolution - depends on density of neurons innervating skin
+    <ul>
+      <li>more neurons - small receptive fields</li>
+      <li>two-point discrimination test - poke you at different points and see if you can tell if the points are different</li>
+      <li>higher discrimination is better</li>
+      <li><em>discrimination</em> is different that <em>sensitivity</em> (like how it hurts when wounded)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="4-neuron-classes">4 neuron classes</h2>
+
+<ul>
+  <li>they have certain structures that tune them into certain kinds of vibrations
+    <ol>
+      <li><em>Proprioception</em>
+        <ol>
+          <li>muscle spindles - on every neuron - fastest
+            <ul>
+              <li>measures stretch on every muscles</li>
+              <li>lets you know where your arm is</li>
+            </ul>
+          </li>
+          <li>Golgi tendon organ
+            <ul>
+              <li>measures tension on tendon</li>
+              <li>safety switches - numb your body if you’re over-stressing something (make you let go of hanging on cliff)</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li>Ia II - <em>touch neurons</em>
+        <ul>
+          <li>superficial - most sensitive
+            <ol>
+              <li>Merkel: hi-res, slow adapt</li>
+              <li>Meissner: hi-res, fast adapt</li>
+            </ol>
+          </li>
+          <li>deeper - sense vibrations, pressure 3. Ruffini: low-res, slow adapt 4. Pacinian: low-res, fast adapt</li>
+          <li>these are in order of depth</li>
+          <li>diabetes - tissue loss and pain / numbness are lost</li>
+        </ul>
+      </li>
+      <li>Adelta - fast pain</li>
+      <li>C fibers - pain, temperature, itch
+        <ul>
+          <li>very slow, stay on</li>
+          <li>no myelination
+      - Pruritus - newly discovered set of sensory neurons
+        - between pain/touch - itch neurons
+        - new in mice: massage neurons</li>
+          <li>can only fire by stimulating in certain pattern</li>
+          <li>goes to emotion center not knowledge - pleasure</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>speed proportional to diameter, myelination</li>
+  <li>adaptation
+    <ul>
+      <li>some adapt slowly (you keep feeling something)</li>
+      <li>some adapt quickly (stop feeling)
+        <ul>
+          <li>if you move finger slightly, start firing again when changed</li>
+          <li>better if you feel cockroach that starts moving</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="pathways">pathways</h2>
+
+<ul>
+  <li>upper-body
+    <ul>
+      <li><em>S1 cortex</em> - primary somatic sensory cortex - this is the knowledge of where was touched</li>
+      <li><em>VPL</em> - everything accumulates here in the thalamus then goes to</li>
+      <li><em>Cuneate nucleus</em> - everything goes into this</li>
+    </ul>
+  </li>
+  <li>lower-body (trunk down)
+    <ul>
+      <li>everything in the lower body goes to <em>Gracile nucleus</em> - in brain stem</li>
+    </ul>
+  </li>
+  <li>special case - sensory for face
+    <ul>
+      <li><em>trigeminal ganglion</em> connects into <em>vpm</em> (thalamus) then goes into <em>S1 cortex</em></li>
+    </ul>
+  </li>
+  <li>proprioceptive pathways
+    <ul>
+      <li>starts in lower body
+        <ul>
+          <li>axons split - half go up to <em>Clark’s nucleus</em>
+            <ul>
+              <li>half go back into muscles</li>
+            </ul>
+          </li>
+          <li>Clark’s nucleus goes straight into cerebellum</li>
+        </ul>
+      </li>
+      <li>starts in upper body - goes straight into cerebellum</li>
+      <li>thus cerebellum have map of where / how tense muscles are</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="representation">representation</h2>
+
+<ul>
+  <li>cortex - this is where understanding is
+    <ul>
+      <li>dedicates area based on how many neurons coming in
+        <ul>
+          <li>lips / hands have more area</li>
+        </ul>
+      </li>
+      <li>S1 - primary somatosensory cortex
+        <ul>
+          <li>most body parts</li>
+          <li>neurons from functionally distinct columns</li>
+          <li>cortex assigns space based on how much info comes in
+            <ul>
+              <li>after amputation and time, map grows into lost space</li>
+              <li>map is different when different stimuli are given to fingers</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>S2 - secondary somatosensory cortex
+        <ul>
+          <li>processes and codes information from S1</li>
+          <li>throat, tongue, teeth, jaw, gum</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="pathway">pathway</h2>
+
+<ul>
+  <li>mechanosensory
+    <ol>
+      <li>DRG</li>
+      <li>Cuneate, Gracile</li>
+      <li>VPL</li>
+      <li>S1</li>
+    </ol>
+  </li>
+  <li>face mechanosensory
+    <ol>
+      <li>trigeminal ganglion</li>
+      <li>principal nucleus of trigeminal complex</li>
+      <li>vpm</li>
+      <li>S1</li>
+    </ol>
+  </li>
+  <li>proprioception
+    <ul>
+      <li>lower body
+        <ol>
+          <li>muscle spindles split</li>
+          <li>half go to motor neurons</li>
+          <li>other half go to Clark’s nucleus</li>
+          <li>clark’s nucleus -&gt; cerebellum</li>
+        </ol>
+      </li>
+      <li>upper body - straight to the cerebellum</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="10---nociception">10 - nociception</h1>
+
+<h2 id="review">review</h2>
+
+<ul>
+  <li>chronic pain is very import clinically</li>
+  <li>cortex - lets you know if you are sensing something
+    <ol>
+      <li><em>loss-of-function lesion</em> - piece of cortex is lost - lose awareness
+        <ul>
+          <li>can come from stroke, migraine-aura</li>
+        </ul>
+      </li>
+      <li><em>gain-of-function lesion</em> = excitatory lesion - like epilepsy
+        <ul>
+          <li>cortex comes on when it shouldn’t</li>
+          <li>increased awareness</li>
+          <li>can come from stroke / migraine</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>“sixth sense” - measuring stretch of all your muscles in cerebellum</li>
+  <li><em>nociception</em> = pain
+    <ul>
+      <li>has <em>nociceptors</em> - neurons that do nociception</li>
+      <li><em>thermoceptors</em> - neurons that sense temperature</li>
+    </ul>
+  </li>
+  <li>two classes of linking receptors
+    <ol>
+      <li>Adelta fibers - fast pain</li>
+      <li>C fibers - slow and chronic</li>
+    </ol>
+  </li>
+  <li>Trp channels - mechanically or thermally gated
+    <ul>
+      <li>let Na+ in</li>
+      <li>trpV heat - binds capsaicin
+        <ul>
+          <li>in the class of vanilloids</li>
+          <li>birds not capsaicin sensitive</li>
+        </ul>
+      </li>
+      <li>trpM cold - binds menthol
+        <ul>
+          <li>adapts in minutes - stop feeling cold after a while</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>synapses of nociceptors go to dorsal horn of drg
+    <ul>
+      <li>nociceptor goes contralateral (must cross midline) - if you cut left side of spinal chord, lose - mechanoception (ipsilateral) from left and nociception (contralateral) from right</li>
+      <li>mechanoreceptors, by contrast, send axon up the spinal cord</li>
+      <li>dorsal horn has laminal structure (has layers)</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>know where pain is
+    <ul>
+      <li>somatosensory cortex</li>
+    </ul>
+  </li>
+  <li>care about pain
+    <ul>
+      <li><em>insular cortex</em> - emotional part of brain
+        <ul>
+          <li>whether or not you care about pain</li>
+          <li>pairs up with other senses</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>can have both loss-of-function and gain-of-function lesions in both places</li>
+  <li>referred pain map - map that refers to a specific problem (ex. esophagus)</li>
+  <li><em>visceral pain</em> - don’t know where the pain is</li>
+  <li><em>hyperalgesia</em> - increased pain sensitivity
+    <ul>
+      <li>pain sensing neurons are hyperactive because of inflammation</li>
+      <li>pain sensing neuron releases substance P into Mast cell or neutrophil which releases histamine which strengthens receptor</li>
+      <li>prostaglandins activate nococeptors</li>
+    </ul>
+  </li>
+  <li><em>allodynia</em> - when mechanosensation hurts - not understood</li>
+  <li>turning off pain - add serotonin
+    <ol>
+      <li>exercise</li>
+      <li>lack of serotonin ~ mood disorders
+        <ul>
+          <li>central sensitization: allodynia</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>these mechanisms work through <em>introception</em>
+    <ul>
+      <li>senses chemical imbalances</li>
+    </ul>
+  </li>
+  <li>phantom limbs and phantom pain - if you lose a limb and still feel pain</li>
+  <li><em>mechanoreceptors inhibit nociceptors</em></li>
+</ul>
+
+<h2 id="pathway-1">pathway</h2>
+
+<ul>
+  <li>nociception
+    <ul>
+      <li><img src="../assets/10_1.png" alt="" /></li>
+      <li>same as mechanosensory except goes all the way to thalamus
+        <ul>
+          <li>doesn’t stop in brainstem</li>
+        </ul>
+      </li>
+      <li>crosses the midline after first synapse</li>
+    </ul>
+  </li>
+  <li>visceral pain
+    <ul>
+      <li>axons mainline straight up, go through vpl, go straight to insular cortex</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="11---vision-eye">11 - vision (eye)</h1>
+
+<ul>
+  <li>most of visual system is to read faces</li>
+  <li>eye
+    <ul>
+      <li>aqueous humor</li>
+      <li>posterior chamber</li>
+      <li>lens</li>
+      <li>ciliary muscles</li>
+      <li>retina</li>
+      <li>fovea</li>
+      <li>optic disk</li>
+      <li>optic nerve and retinal vessels</li>
+    </ul>
+  </li>
+  <li>to see far, stretch lens = <em>accomodation</em></li>
+  <li>retina - rods and cones are at back
+    <ul>
+      <li>cones - color</li>
+      <li>retinal ganglion cells sends down signal</li>
+    </ul>
+  </li>
+  <li>12 days to turnover whole photoreceptor disks into PE (pigment epithelium)
+    <ul>
+      <li>PE is what the rods / cones are in</li>
+      <li>PE contains optic disks containing rhodopsin protein that is sensitive to light that break off of rods / cones</li>
+    </ul>
+  </li>
+  <li>light leads to inhibition</li>
+  <li>melanopsin - receptor for blue light</li>
+</ul>
+
+<h2 id="circuits">circuits</h2>
+
+<ul>
+  <li>accomodation - stretching lens uncrosses lines</li>
+  <li>function photoreceptor
+    <ul>
+      <li>usually cGMP is letting in Na/Ca
+        <ul>
+          <li>Ca provides negative feedback here</li>
+        </ul>
+      </li>
+      <li>when light hits, retinal inside rohodopsin activates phosphodiesterase - breaks down cGMP so channel closes and they aren’t let in</li>
+    </ul>
+  </li>
+  <li>light on middle
+    <ul>
+      <li>depolarizes cone</li>
+      <li>excites oncenter</li>
+      <li>inhibits offcenter</li>
+      <li>these adjust quickly</li>
+    </ul>
+  </li>
+  <li>horizontal cells - takes positive input from photoreceptor and inhibits it back
+    <ul>
+      <li>inhibits horizontal cells else around it - creates contrast</li>
+      <li>have these for each color</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="pathway-2">pathway</h2>
+
+<ul>
+  <li><img src="../assets/11_1.png" alt="" /></li>
+</ul>
+
+<ol>
+  <li>rods / cones
+(2). horizontal cells - regulate gain control, how fast adapts, contrast adaptation</li>
+  <li>bipolar cells
+(4). amacrine cells - processing of movements</li>
+  <li>retinal ganglion cells</li>
+  <li>go into thalamus then to cortex
+(6). small amount go into brain stem and control mood / circadian rhythms</li>
+</ol>
+
+<h1 id="12---central-visual-system">12 - central visual system</h1>
+
+<ul>
+  <li>cortex is a pizza box</li>
+  <li>has columns</li>
+  <li>autophagy - process by which cells eat parts of themselves
+    <ul>
+      <li>nobel 2016</li>
+    </ul>
+  </li>
+  <li>cones - color</li>
+  <li>12 day cycle for processing optic disks</li>
+  <li>photoreceptors have cyclic G-activated channel
+    <ul>
+      <li>light shuts down photoreceptors</li>
+      <li>cell decreases in activity</li>
+    </ul>
+  </li>
+  <li>very roughly - each cone connects to cone bipolar cell
+    <ul>
+      <li>this gets represented by one column in the cortex</li>
+    </ul>
+  </li>
+  <li>15-30 rods connect to 1 rod bipolar cells</li>
+  <li>cortex has 6 layers
+    <ul>
+      <li>each has tons of neurons, mostly pyramidal neurons</li>
+      <li>column is a section through the 6 layers - all does about the same thing</li>
+      <li>orientation columns responds to specific x,y
+        <ul>
+          <li>has subregions that respond to specific orientations</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>ocular dominance column - both eyes for same coordinate go to same spot
+    <ul>
+      <li>dominated by one eye</li>
+    </ul>
+  </li>
+  <li>distance
+    <ul>
+      <li>far cells</li>
+      <li>tuned cells</li>
+      <li>near cells</li>
+    </ul>
+  </li>
+  <li><em>V4</em> in temporal lobe - object recognition</li>
+</ul>
+
+<h2 id="pathways-1">pathways</h2>
+
+<ul>
+  <li><img src="../assets/12_1.png" alt="" /></li>
+  <li>overall
+    <ol>
+      <li>V1</li>
+      <li>V2</li>
+      <li>V4 or MT</li>
+    </ol>
+  </li>
+  <li>central projections
+    <ul>
+      <li>retinal ganglions</li>
+      <li>all go through optic stuff</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="13---auditory-system">13 - auditory system</h1>
+
+<ul>
+  <li>ear parts
+    <ul>
+      <li>outer</li>
+      <li>middle
+        <ul>
+          <li>tympanic membrane</li>
+        </ul>
+      </li>
+      <li>inner
+        <ul>
+          <li>cochlea - senses the sound</li>
+          <li>oval window</li>
+          <li>round window - not understood</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>conductive hearing loss - in the outer/middle ear</li>
+  <li>sensorineural hearing loss - in the cochlea
+    <ul>
+      <li>can’t be fixed with hearing aids</li>
+    </ul>
+  </li>
+  <li>humans
+    <ul>
+      <li>2-5kHz ~= human speech (can sometimes hear more)</li>
+      <li>30-100x boost for tympanic membrane
+        <ul>
+          <li>this differs between people</li>
+        </ul>
+      </li>
+      <li>200x focus onto oval window</li>
+    </ul>
+  </li>
+  <li>cochlea
+    <ul>
+      <li>4 layers
+        <ul>
+          <li>inner hair cells - what you hear with</li>
+          <li>outer hair cells - generate sound
+            <ul>
+              <li>generates noise at every frequency except one you want to hear</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>otoacoustical emmision - low buzz that is produced</li>
+      <li>tenitis - ringing in the ears
+        <ul>
+          <li>can be internal</li>
+          <li>can be peripheral - generated by otoacoustical emmision</li>
+        </ul>
+      </li>
+      <li>high frequencies right next to cochlea</li>
+      <li>low frequencies on distal tip</li>
+      <li>human high frequency cells die with age</li>
+    </ul>
+  </li>
+  <li>hair cells
+    <ul>
+      <li>bundle of cilia</li>
+      <li>have an orientation</li>
+      <li>kinocilium is the tallest</li>
+      <li>tall ones are in the back</li>
+      <li>dying hair cells - can’t be replaced
+        <ol>
+          <li>​</li>
+          <li>loud sounds</li>
+          <li>certain antibiotics</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>auditory pathwayz
+    <ul>
+      <li><em>MSO - medial superior olive</em> - decides where the sounds is coming from
+        <ul>
+          <li>takes input from right / left ear, decides which came in first</li>
+        </ul>
+      </li>
+      <li>medial geniculate complex of the thalamus</li>
+    </ul>
+  </li>
+  <li>brain shape
+    <ul>
+      <li>folds are pretty random</li>
+      <li>phrenology - shape of skull was based on brain
+        <ul>
+          <li>thought it could determine personality</li>
+          <li>false</li>
+          <li>Hsechl’s Gyrus folding pattern is not random
+            <ul>
+              <li>argument that if you have one, you are more musical</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>any sounds is made up of a bunch of frequencies</li>
+</ul>
+
+<h2 id="circuits-1">circuits</h2>
+
+<ul>
+  <li>K depolarizes hair cells, lets in Ca, releases vesicles</li>
+</ul>
+
+<h1 id="14---vestibular-system">14 - vestibular system</h1>
+
+<ul>
+  <li>very related to cochlea
+    <ul>
+      <li>same hair cells</li>
+    </ul>
+  </li>
+  <li>differences
+    <ul>
+      <li><img src="../assets/14_1.png" alt="" />
+        <ol>
+          <li>vestibular system doesn’t use cortex (you don’t think about it)</li>
+        </ol>
+        <ul>
+          <li>goes right into spinal chord
+            <ol>
+              <li>controls eye movements</li>
+            </ol>
+          </li>
+          <li>one of the fastest circuits in the brain</li>
+        </ul>
+      </li>
+      <li>clinically important
+        <ul>
+          <li>you have to be able to have your balance</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>each column is computational unit of the cortex</li>
+  <li>ocular dominance column
+    <ul>
+      <li>one for each eye</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>labyrinth and its innervation
+    <ul>
+      <li>semicircular canals
+        <ul>
+          <li>can only measure one axis of rotation</li>
+          <li>remember <em>horizontal canal</em> - measures turning head left to right
+            <ul>
+              <li>this measures acceleration</li>
+              <li>like a hoola hoop filled with glitter</li>
+              <li>has ampulla at one place in the hoop</li>
+              <li>cupula - sits over the ampulla’s hair cells</li>
+              <li>if the “glitter” hits the cupula, it will bend the hair cells</li>
+              <li>if you keep spinning, fluid starts moving and you stop detecting movement
+                <ul>
+                  <li>this means the canals adapt mechanically</li>
+                </ul>
+              </li>
+              <li>if you stop spinning, fluid keeps moving and system thinks you’re spinning the other way</li>
+              <li>right horizontal canal activated by turn to the right
+                <ul>
+                  <li>same for left</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>scarpa’s ganglion - has hair cells inside
+        <ul>
+          <li>sends axons into vestibular nuclei</li>
+        </ul>
+      </li>
+      <li>lots of fluid (high in K+)</li>
+      <li>macula - place where all the hair cells are
+        <ul>
+          <li>Ampullae - at base of canals
+            <ul>
+              <li>hair cells all in the same direction</li>
+            </ul>
+          </li>
+          <li>utricle and saccule - measure head tilt
+            <ul>
+              <li>hair cells in multiple orientations</li>
+              <li>these contain otoconia
+                <ul>
+                  <li>these are little crystals that move with gravity</li>
+                  <li>measure acceleration and tilt</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>tilts do not adapt - they keep firing while you’re leaned back
+    <ul>
+      <li>they basically report tilt / position at all times</li>
+    </ul>
+  </li>
+  <li>tiplink - connect cilia together for hair cells
+    <ul>
+      <li>when they move, tiplink move, pull on ion channels</li>
+      <li>motor on connected hair cell moves up and down to generate correct amount of tension
+        <ul>
+          <li>motor uses myosin and actin</li>
+          <li>harming these proteins can cause deafness</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>both eyes must always be looking in the same direction
+    <ul>
+      <li>also must be sitting over image for a while</li>
+    </ul>
+  </li>
+  <li><em>ipsilateral</em> - same side</li>
+  <li>contralateral - different side</li>
+  <li>vestibular ocular reflex VOR - turn your head to the right, eyes move left
+    <ul>
+      <li>doesn’t require cortex</li>
+      <li>only have to learn excitatory</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="15---chemical-senses">15 - chemical senses</h1>
+
+<p><img src="../assets/15_1.png" alt="" /></p>
+
+<ul>
+  <li>cAMP is used by GPCR</li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

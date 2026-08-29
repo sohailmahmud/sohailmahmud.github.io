@@ -1,0 +1,1344 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/05_blockchain/blockchain_basics.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | blockchain basics</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> blockchain basics </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/05_blockchain/blockchain_basics.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/05_blockchain/blockchain_basics.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<h1 id="delineations">delineations</h1>
+
+<ul>
+  <li>3 things
+    <ul>
+      <li>cortex</li>
+      <li>limbic system
+        <ul>
+          <li><strong>thalamus</strong> (has pulvinar), <strong>basal ganglia</strong>, hypothalamus, hippocampus, amygdala, …</li>
+          <li>glands / hormones</li>
+        </ul>
+      </li>
+      <li>brain stem
+        <ul>
+          <li>midbrain (has superior colliculus), pons, medulla</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>cerebellum?? (has 60% of neurons)</li>
+</ul>
+
+<h1 id="numbers">numbers</h1>
+
+<ul>
+  <li>human brain
+    <ul>
+      <li>86 bil total</li>
+      <li>16 bil in cortex - largest of anything (proportionally)</li>
+      <li>15 tril synapses</li>
+      <li>1 glial cell : 1 neuron</li>
+      <li>cooking allowed us to meet the energy requirements for this</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="whole-brain">whole brain</h1>
+
+<ul>
+  <li><em>Cerebrum</em> - The cerebrum is the largest portion of the brain, and contains tools which are responsible for most of the brain’s function. It is divided into four sections:
+    <ul>
+      <li>the temporal lobe</li>
+      <li>the occipital lobe</li>
+      <li>parietal lobe</li>
+      <li>frontal lobe.</li>
+      <li>The cerebrum is divided into a right and left hemisphere which are connected by axons that relay messages from one to the other. This matter is made of nerve cells which carry signals between the organ and the nerve cells which run through the body.</li>
+    </ul>
+  </li>
+  <li><em>Frontal Lobe</em> - This lobe controls a several elements including creative thought, problem solving, intellect, judgment, behavior, attention, abstract thinking, physical reactions, muscle movements, coordinated movements, smell and personality.</li>
+  <li><em>Parietal Lobe</em> - this lobe focuses on comprehension. Visual functions, language, reading, internal stimuli, tactile sensation and sensory comprehension will be monitored here.
+    <ul>
+      <li><em>Sensory Cortex</em> - The sensory cortex, located in the front portion of the parietal lobe, receives information relayed from the spinal cord regarding the position of various body parts and how they are moving. This middle area of the brain can also be used to relay information from the sense of touch, including pain or pressure which is affecting different portions of the body.</li>
+      <li><em>Motor Cortex</em> - This helps the brain monitor and control movement throughout the body. It is located in the top, middle portion of the brain.</li>
+    </ul>
+  </li>
+  <li>Temporal Lobe: The temporal lobe controls visual and auditory memories. It includes areas that help manage some speech and hearing capabilities, behavioral elements, and language. It is located in the cerebral hemisphere.
+    <ul>
+      <li>Wernicke’s Area- This portion of the temporal lobe is formed around the auditory cortex. While scientists have a limited understanding of the function of this area, it is known that it helps the body formulate or understand speech.</li>
+    </ul>
+  </li>
+  <li>Occipital Lobe: The optical lobe is located in the cerebral hemisphere in the back of the head. It helps to control vision.
+    <ul>
+      <li>Broca’s Area- This area of the brain controls the facial neurons as well as the understanding of speech and language. It is located in the triangular and opercular section of the inferior frontal gyrus.</li>
+    </ul>
+  </li>
+  <li>Cerebellum
+    <ul>
+      <li>This is commonly referred to as “the little brain,” and is considered to be older than the cerebrum on the evolutionary scale. The cerebellum controls essential body functions such as balance, posture and coordination, allowing humans to move properly and maintain their structure.</li>
+      <li>60% of neurons</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="thalamocortical-system">thalamocortical system</h2>
+
+<ul>
+  <li>cortex has layers that are connected in columns through 5 layers
+    <ul>
+      <li>cotex has different types based on distributions of cells through layers (Brodmann map 1909 has 50ish areas)</li>
+    </ul>
+  </li>
+  <li>thalamus has lots of connections - gates what goes into cortex</li>
+</ul>
+
+<h2 id="limbic-system">limbic system</h2>
+
+<ul>
+  <li>The limbic system contains glands which help relay emotions. Many hormonal responses that the body generates are initiated in this area. The limbic system includes the amygdala, hippocampus, hypothalamus and thalamus.</li>
+  <li>Amygdala:The amygdala helps the body respond to emotions, memories and fear. It is a large portion of the telencephalon, located within the temporal lobe which can be seen from the surface of the brain. This visible bulge is known as the uncus.</li>
+  <li>Hippocampus: This portion of the brain is used for learning memory, specifically converting temporary memories into permanent memories which can be stored within the brain. The hippocampus also helps people analyze and remember spatial relationships, allowing for accurate movements. This portion of the brain is located in the cerebral hemisphere.</li>
+  <li>Hypothalamus:The hypothalamus region of the brain controls mood, thirst, hunger and temperature. It also contains glands which control the hormonal processes throughout the body.</li>
+  <li>Thalamus:The Thalamus is located in the center of the brain. It helps to control the attention span, sensing pain and monitors input that moves in and out of the brain to keep track of the sensations the body is feeling.</li>
+</ul>
+
+<h2 id="brain-stem">brain stem</h2>
+
+<ul>
+  <li>All basic life functions originate in the brain stem, including heartbeat, blood pressure and breathing. In humans, this area contains the medulla, midbrain and pons. This is commonly referred to as the simplest part of the brain, as most creatures on the evolutionary scale have some form of brain creation that resembles the brain stem. The brain stem consists of midbrain, pons and medulla.</li>
+  <li>Midbrain:The midbrain, also known as the mesencephalon is made up of the tegmentum and tectum. These parts of the brain help regulate body movement, vision and hearing. The anterior portion of the midbrain contains the cerebral peduncle which contains the axons that transfer messages from the cerebral cortex down the brain stem, which allows voluntary motor function to take place.</li>
+  <li>Pons: This portion of the metencephalon is located in the hindbrain, and links to the cerebellum to help with posture and movement. It interprets information that is used in sensory analysis or motor control. The pons also creates the level of consciousness necessary for sleep.</li>
+  <li>Medulla: The medulla or medulla oblongata is an essential portion of the brain stem which maintains vital body functions such as the heart rate and breathing.</li>
+</ul>
+
+<h1 id="1---introduction">1 - introduction</h1>
+
+<ul>
+  <li><img src="../assets/map.png" alt="" /></li>
+</ul>
+
+<h2 id="genomics">genomics</h2>
+
+<ul>
+  <li>male Drosophila uses body position and environment to add rhythmic notes to song
+    <ul>
+      <li>female uses this to gauge male’s brain</li>
+    </ul>
+  </li>
+  <li><em>neural circuits</em> make up <em>neural systems</em></li>
+  <li>neural systems serve 3 general functions
+    <ol>
+      <li>sensory systems</li>
+      <li>motor systems</li>
+      <li>associational systems - link the other two, higher order functions</li>
+    </ol>
+  </li>
+  <li><em>gene</em> has coding DNA (<em>exons</em>) and regulatory DNA (<em>introns</em>)</li>
+  <li>model organisms
+    <ul>
+      <li>cat - visual cortex</li>
+      <li>squid and sea slug had really large neurons</li>
+      <li>4 species: worm C. elegans, Drosophila, zebrafish Danio rerio, mouse Mus musculus
+        <ul>
+          <li>complete genome is available for them</li>
+          <li>can try <em>homologous recombination</em> - splicing in new genes</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>human genome has ~20k genes, ~14k expressed in brain, ~6k expressed only in brain</li>
+  <li>single-gene mutations can cause diseases like microcephaly</li>
+  <li>simulate brain as a computer
+    <ul>
+      <li>passive cabling equation</li>
+      <li>theoretical neuroscience</li>
+      <li>blue brain project</li>
+      <li>human brain project</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="cellular-components">cellular components</h2>
+
+<ul>
+  <li><em>neuron doctrine</em> by Ramon y Cajal / Sherrington replaces Golgi’s <em>reticular theory</em>
+    <ul>
+      <li>Cajal uses Golgi’s salt-staining method to show neurons are distinct</li>
+      <li>Sherrington finds synapses</li>
+      <li>there are rare <em>gap junctions</em> between neurons (where there are <em>electrical synapses</em>)</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>neurons</li>
+</ol>
+
+<ul>
+  <li>number of inputs reflects <em>convergence</em></li>
+  <li>number of targets reflects <em>divergence</em></li>
+  <li><em>local circuit neurons</em> = <em>interneurons</em> - short axons</li>
+  <li><em>projection neurons</em> - long axons</li>
+</ul>
+
+<ol>
+  <li>glial cells - support and regeneration</li>
+</ol>
+
+<ul>
+  <li>outnumber neurons 3:1</li>
+  <li>they are stem cells - can generate new glia</li>
+  <li>maintaining ion gradients, modulating nerve signals, modulating synaptic action, scaffolding, aiding recovery</li>
+</ul>
+
+<ol>
+  <li><em>astrocytes</em> - in CNS, maintain chemical environment, retain stem cell properties</li>
+  <li><em>oligodendrocytes</em> - in CNS, lay down myelin - in PNS, <em>Schwann cells</em> do this</li>
+  <li><em>microglial</em> cells - remove debris</li>
+</ol>
+
+<ul>
+  <li>glial stem cells - make more glia and sometimes neurons</li>
+</ul>
+
+<h2 id="cellular-diversity">cellular diversity</h2>
+
+<ul>
+  <li>~10^11 neurons, more glia</li>
+  <li>histology - microscopic analysis of cells</li>
+  <li>stains
+    <ul>
+      <li>Golgi stain - randomly stains only some neurons</li>
+      <li>Nissl stain - only stains cell bodies</li>
+      <li>Myelin stain - only stains myelin</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="neural-circuits">neural circuits</h2>
+
+<ul>
+  <li><em>neuropil</em> - bundle of dendrites/axons/glia - where synaptic connectivity occurs</li>
+  <li><em>afferent</em> neuron - carries info toward the brain</li>
+  <li><em>efferent</em> neuron - carries info away</li>
+  <li><em>myotatic reflex</em> example - knee-jerk</li>
+</ul>
+
+<h2 id="organization-of-the-human-nervous-system">organization of the human nervous system</h2>
+
+<ol>
+  <li>sensory systems</li>
+  <li>
+    <p>motor systems</p>
+  </li>
+  <li><em>CNS</em></li>
+</ol>
+
+<ul>
+  <li>brain</li>
+  <li>spinal cord</li>
+</ul>
+
+<ol>
+  <li><em>PNS</em></li>
+</ol>
+
+<ul>
+  <li>sensory neurons</li>
+  <li><em>somatic</em> motor division - connect CNS to skeletal muscles</li>
+  <li><em>autonomic</em> or <em>visceral</em> motor division - innervate muscles / glands
+    <ul>
+      <li><em>autonomic ganglia</em> - peripheral motor neurons that take inputs from brainstem / spinal cord</li>
+      <li><em>enteric system</em> - small ganglia / neurons in gut that influence gastric motility and secretion</li>
+      <li><em>sympathetic</em> division - ganglia lie near the vertebral column and sent their axons to a variety of targets</li>
+      <li><em>parasympathetic</em> division - ganglia are found near organs they innervate</li>
+    </ul>
+  </li>
+  <li>groupings
+    <ul>
+      <li><em>ganglia</em> - accumulations of cell bodies / supporting cells</li>
+      <li><em>nerve</em> - bundles of axons in PNS</li>
+      <li><em>tract</em> - bundles of CNS axons
+        <ul>
+          <li>if they cross the brain midline called <em>commisures</em></li>
+        </ul>
+      </li>
+      <li><em>nuclei</em> - local accumulations of similar neurons</li>
+      <li><em>cortex</em> - sheet-like arrays of neurons</li>
+      <li><em>gray matter</em> - has more cell bodies</li>
+      <li><em>white matter</em> - has more axons</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="neural-systems">neural systems</h2>
+
+<ol>
+  <li>unity of function - divide things into different systems - ex. visual</li>
+  <li>representation of information - ex. vision can be <em>topographic map</em>, taste can be <em>computational map</em></li>
+  <li>subdivision into subsystems - ex. vision has color, form, motion, all in parallel</li>
+</ol>
+
+<h2 id="structural-analysis">structural analysis</h2>
+
+<ul>
+  <li>often-used <em>lesion studies</em></li>
+  <li><em>anterograde</em> - source to termination</li>
+  <li>vs <em>retrograde</em> - terminus to source</li>
+</ul>
+
+<h2 id="functional-analysis-of-neural-systems">functional analysis of neural systems</h2>
+
+<ol>
+  <li><em>electrophysiological recording</em> - uses electrodes, neuron-level</li>
+</ol>
+
+<ul>
+  <li>can determine <em>receptive field</em> - region in sensory space where a specific stimulus elicits a spike</li>
+</ul>
+
+<ol>
+  <li><em>functional brain imaging</em> - noninvasive, records local activity</li>
+</ol>
+
+<ul>
+  <li>computerized tomography (CT), magnetic resonance imaging (MRI), diffusion tensor imaging (DTI), PET, SPECT, fMRI, MEG, MSI</li>
+</ul>
+
+<h2 id="analyzing-complex-behavior">analyzing complex behavior</h2>
+
+<ul>
+  <li><em>cognitive neuroscience</em> - understanding higher-order functions</li>
+  <li><em>neuroethology</em> - complex behaviors of animals</li>
+</ul>
+
+<h1 id="2---electrical-signals-of-nerve-cells">2 - electrical signals of nerve cells</h1>
+
+<ul>
+  <li><em>microelectrode</em> - fine glass tubing filled with good conductor</li>
+  <li>all cells have a voltage difference across them
+    <ul>
+      <li>assume resting potential - we’ll use -58 mV</li>
+      <li><em>depolarized</em> - less negative - we’ll use +58 mV</li>
+    </ul>
+  </li>
+  <li>potentials
+    <ol>
+      <li><em>receptor potential</em> - (small) due to the activation of sensory neurons by external stimuli
+        <ul>
+          <li>at terminal of dendrite</li>
+          <li><em>graded</em> - depends on how strong the input is</li>
+        </ul>
+      </li>
+      <li><em>synaptic potential</em> - (small) caused by activation of synapse
+        <ul>
+          <li>at middle of dendrite</li>
+        </ul>
+      </li>
+      <li><em>action potential</em> - cause by the other 2
+        <ul>
+          <li>at the axon</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><em>active transporters</em> create differences in concentrations of specific ions - battery</li>
+  <li>cells can be depolarized by adding too much K+ outside</li>
+  <li><em>ion channels</em> - make membranes selectively permeable - wires</li>
+  <li>ions
+    <ul>
+      <li>outside: high Na, Cl; low K</li>
+      <li>generally 10:1 ratio between inside, outside</li>
+      <li>inside of cell has a bunch of negative proteins to balance chlorine</li>
+      <li>ions want to spread out because of entropy (then they factor in charge difference)</li>
+    </ul>
+  </li>
+  <li>$V<em>{ion} = 58/z * log(X</em>{out} / X_{in}) $
+    <ul>
+      <li>calculate for each ion, if able to move</li>
+      <li>z is charge on ion</li>
+      <li>for potassium: 58/1 * log(.1) = -58mV</li>
+      <li>Cl Nernst potential is actually -70 mV (even though we assumed -58 before)</li>
+      <li>Cl works as an inhibitor - ex. alcohol lets chloride in</li>
+      <li>whichever ion leaks, this determines the membrane potential</li>
+    </ul>
+  </li>
+  <li>hodgkin-huxley
+    <ul>
+      <li>large squid escape neurons</li>
+      <li>adding K+ outside depolarizes the cell</li>
+      <li>adding Na+ outside raises height of spike</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="3---voltage-dependent-membranes">3 - voltage-dependent membranes</h1>
+
+<ul>
+  <li>voltage clamp - one electrode outside, one inside
+    <ul>
+      <li>measured with reference to outside (usually more negative inside)</li>
+      <li>keeps voltage constant</li>
+      <li>current clamp - keeps current constant</li>
+    </ul>
+  </li>
+  <li>current clamp - just measures the voltage without interfering</li>
+  <li>patch-clamp - suction part of cell into pipette</li>
+  <li>passive properties
+    <ul>
+      <li>current injection: $V_t = V_{\infty} (1-e^{-t/ \tau})$</li>
+      <li>voltage decay: $V_t = V_{\infty} e^{-t / \tau}$</li>
+    </ul>
+  </li>
+  <li>block Na+ current with tetrodotoxin</li>
+  <li>block K+ current with tetraethyl-ammonium</li>
+  <li><em>refractory period</em> is because Na needs to stop being inactivated
+    <ul>
+      <li>Na+ is <em>transient</em>, K+ is not</li>
+    </ul>
+  </li>
+  <li><em>myelin</em> insulates sections - less ion loss
+    <ul>
+      <li>called <em>saltatory conduction</em></li>
+      <li>faster and more efficient</li>
+      <li>concentrates action potential to nodes</li>
+      <li>without myelin, 10 m/s with myelin, 100 m/s</li>
+      <li>deals with JAM receptor system</li>
+      <li>umyelinated can be ok
+        <ul>
+          <li>might want to regenerate</li>
+          <li>don’t care about speed</li>
+        </ul>
+      </li>
+      <li>PNS
+        <ul>
+          <li>Schwann cells</li>
+          <li>loss - Guillan-barre syndrome</li>
+        </ul>
+      </li>
+      <li>CNS
+        <ul>
+          <li>oligodendrocytes</li>
+          <li>loss - multiple sclerosis (MS)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="4---ion-channel-transporters">4 - ion channel transporters</h1>
+
+<ul>
+  <li>patch electrode - pull a piece of membrane out <img src="../assets/4_A.png" alt="" />
+    <ol>
+      <li>cell-attached - don’t break membrane</li>
+      <li>whole-cell - break membrane</li>
+      <li>inside-out - inside of membrane is outside electrode</li>
+      <li>outside-out - outside of membrane is outside electrode - this method is always preferred
+        <ul>
+          <li>tetrodotoxin binds to outside of cell membrane</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>some channels are delayed</li>
+  <li>
+    <p>self-inactivating = <em>transient</em> - channels turn off by themselves</p>
+
+    <ul>
+      <li>take 10-20 ms</li>
+    </ul>
+  </li>
+  <li>
+    <p>voltage-gated channels</p>
+
+    <ul>
+      <li>Na+, K+, Ca, Cl</li>
+    </ul>
+  </li>
+  <li>frog Xenopus Ooctyes ion channels are studied</li>
+  <li>TRP channels gated by mechanical / heat</li>
+  <li>4 K+ channels
+    <ol>
+      <li>delayed rectifier</li>
+      <li>fast acting - shapes AP, used for hearing</li>
+      <li>late phase - slow ending, makes AP fire again</li>
+      <li>inward rectifier - open at resting potential - establishes membrane potential</li>
+    </ol>
+  </li>
+  <li>mitten model - protein rotates around</li>
+  <li>
+    <p>human genes: 10 Na, 10 Ca, 100K, ~5 Cl</p>
+
+    <ul>
+      <li>there are more types of potassium channels</li>
+    </ul>
+  </li>
+  <li>channel-opathies - diseases can be caused by altered ion channels</li>
+  <li>ion transporters
+    <ul>
+      <li>ATPase Pumps
+        <ul>
+          <li><em>Na+/K+ pump</em></li>
+          <li>Ca pump</li>
+        </ul>
+      </li>
+      <li>ion exchangers</li>
+      <li>Na+/K+ pump exchanges 3Na for 2K ions
+        <ul>
+          <li>1/3 of body’s energy</li>
+          <li>2/3 of neuron’s energy</li>
+          <li>brains use 20% of body’s energy</li>
+          <li>Ouabain blocks this</li>
+        </ul>
+      </li>
+      <li>SERT - Na transporter
+        <ul>
+          <li>co-transporter</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>ligand-gated channels
+    <ul>
+      <li>respond to a chemical</li>
+      <li>usually allow Na, K, Cl to flow in and out</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="5---synapses">5 - synapses</h1>
+
+<h2 id="synapse-types">synapse types</h2>
+
+<ol>
+  <li>electrical synapses</li>
+</ol>
+
+<ul>
+  <li>gap junction channels</li>
+  <li>ions flow through gap junction channels</li>
+  <li>presynaptic and postsynaptic cell are almost the same</li>
+  <li>delay is fast (.1 ms)</li>
+  <li>gap junction proteins have been showing up in diseases</li>
+  <li>simple organisms have these</li>
+</ul>
+
+<ol>
+  <li>chemical synapses</li>
+</ol>
+
+<ul>
+  <li><em>bouton</em> - end of presynaptic dendrite</li>
+  <li><em>spines</em> - start of postsynaptic dendrite</li>
+  <li>voltage-gated Ca comes in and causes vesicles to fuse with presynaptic membrane</li>
+  <li>neurotransmitter released</li>
+  <li>bind to ligand-gated channels which let ions flow through
+    <ul>
+      <li>if Cl flows into postsynaptic cell - inhibition</li>
+    </ul>
+  </li>
+  <li>pumps get rid of neurotransmitters quickly</li>
+</ul>
+
+<h2 id="neurotransmitter-types">neurotransmitter types</h2>
+
+<ul>
+  <li>released when Ca comes in due to depolarization</li>
+</ul>
+
+<ol>
+  <li>peptides</li>
+</ol>
+
+<ul>
+  <li>ex. oxytocin</li>
+  <li>require long Ca exposure</li>
+  <li>loaded into vesicles up by the cell body - can take days to get to bouton</li>
+  <li>neurotransmitter diffuses away - doesn’t always have specific target</li>
+  <li>can spread to all neurons in the area (ex. substance P)</li>
+</ul>
+
+<ol>
+  <li>small &amp; fast</li>
+</ol>
+
+<ul>
+  <li>glutamate, Ach, GABA</li>
+  <li>loaded into vesicles in bouton</li>
+  <li>presynaptic cell takes these back up</li>
+</ul>
+
+<h2 id="discovery">discovery</h2>
+
+<ul>
+  <li>neurotransmitter lifecycle
+    <ul>
+      <li>synthesis -&gt; receptors -&gt; function -&gt; removal</li>
+      <li>important that they are removed</li>
+      <li>60 s to recycle</li>
+    </ul>
+  </li>
+  <li>Loewi’s experiment showed that neurotransmitters can flow through solution to synchronize heart</li>
+</ul>
+
+<h2 id="synaptic-transmission">synaptic transmission</h2>
+
+<ul>
+  <li><em>minis</em> = <em>MEPP</em> - not big enough to fire the neuron
+    <ul>
+      <li>you can treat a muscle as a post-synaptic junction</li>
+      <li>chatter from single vesicle release</li>
+      <li><em>quantal basis of neurotransmitter release</em> - 1,2,3,etc because vesicles release as all-or-none</li>
+      <li>synapses / vesicles are all about the same size across different species
+        <ul>
+          <li>receptors receive these neurotransmitters differently</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>each vesicle is covered with proteins
+    <ul>
+      <li><em>SNAPs</em> on plasma membrane</li>
+      <li><em>SNAREs</em> on vesicle
+        <ul>
+          <li>ex. <em>synaptobrevin</em></li>
+          <li>botulinum toxin, tetanus toxin - block synaptobrevin - clip other proteins</li>
+          <li>render a vesicle inactive</li>
+        </ul>
+      </li>
+      <li>they recognize each other and lock for <em>priming</em> - ready to release when Ca+ enters</li>
+    </ul>
+  </li>
+  <li>need to endocytose membrane to make more vesicles
+    <ul>
+      <li>endocytosis includes <em>clathrin</em> which curves the membrane</li>
+    </ul>
+  </li>
+  <li>can measure single ligand-gated channel by clamping it alone</li>
+</ul>
+
+<h1 id="6---neurotransmitters">6 - neurotransmitters</h1>
+
+<h2 id="receptors">receptors</h2>
+
+<ul>
+  <li>
+    <p>ionotropic</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>AMPA GluR-x</th>
+          <th>NMDA NR-x</th>
+          <th>Kainate</th>
+          <th>GABA-A</th>
+          <th>glycine</th>
+          <th>Nicotinic Ach</th>
+          <th>5HT-3</th>
+          <th>P2x purinergic</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Abbrev</td>
+          <td>AMPA</td>
+          <td>NMDA</td>
+          <td>Kainate</td>
+          <td>GABA</td>
+          <td>Glycine</td>
+          <td>nACh</td>
+          <td>Serotonin</td>
+          <td>Purines</td>
+        </tr>
+        <tr>
+          <td>Ion</td>
+          <td>Na</td>
+          <td>Na/Ca</td>
+          <td>Na</td>
+          <td>Cl</td>
+          <td>Cl</td>
+          <td>Na</td>
+          <td>Na</td>
+          <td>Na</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>metabotropic</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>mGlu-x</th>
+          <th>GABA-B</th>
+          <th>D-x</th>
+          <th>Alpha, beta, adrenergic</th>
+          <th>H-x</th>
+          <th>5HT1-7</th>
+          <th>Purinergic A or P</th>
+          <th>Ach Muscarinic-x</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Abbrev</td>
+          <td>Glutamate</td>
+          <td>GABA_B</td>
+          <td>Dopamine</td>
+          <td>NE,Epi</td>
+          <td>Histamine</td>
+          <td>Serotonin</td>
+          <td>Purines</td>
+          <td>Muscarinic</td>
+        </tr>
+        <tr>
+          <td>Function</td>
+          <td> </td>
+          <td> </td>
+          <td>cocaine, ADHD drugs</td>
+          <td>antianxiety</td>
+          <td>unkown, probs sleep</td>
+          <td>3 is ionotropic!</td>
+          <td> </td>
+          <td>mushroom drugs</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><img src="../assets/6_1.png" alt="" /></li>
+  <li><img src="../assets/6_4.png" alt="" /></li>
+</ul>
+
+<h2 id="excitatory">excitatory</h2>
+
+<ol>
+  <li><em>Acetylcholine</em> - excites muscle cells</li>
+</ol>
+
+<ul>
+  <li>receptors: nAch</li>
+  <li>Acetylcholinesterase breaks down Ach after it is released</li>
+  <li>neurotoxins (ex. Serin) break down Acetylcholinesterase so Ach stays and muscles stay on (nerve gases)</li>
+  <li>Myasthinia is when you develop antibodies against your own nAch receptors</li>
+  <li>you have trouble controlling your eyes</li>
+</ul>
+
+<ol>
+  <li><em>Glutamate</em> - excites pyramidal cells</li>
+</ol>
+
+<ul>
+  <li>VGLUT pumps Glutamate into vesicles</li>
+  <li>EATT transports extracellular Glutamate into presynaptic terminal / nearby Glial cells
+    <ul>
+      <li>Glial cells convert glutamate to glutamine (inactivates) and glutamine is taken up by the presynaptic terminal</li>
+      <li>glutamate overload if you overload the inactivating pumps in the glial cells</li>
+    </ul>
+  </li>
+  <li>glutamate receptors
+    <ul>
+      <li>AMPA - fast Na only</li>
+      <li>NMDA - slow, Na and Ca and also requires depolarization</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="inhibitory">inhibitory</h2>
+
+<ol>
+  <li>,4. <em>GABA</em>/<em>glycine</em></li>
+</ol>
+
+<ul>
+  <li>have simple transporters that move released GABA into presynaptic terminal / Glia</li>
+  <li>Ionotropic GABA receptors - depressants; shut down nervous system
+    <ul>
+      <li>can bind steroids like estrogen - different effects in men / women</li>
+      <li>alcohol binds to this, shuts things down</li>
+    </ul>
+  </li>
+  <li>immature neurons have high intracellular Cl - people don’t know why</li>
+</ul>
+
+<h2 id="neuromodulators">neuromodulators</h2>
+
+<ul>
+  <li>lifecycle molecules
+    <ul>
+      <li>synthesis: L-Dopa, trytophan</li>
+      <li>reuptake: DAT, NET, SerT</li>
+      <li>breakdown: MAO</li>
+      <li>vesicular transport: VMAT</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li><em>catecholamines</em></li>
+</ol>
+
+<ul>
+  <li>pathway: DOPA -&gt; Dopamine -&gt; Norepinephrine -&gt; Epinephrine</li>
+  <li>dopamine - forming of memories
+    <ul>
+      <li>produced by substantia nigra</li>
+      <li>loss of these neurons -&gt; Parkinson’s</li>
+    </ul>
+  </li>
+  <li>norepinephrine
+    <ul>
+      <li>produced by locus coeruleus</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li><em>serotonin</em> = 5HT - happiness</li>
+</ol>
+
+<ul>
+  <li>Tryptophan -&gt; serotonin</li>
+  <li>serotonin produced by Raphe nuclei</li>
+  <li>affected by LSD</li>
+</ul>
+
+<ol>
+  <li><em>histamine</em> - not well-known</li>
+</ol>
+
+<ul>
+  <li>antihistamines can make you hallucinate</li>
+</ul>
+
+<ol>
+  <li><em>atp</em> - sensitivity to pain</li>
+  <li><em>neuropeptides</em> - slow
+    <ul>
+      <li>substance P - pain</li>
+      <li>alpha-endorphin - analgesia (block pain)
+        <ul>
+          <li>vasopressin - blood pressure</li>
+        </ul>
+      </li>
+      <li>thyrotropin releasing hormone (TRH) - metabolism</li>
+      <li>neuropeptide Y - mood/aggression</li>
+    </ul>
+  </li>
+  <li><em>enndocannabinoids</em> - weed</li>
+</ol>
+
+<ul>
+  <li>ex. anandamide - binds to CB1 (cannabanoid 1 receptor)</li>
+  <li>retrograde signal - post back to pre - inhibit the inhibitor</li>
+  <li>this increases the signal</li>
+</ul>
+
+<ol>
+  <li><em>nitric oxide</em> - gas</li>
+</ol>
+
+<ul>
+  <li>binds to guanylyl cyclase</li>
+</ul>
+
+<h1 id="7---molecular-signaling">7 - molecular signaling</h1>
+
+<h2 id="localization">localization</h2>
+
+<ul>
+  <li>chemical signaling mechanisms
+    <ol>
+      <li><em>synaptic</em> - local
+        <ul>
+          <li>ex. Ach</li>
+        </ul>
+      </li>
+      <li><em>paracrine</em> - medium distance, neurotransmitter sprinkled and nearby targets take it up
+        <ul>
+          <li>ex. serotonin</li>
+        </ul>
+      </li>
+      <li><em>endocrine</em> - get into your blood stream - body-wide signaling
+        <ul>
+          <li>ex. vasopressin</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>amplification = enzyme
+    <ul>
+      <li>signal that activates enzyme amplifies signal</li>
+    </ul>
+  </li>
+  <li>cell-signaling molecules
+    <ol>
+      <li><em>cell-impermeant</em> molecules
+        <ul>
+          <li>need transmembrane receptors</li>
+          <li>ex. glutamate</li>
+        </ul>
+      </li>
+      <li><em>cell-permeant</em> molecules (steroids)
+        <ul>
+          <li>can have intracellular receptors</li>
+        </ul>
+      </li>
+      <li><em>signaling</em> molecules
+        <ul>
+          <li>adhesion molecules - like a lock and key - binds neurons together</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><em>spine</em> has small neck - hard for proteins to go through it
+    <ul>
+      <li>keeps information local</li>
+      <li>large raft of signaling molecules keeps info local</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="celllular-receptors">celllular receptors</h2>
+
+<ol>
+  <li><strong>ionotropic</strong> - channel-linked receptors</li>
+</ol>
+
+<ul>
+  <li>neurotransmitter binds to a channel that opens</li>
+  <li>ex. Glu ionotropic receptor</li>
+  <li>signal is sodium coming in</li>
+</ul>
+
+<ol>
+  <li><em>enzyme-linked</em> receptors</li>
+</ol>
+
+<ul>
+  <li>ex. TrkA NGF receptor - Tyrosine kinase</li>
+  <li>once it binds, it becomes an enzyme</li>
+</ul>
+
+<ol>
+  <li><strong>metabotropic</strong> - G-protein-coupled receptors</li>
+</ol>
+
+<ul>
+  <li>ex. Glue metabotropic receptor</li>
+  <li>activate G-protein that then does something</li>
+  <li>these require energy for G-proteins</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Heterotrimeric G-proteins</p>
+
+    <ul>
+      <li>G-protein has 3 subunits: - <img src="../assets/7_6.png" alt="" /></li>
+    </ul>
+
+    <ol>
+      <li>Gs - binds norepinephrine</li>
+    </ol>
+
+    <ul>
+      <li>
+        <ul>
+          <li>cAMP</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ol>
+      <li>Gq - binds glutamate</li>
+    </ol>
+
+    <ul>
+      <li>
+        <ul>
+          <li>DAG (diaglycerol) &amp; IP3</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ol>
+      <li>Gi - binds dopamine</li>
+    </ol>
+
+    <ul>
+      <li>inhibits cAMP</li>
+    </ul>
+  </li>
+  <li>
+    <p>Monomeric G-proteins</p>
+
+    <ul>
+      <li>G-protein has just one subunit</li>
+      <li>ex. Ras</li>
+    </ul>
+  </li>
+  <li>
+    <p><em>intracellular</em> receptors</p>
+  </li>
+</ol>
+
+<ul>
+  <li>ex. estrogen receptors</li>
+  <li>activates intracellular transcription factors</li>
+</ul>
+
+<h2 id="second-messengers">second messengers</h2>
+
+<ul>
+  <li>Ca must be pumped out of neuron or</li>
+  <li>Ca can be stored into internal stores in ER</li>
+  <li>Adenylyl cyclase turns ATP into cAMP -&gt; PKA</li>
+  <li>Guanylyl cyclase turns GTP into cGMP -&gt; PKG
+    <ul>
+      <li>would use inside-out patch to study these</li>
+    </ul>
+  </li>
+  <li>Phospholipase C -&gt; PKC -&gt; IP3 lets Ca out of ER (usually kills cell)</li>
+</ul>
+
+<h2 id="protein-control">protein control</h2>
+
+<ul>
+  <li>kinases (on switch) add phosphate to protein and makes them active
+    <ul>
+      <li>PKA - cAMP binds then catalytic domain can bind
+        <ul>
+          <li>non-covalent so can diffuse into nucleus</li>
+        </ul>
+      </li>
+      <li>CAM kinase
+        <ul>
+          <li>covalent</li>
+        </ul>
+      </li>
+      <li>protein kinase C
+        <ul>
+          <li>covalent - very local to membrane</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>phosphatases (off switch) remove phosphates</li>
+</ul>
+
+<h2 id="long-term-alteration">long-term alteration</h2>
+
+<ul>
+  <li>long-term alteration requires epigenetic changes (change transcription factors)</li>
+  <li>transcription factor <em>CREB</em> requires three things at once
+    <ol>
+      <li>Ca comes in and binds Cam kinase</li>
+      <li>activate Protein kinase A - this can stay in nucleus for a while
+        <ul>
+          <li>how much to make</li>
+        </ul>
+      </li>
+      <li>MAP kinase, ras
+        <ul>
+          <li>on/off switch</li>
+          <li>
+            <h2 id="when-all-of-these-things-come-in-at-once---convergence-signaling---creb-will-make-actin-ampa-receptors">when all of these things come in at once - convergence signaling - CREB will make actin, AMPA receptors</h2>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><em>TrkA</em> binds NGF (Nerve growth factor) - peptide and has 3 pathways:
+    <ol>
+      <li>PI 3 kinase</li>
+      <li>ras</li>
+      <li>Phospholipase C
+        <ul>
+          <li>this displays divergence signaling</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>cerebellar synapses
+    <ul>
+      <li>mGlu inhibits AMPA with negative feedback</li>
+      <li>lets out Ca which depresses AMPA receptor</li>
+    </ul>
+  </li>
+  <li>
+    <p>signal scaling - tyrosine hydroxylase makes dopamine</p>
+
+    <ul>
+      <li>more Ca in bouton activates more hydroxylase -&gt; makes more dopamine</li>
+      <li>Ca comes in whenever fires</li>
+      <li><em>use it or lose it</em></li>
+    </ul>
+
+    <h1 id="8---synaptic-plasticity">8 - synaptic plasticity</h1>
+  </li>
+</ul>
+
+<h2 id="short-term">short-term</h2>
+
+<ul>
+  <li>measured by firing neuron before muscle and recording response
+    <ol>
+      <li>synaptic facilitation - frequency-dependent plasticity - fire faster, get bigger EPSPS
+        <ul>
+          <li>Ca comes in and persists during next pulse</li>
+          <li>ms time scale</li>
+        </ul>
+      </li>
+      <li>synaptic depression - transmitters are depleted
+        <ul>
+          <li>s time scale</li>
+        </ul>
+      </li>
+      <li>synaptic potentiation/augmentation - changes in presynaptic proteins
+        <ul>
+          <li>min time scale</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>experiments
+    <ul>
+      <li><em>habituation</em> - decrease vesicles on sensory neuron after too much stimuli</li>
+      <li><em>sensitization</em> - associate two stimuli together: <img src="../assets/8_5.png" alt="" /></li>
+    </ul>
+  </li>
+  <li>mechanism
+    <ul>
+      <li>sensory neuron -&gt; serotinergic neuromodulatary interneuon -&gt; motor neuron</li>
+      <li>interneuron releases serotonin</li>
+      <li>cAMP produced in sensory neuron
+        <ul>
+          <li>long term - CREB in nucleus - synapse growth</li>
+          <li>central signal for LTM</li>
+          <li>activates PKA</li>
+        </ul>
+      </li>
+      <li>short term - decreases K+ current</li>
+    </ul>
+  </li>
+  <li>sensory neuron doesn’t learn, neuromuscular junction gets stronger</li>
+  <li>mutant genes associated with cAMP identified
+    <ul>
+      <li>phosphodiesterase - if you remove this, too much cAMP</li>
+      <li>adenylate cyclase</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="long-term">long-term</h2>
+
+<ul>
+  <li>HM lost his memory w/out hippocampus
+    <ul>
+      <li>site of LTP</li>
+      <li>at night memories are moved from hippocampus (flash drive) to cortex (long-term hard drive)</li>
+    </ul>
+  </li>
+  <li>Schaffer collateral pathway is one pathway in hippocampus (also perforant pathway, mossy fiber)
+    <ul>
+      <li>pre-stimulate with tetanus</li>
+      <li>later when stimulated EPSP is bigger</li>
+      <li>usually 20 ms between firing - LTP when multiple firing in less time</li>
+    </ul>
+  </li>
+  <li>Schaffer mechanism - NMDA receptor key to this
+    <ul>
+      <li>both AMPA and NMDA exist</li>
+      <li>NMDA -&gt; Ca -&gt; CAM kinase -&gt; LTP</li>
+      <li>Mg blocks NMDA unless already depolarized</li>
+      <li>requires good timing!</li>
+    </ul>
+  </li>
+  <li>silent synapses
+    <ul>
+      <li>short-term - more AMPA receptors, long-term new synapses</li>
+      <li>all synapses born with only NMDA</li>
+      <li>protein synthesis needed for LTP (mostly making more AMPA)</li>
+      <li>unclear how synapse decides whether to strengthen / make more synapses</li>
+    </ul>
+  </li>
+  <li>LTD - long-term depression is opposite of LTP - long-term potentiation
+    <ul>
+      <li>low levels of Ca lead to AMPA being endocytosed</li>
+      <li>mGlu -&gt; PKC -&gt; starts LTD</li>
+    </ul>
+  </li>
+  <li>epilepsy - neurons fire together and wire together</li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

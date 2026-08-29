@@ -1,0 +1,677 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/01_ai/fairness_sts.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | fairness, sts</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> fairness, sts </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/01_ai/fairness_sts.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/01_ai/fairness_sts.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                <p><strong>Some notes on algorithm fairness and STS as applied to AI</strong></p>
+
+<h1 id="fairness">fairness</h1>
+
+<h2 id="metrics">metrics</h2>
+
+<ul>
+  <li>good introductory <a href="https://towardsdatascience.com/a-tutorial-on-fairness-in-machine-learning-3ff8ba1040cb">blog</a></li>
+  <li>causes of bias
+    <ul>
+      <li>skewed sample</li>
+      <li>tainted examples</li>
+      <li>selectively limited features</li>
+      <li>sample size disparity</li>
+      <li>proxies of sensitive attributes</li>
+    </ul>
+  </li>
+  <li>definitions
+    <ul>
+      <li><strong>unawareness</strong> - don’t show sensitive attributes
+        <ul>
+          <li>flaw: other attributes can still signal for it</li>
+        </ul>
+      </li>
+      <li>group fairness
+        <ul>
+          <li><strong>demographic parity</strong> - mean predictions for each group should be approximately equal
+            <ul>
+              <li>flaw: means might not be equal</li>
+            </ul>
+          </li>
+          <li><strong>equalized odds</strong> - predictions are independent of group given label
+            <ul>
+              <li>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>equality of opportunity: $p(\hat y=1</td>
+                      <td>y=1)$ is same for both groups</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            </ul>
+          </li>
+          <li><strong>predictive rate parity</strong> - Y is independent of group given prediction</li>
+        </ul>
+      </li>
+      <li><strong>individual fairness</strong> - similar individuals should be treated similarly</li>
+      <li><strong>counterfactual fairness</strong> - replace attributes w/ flipped values</li>
+    </ul>
+  </li>
+  <li>fair algorithms
+    <ul>
+      <li>preprocessing - remove sensitive information</li>
+      <li>optimization at training time - add regularization</li>
+      <li>postprocessing - change thresholds to impose fairness</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="fairness-in-computer-vision-tutorial"><a href="https://sites.google.com/view/fatecv-tutorial/schedule">fairness in computer vision (tutorial)</a></h2>
+
+<h3 id="harms-of-cv"><a href="https://www.youtube.com/watch?time_continue=546&amp;v=0sBE5OyD7fk&amp;feature=emb_logo">harms of CV</a></h3>
+
+<ul>
+  <li><strong>timnit gebru</strong> - fairness team at google
+    <ul>
+      <li>also emily denton</li>
+    </ul>
+  </li>
+  <li>startups
+    <ul>
+      <li>faceception startup - profile people based on their image</li>
+      <li>hirevue startup videos - facial recognition for judging interviews</li>
+      <li>clearview ai - search all faces</li>
+      <li>police using facial recognition - harms protestors</li>
+      <li>facial recognition rarely has good uses</li>
+      <li>contributes to mass surveillance</li>
+      <li>can be used to discriminate different ethnicities (e.g. Uighurs in china)</li>
+    </ul>
+  </li>
+  <li>gender shades work - models for gender classification were worse for black women
+    <ul>
+      <li>datasets were biased - PPB introduced to balance things somewhat</li>
+    </ul>
+  </li>
+  <li>gender recognition is harmful in the first place
+    <ul>
+      <li>collecting data without consent is also harmful</li>
+    </ul>
+  </li>
+  <li><a href="https://www.theverge.com/2019/4/3/18291995/amazon-facial-recognition-technology-rekognition-police-ai-researchers-ban-flawed">letter to amazon</a>: stop selling facial analysis technology</li>
+  <li>combating this technology
+    <ul>
+      <li>fashion for fooling facial recognition</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="data-ethics"><a href="https://www.youtube.com/watch?v=v_XBJd1Fxqc&amp;feature=emb_logo">data ethics</a></h3>
+
+<ul>
+  <li>different types of harms
+    <ul>
+      <li>sometimes you need to make sure there aren’t disparate error rates across subgroups</li>
+      <li>sometimes the task just should not exist</li>
+      <li>sometimes the manner in which the tool is used is problematic because of who has the power</li>
+    </ul>
+  </li>
+  <li>technology amplifies our intent</li>
+  <li>most people feel that data collection is the most important place to intervene</li>
+  <li>people are denied housing based on data-driven discrimination</li>
+  <li>collecting data
+    <ul>
+      <li>wild west - just collect everything</li>
+      <li>curatorial data - collect very specific data (this can help mitigate bias)</li>
+    </ul>
+  </li>
+  <li>datasets are value-laden, drive research agendas</li>
+  <li>ex. celeba labels gender, attractiveness</li>
+  <li>ex. captions use gendered language (e.g. beautiful)</li>
+</ul>
+
+<h3 id="where-do-we-go"><a href="https://www.youtube.com/watch?v=vpPpwa7W93I&amp;feature=emb_logo">where do we go?</a></h3>
+
+<ul>
+  <li>technology is not value-neutral – it’s political</li>
+  <li>model types and metrics embed values</li>
+  <li>science is not <em>neutral, objecive, perspectiveless</em></li>
+  <li>be aware of your own <strong>positionality</strong></li>
+  <li>concrete steps
+    <ul>
+      <li>ethics-informed model evaluations (e.g. disaggregegated evaluations, counterfactual testing)</li>
+      <li>recognize limitations of technical approaches</li>
+      <li>transparent dataset documentation</li>
+      <li>think about perspectives of marginalized groups</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="facial-rec-demographic-benchmarking">facial rec. demographic benchmarking</h2>
+
+<ul>
+  <li><a href="http://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf">gender shades</a> (Buolamwini &amp; gebru, 2018)</li>
+  <li><a href="https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8280.pdf">Face Recognition Vendor Test (FRVT) Part 3: Demographic Effects</a> (grother et al. 2019), NIST
+    <ul>
+      <li>facial rec types
+        <ul>
+          <li>1: 1 == <strong>verification</strong></li>
+          <li>1: N == <strong>identification</strong></li>
+        </ul>
+      </li>
+      <li>data
+        <ul>
+          <li><strong>domestic mugshots</strong> collected in the United States</li>
+          <li><strong>application photographs</strong> from a global population of applicants for immigration benefits</li>
+          <li><strong>visa photographs</strong> submitted in support of visa applicants</li>
+          <li><strong>border crossing photographs</strong> of travelers entering the United States</li>
+        </ul>
+      </li>
+      <li>a common practice is to use random pairs, but as the pairs are stratified to become more similar, the false match rate increases (Fig 3)</li>
+      <li>results
+        <ul>
+          <li>biggest errors seem to be in African Americans + East Asians
+            <ul>
+              <li>impact of errors - in verification, false positives can be security threat (while false negative is mostly just a nuisance)</li>
+            </ul>
+          </li>
+          <li>In domestic mugshots, false negatives are higher in Asian and American Indian individuals, with error rates above those in white and black face</li>
+          <li>possible confounder - aging between subsequent photos</li>
+          <li>better image quality reduces false negative rates and differentials</li>
+          <li>false positives to be between 2 and 5 times higher in women than men</li>
+          <li>one to many matching usually has same biases
+            <ul>
+              <li>a few systems have been able to remove bias in these false positives</li>
+            </ul>
+          </li>
+          <li>did not analyze cause and effect
+            <ul>
+              <li>don’t consider skin tone</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://dl.acm.org/doi/pdf/10.1145/3375627.3375820">Saving Face: Investigating the Ethical Concerns of Facial Recognition Auditing</a> (2020)</li>
+</ul>
+
+<h2 id="legal-perspectives">legal perspectives</h2>
+
+<p><em>“the master’s tools will never dismantle the master’s house.”</em></p>
+
+<p><strong><a href="http://faculty.haas.berkeley.edu/morse/research/papers/AlgorithmicAccountability_BartlettMorseStantonWallace.pdf">ALGORITHMIC ACCOUNTABILITY: A LEGAL AND ECONOMIC FRAMEWORK</a> (2020)</strong></p>
+
+<ul>
+  <li>Title VII defines accountability under under U.S. antidiscrimination law
+    <ul>
+      <li>protected attributes: sex, religion, national origin, color</li>
+      <li>law is all about who has the burden of proof - 3 steps
+        <ul>
+          <li><strong>plaintiff</strong> identifies practice that has observed statistical disparities on protected group</li>
+          <li><strong>defendant</strong> demonstrates practice is (a) job-related (b) consistent with business necessity</li>
+          <li><strong>plaintiff</strong> proposes alternative</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>ex. dothard vs rawlingson: prison guards were selected based on weight/height rather than strength, so female applicants sued
+    <ul>
+      <li>legitimate target variable: strength</li>
+      <li>proxy variable: weight/height</li>
+      <li>supreme court ruled that best criterion is to assess strength, not use weight/height proxies</li>
+    </ul>
+  </li>
+  <li>ex. redlining - people in certain neighborhoods do not get access to credit
+    <ul>
+      <li>legitimate target: ability to pay back a loan</li>
+      <li>proxy variable: zip code (disproportionately affected minorities)</li>
+    </ul>
+  </li>
+  <li>2 key questions
+    <ul>
+      <li><strong>legitimate target variable</strong> - is unobservable target characteristic (e.g. strength) one that can justify hiring disparities?
+        <ul>
+          <li>disparate outcomes mus be justified by reference to a legitimate “business necessity” (e.g. for hiring, this would be a required job-related skill)</li>
+        </ul>
+      </li>
+      <li><strong>biased proxy</strong> - do proxy variables (e.g. weight/height) properly capture the legitimate target variable?
+        <ul>
+          <li>problematic “redundant encodings” - a proxy variable can be predictive of a legitimate target variable and membership in a protected group</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>input accountability test - captures these questions w/ basic statistics</strong>
+    <ul>
+      <li>intuition: exclude input variables which are potentially problematic
+        <ul>
+          <li>in this context, easier to define fairness without tradeoffs</li>
+          <li>even in unbiased approach, still need things like subsidies to address systemic issues</li>
+        </ul>
+      </li>
+      <li>the test
+        <ul>
+          <li>look at correlations between proxy and legitimate target, proxy and different groups - proxy should not systematically penalize members of a protected group</li>
+          <li><strong>regression form</strong>
+            <ul>
+              <li>predict legitimate target from proxy: $Height_i = \alpha \cdot Strength_i + \epsilon_i$</li>
+              <li>measure if residuals are correlated with protected groups: $\epsilon_i \perp gender$</li>
+              <li>if they are correlated, exclude the feature</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>difficulties
+        <ul>
+          <li>target is often unobservable / has measurement err</li>
+          <li>have to define a threshold for testing residual correaltions (maybe 0.05 p-vaues)</li>
+          <li>there might exist nonlinear interactions</li>
+        </ul>
+      </li>
+      <li>major issues
+        <ul>
+          <li>even if features are independently okay, when you combine them in a model the outputs can be problematic</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>related approaches
+    <ul>
+      <li>some propose balancing the outcomes
+        <ul>
+          <li>one common problem here is that balancing err rates can force different groups to be different</li>
+        </ul>
+      </li>
+      <li>some propose using bst predictive model alone
+        <ul>
+          <li>some have argued that a test for fairness is that there is no other algorithm that is as accurate and have less of an adverse impact (skanderson and ritter)</li>
+        </ul>
+      </li>
+      <li>HUD’s mere predictive test - only requires that prediction is good and that inputs are not subsitutes for a protected characteristic</li>
+    </ul>
+  </li>
+  <li>In a <a href="https://www.edweek.org/policy-politics/districts-face-uncertainty-in-maintaining-racially-diverse-schools/2007/06">2007 U.S. Supreme Court school-assignment case</a> on whether race could be a factor in maintaining diversity in K-12 schools
+    <ul>
+      <li>Chief Justice John Roberts’ opinion famously concluded: “The way to stop discrimination on the basis of race is to stop discriminating on the basis of race.”</li>
+      <li>then-justice Ruth Bader Ginsburg said: “It’s very hard for me to see how you can have a racial objective but a nonracial means to get there.”</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="misc-papers">misc papers</h2>
+
+<ul>
+  <li><a href="https://openreview.net/pdf?id=s-e2zaAlG3I">Large image datasets: A pyrrhic win for computer vision?</a> - bias in imagenet / tiny images</li>
+  <li>http://positivelysemidefinite.com/2020/06/160k-students.html</li>
+</ul>
+
+<h1 id="ethics">ethics</h1>
+
+<h2 id="some-basics">some basics</h2>
+
+<ul>
+  <li>utilitarian - good to be maximized
+    <ul>
+      <li>utilitarian approach: which option produces the most good and does the least harm?</li>
+      <li>common good approach: which option best serves the community as a whole?</li>
+    </ul>
+  </li>
+  <li>deontological - adhering to “the right”
+    <ul>
+      <li>ex. principles like privacy, autonomy, conflicting</li>
+      <li>rights approach: which option bbest respects the rights of all who have a stake?</li>
+      <li>justice approach: which option treats people equally or proportionately?</li>
+    </ul>
+  </li>
+  <li>consequentalist questions
+    <ul>
+      <li>who will be directly affected? who gets harmed?</li>
+    </ul>
+  </li>
+  <li>virtue ethics - lives by a code of honor
+    <ul>
+      <li>which option leas me to act as the sort of persion I want to be?</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="moral-trade">moral trade</h2>
+
+<ul>
+  <li><a href="https://www.fhi.ox.ac.uk/wp-content/uploads/moral-trade-1.pdf">Moral Trade</a> (ord 2015) - <strong>moral trade</strong> = trade that is made possible by differences in the parties’ moral views</li>
+  <li>examples
+    <ul>
+      <li>one trading their eating meat for another donating more to a certain charity they both believe in</li>
+      <li>donating to/against political parties</li>
+      <li>donating to/against gun lobby</li>
+      <li>donating to/for pro-life lobby</li>
+      <li>paying non-profit employees</li>
+    </ul>
+  </li>
+  <li>benefits
+    <ul>
+      <li>can yield Pareto improvements = strict improvements where something gets better while other things remain atleast constant</li>
+    </ul>
+  </li>
+  <li>real-world examples
+    <ul>
+      <li>vote swapping (i.e. in congress)</li>
+      <li>vote swapping across states/regions (e.g. Nader Trader, VotePair) - ruled legal when money not involved</li>
+      <li>election campaign donation swapping - repledge.com (led by eric zolt) - was taken down due to issues w/ election financing</li>
+    </ul>
+  </li>
+  <li>issues
+    <ul>
+      <li>factual trust - how to ensure both sides carry through? (maybe financial penalties or audits could solve this)</li>
+      <li>counterfactual trust - would one party have given this up even if the other party hadn’t?</li>
+    </ul>
+  </li>
+  <li>minor things
+    <ul>
+      <li>fits most naturally with moral framework of consequentalism</li>
+      <li>includes indexicals (e.g. prioritizing one’s own family)</li>
+      <li>could have uneven pledges</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="sts">sts</h1>
+
+<ul>
+  <li><strong>social determinism</strong> - theory that social interactions and constructs alone determine individual behavior</li>
+  <li><strong>technological determinism</strong> - theory that assumes that a society’s technology determines the development of its social structure and cultural values</li>
+  <li><a href="https://www.cc.gatech.edu/~beki/cs4001/Winner.pdf">do artifacts have politics?</a> (winner 2009)
+    <ul>
+      <li><strong>politics</strong> - arrangements of power and authority in human associations as well as the activitites that take place within those arrangements</li>
+      <li><strong>technology</strong> -  smaller or larger pieces or systems of hardware of a specific kind.</li>
+      <li>examples
+        <ul>
+          <li>pushes back against social determinism - technologies have the ability to shift power</li>
+          <li>ex: nuclear power (consolidates power) vs solar power (democratizes power)</li>
+          <li>ex. tv enables mass advertising</li>
+          <li>ex. low bridges prevent buses</li>
+          <li>ex. automation removes the need for skilled labor
+            <ul>
+              <li>ex. tractors in grapes of wrath / tomato harvesters</li>
+            </ul>
+          </li>
+          <li>ex. not making things handicap accessible</li>
+        </ul>
+      </li>
+      <li>“scientific knowledge, technological invention, and corporate profit reinforce each other in deeply entrenched patterns that bear the unmistakable stamp of political and economic power”
+        <ul>
+          <li>pushback on use of things like pesticides, highways, nuclear reactors</li>
+        </ul>
+      </li>
+      <li>technologies which are inherently political, regardless of use
+        <ul>
+          <li>ex. “If man, by dint of his knowledge and inventive genius has subdued the forces of nature, the latter avenge themselves upon him by subjecting him, insofar as he employs them, to a veritable despotism independent of all social organization.”</li>
+          <li>attempts to justify strong authority on the basis of supposedly necessary conditions of technical practice have an ancient history.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://openreview.net/pdf?id=fkAxTMzy3fs">Disembodied Machine Learning: On the Illusion of Objectivity in NLP</a></li>
+  <li><a href="https://www.americanheritage.com/less-work-mother">less work for mother</a> (cowan 1987) - technologies that seem like they save time rarely do (although they increase “productivity”)</li>
+  <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3547903">The Concept of Function Creep</a> - “Function creep denotes an imperceptibly transformative and therewith contestable change in a data-processing system’s proper activity.”</li>
+</ul>
+
+<h1 id="effective-altruism">effective altruism</h1>
+
+<ul>
+  <li><a href="https://www.effectivealtruism.org/articles/introduction-to-effective-altruism/">effectivealtruism</a>
+    <ul>
+      <li>promising causes
+        <ul>
+          <li>great in <em>scale</em> (it affects many lives, by a great amount)</li>
+          <li>highly <em>neglected</em> (few other people are working on addressing the problem), and</li>
+          <li>highly <em>solvable</em> or <em>tractable</em> (additional resources will do a great deal to address it).</li>
+        </ul>
+      </li>
+      <li>3 big areas
+        <ul>
+          <li>fighting extreme poverty (e.g. malaria)</li>
+          <li>animal suffering</li>
+          <li>improving the long-term future</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://rethinkpriorities.freshteam.com/jobs/iX8GfQ1eBLDq/researcher-multiple-positions-remote">rethink-priorities jobs</a></li>
+  <li><a href="https://www.openphilanthropy.org/blog/modeling-human-trajectory">open philanthropy</a></li>
+  <li>careers can have greater impacts than altruism (<a href="https://80000hours.org/key-ideas/">80k hours</a>)
+    <ul>
+      <li>https://80000hours.org/career-guide/</li>
+      <li><a href="https://80000hours.org/problem-profiles/positively-shaping-artificial-intelligence/">80k hours AI careers</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness">givewell cost-effective calculations</a>
+    <ul>
+      <li>charities often exaggerate their “cost to save a life”</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="tech-for-good">tech for “good”</h1>
+
+<ul>
+  <li>
+    <p><a href="https://www.schneier.com/essays/archives/2019/02/public-interest_tech.html">Essays: Cybersecurity for the Public Interest - Schneier on Security</a></p>
+  </li>
+  <li>
+    <p><a href="https://arxiv.org/abs/1206.4656">Machine Learning that Matters</a> (wagstaff, 2021)</p>
+    <ul>
+      <li>doesn’t make sense to compare the same metrics across different dsets (e.g. AUC over entire domain doesn’t matter)</li>
+      <li>classification / regr. are overemphasized (<a href="https://link.springer.com/content/pdf/10.1007/s10994-011-5242-y.pdf">langley, 2011</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="concrete-ai-harms">concrete ai harms</h1>
+
+<ul>
+  <li><a href="https://github.com/daviddao/awful-ai">awful-ai</a> - list of scary usages of ai</li>
+</ul>
+
+<p>Technologies, especially world-shaping technologies like CNNs, are never objective. Their existence and adoption change the world in terms of</p>
+
+<ul>
+  <li>
+    <p>consolidation of power (e.g. facial-rec used to target Uighurs, increased rationale for amassing user data)</p>
+  </li>
+  <li>
+    <p>a shift toward the quantitative (which can lead to the the type of click-bait extremization we see online)</p>
+  </li>
+  <li>
+    <p>automation (low-level layoffs, which also help consolidate power to tech giants)</p>
+  </li>
+  <li>
+    <p>energy usage (the exorbitant footprint of models like GPT-3)</p>
+  </li>
+  <li>
+    <p>access to media (deepfakes, etc.)</p>
+  </li>
+  <li>
+    <p>a lot more</p>
+  </li>
+  <li>
+    <p>pandemic</p>
+
+    <ul>
+      <li>I hope the pandemic, which has boosted the desire for tracking, does not result in a long-term arc towards more serveillance</li>
+      <li>from <a href="https://www.theatlantic.com/magazine/archive/2020/09/china-ai-surveillance/614197/">here</a>: City Brain would be especially useful in a pandemic. (One of Alibaba’s sister companies created the app that color-coded citizens’ disease risk, while silently sending their health and travel data to police.) As Beijing’s outbreak spread, some malls and restaurants in the city began scanning potential customers’ phones, pulling data from mobile carriers to see whether they’d recently traveled. Mobile carriers also sent municipal governments lists of people who had come to their city from Wuhan, where the coronavirus was first detected. And Chinese AI companies began making networked facial-recognition helmets for police, with built-in infrared fever detectors, capable of sending data to the government. City Brain could automate these processes, or integrate its data streams.</li>
+      <li>“The pandemic may even make people value privacy less, as one early poll in the U.S. suggests”</li>
+    </ul>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

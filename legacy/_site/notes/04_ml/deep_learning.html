@@ -1,0 +1,589 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/04_ml/deep_learning.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | Deep Learning</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> deep learning </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/04_ml/deep_learning.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/04_ml/deep_learning.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<p>This note covers miscellaneous deep learning, with an emphasis on different architectures + empirical tricks.</p>
+
+<p>See also notes in <a href="https://csinva.io/notes/ml/unsupervised.html">📌 unsupervised learning</a>, <a href="https://csinva.io/notes/research_ovws/ovw_disentanglement.html">📌 disentanglement</a>, <a href="https://csinva.io/notes/ml/nlp.html">📌 nlp</a></p>
+
+<h1 id="basics">basics</h1>
+
+<ul>
+  <li>basic perceptron update rule
+    <ul>
+      <li>if output is 0 but should be 1: raise weights on active connections by d</li>
+      <li>if output is 1 but should be 0: lower weights on active connections by d</li>
+    </ul>
+  </li>
+  <li><em>perceptron convergence thm</em> - if data is linearly separable, perceptron learning algorithm wiil converge</li>
+  <li>transfer / activation functions
+    <ul>
+      <li>sigmoid(z) = $\frac{1}{1+e^{-z}}$</li>
+      <li>Binary step</li>
+      <li>TanH (always preferred to sigmoid)</li>
+      <li>Rectifier = ReLU
+        <ul>
+          <li>Leaky ReLU - still has some negative slope when &lt;0</li>
+          <li>rectifying in electronics converts analog -&gt; digital</li>
+        </ul>
+      </li>
+      <li>rare to mix and match neuron types</li>
+    </ul>
+  </li>
+  <li><em>deep</em> - more than 1 hidden layer</li>
+  <li>regression loss = $\frac{1}{2}(y-\hat{y})^2$</li>
+  <li>classification loss = $-y log (\hat{y}) - (1-y) log(1-\hat{y})$
+    <ul>
+      <li>can’t use SSE because not convex here</li>
+    </ul>
+  </li>
+  <li>multiclass classification loss $=-\sum_j y_j ln \hat{y}_j$</li>
+  <li><strong>backpropagation</strong> - application of <em>reverse mode automatic differentiation</em> to neural networks’s loss
+    <ul>
+      <li>apply the chain rule from the end of the program back towards the beginning
+        <ul>
+          <li>$\frac{dL}{dx_i} = \frac{dL}{dz} \frac{\partial z}{\partial x_i}$</li>
+          <li>sum $\frac{dL}{dz}$ if neuron has multiple outputs z</li>
+          <li>L is output</li>
+        </ul>
+      </li>
+      <li>$\frac{\partial z}{\partial x_i}$ is actually a Jacobian (deriv each $z_i$ wrt each $x_i$ - these are vectors)
+        <ul>
+          <li>each gate usually has some sparsity structure so you don’t compute whole Jacobian</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>pipeline
+    <ul>
+      <li>initialize weights, and final derivative ($\frac{dL}{dL}=1$)</li>
+      <li>for each batch
+        <ul>
+          <li>run network forward to compute outputs at each step</li>
+          <li>compute gradients at each gate with backprop</li>
+          <li>update weights with SGD</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><img src="../assets/backprop.png" alt="backprop" /></li>
+</ul>
+
+<h1 id="training">training</h1>
+
+<ul>
+  <li><em>vanishing gradients problem</em> - neurons in earlier layers learn more slowly than in later layers
+    <ul>
+      <li>happens with sigmoids</li>
+      <li>dead ReLus</li>
+    </ul>
+  </li>
+  <li><em>exploding gradients problem</em> - gradients are significantly larger in earlier layers than later layers
+    <ul>
+      <li>RNNs</li>
+    </ul>
+  </li>
+  <li><em>batch normalization</em> - whiten inputs to all neurons (zero mean, variance of 1)
+    <ul>
+      <li>do this for each input to the next layer</li>
+    </ul>
+  </li>
+  <li><em>dropout</em> - randomly zero outputs of p fraction of the neurons during training
+    <ul>
+      <li>like learning large ensemble of models that share weights</li>
+      <li>2 ways to compensate (pick one)
+        <ol>
+          <li>at test time multiply all neurons’ outputs by p</li>
+          <li>during training divide all neurons’ outputs by p</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li><em>softmax</em> - takes vector z and returns vector of the same length
+    <ul>
+      <li>makes it so output sums to 1 (like probabilities of classes)</li>
+    </ul>
+  </li>
+  <li><strong>tricks to squeeze out performance</strong>
+    <ul>
+      <li>ensemble models</li>
+      <li>(stochastic) weight averaging can help a lot</li>
+      <li>test-time augmentation
+        <ul>
+          <li>this could just be averaging over dropout resamples as well</li>
+        </ul>
+      </li>
+      <li>gradient checkpointing (<a href="https://arxiv.org/pdf/1604.06174.pdf">2016 paper</a>)
+        <ul>
+          <li>10x larger DNNs into memory with 20% increase in comp. time</li>
+          <li>save gradients for a carefully chosen layer to let you easily recompute</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="cnns">CNNs</h1>
+<ul>
+  <li>kernel here means filter</li>
+  <li>convolution G- takes a windowed average of an image F with a filter H where the filter is flipped horizontally and vertically before being applied</li>
+  <li>G = H $\ast$ F
+    <ul>
+      <li>if we do a filter with just a 1 in the middle, we get the exact same image</li>
+      <li>you can basically always pad with zeros as long as you keep 1 in middle</li>
+      <li>can use these to detect edges with small convolutions</li>
+      <li>can do Guassian filters</li>
+    </ul>
+  </li>
+  <li>convolutions typically sum over all color channels</li>
+  <li>1x1 conv - still convolves over channels</li>
+  <li>pooling - usually max - doesn’t pool over depth
+    <ul>
+      <li>people trying to move away from this - larger strides in conversation layers</li>
+      <li>stacking small layers is generally better</li>
+    </ul>
+  </li>
+  <li>most of memory impact is usually from activations from each layer kept around for backdrop</li>
+  <li>visualizations
+    <ul>
+      <li>layer activations (maybe average over channels)</li>
+      <li>visualize the weights (maybe average over channels)v</li>
+      <li>feed a bunch of images and keep track of which activate a neuron most</li>
+      <li>t-SNE embedding of images</li>
+      <li>occluding</li>
+    </ul>
+  </li>
+  <li>weight matrices have special structure (Toeplitz or block Toeplitz)</li>
+  <li>input layer is usually centered (subtract mean over training set)</li>
+  <li>usually crop to fixed size (square input)</li>
+  <li>receptive field - input region</li>
+  <li>stride m - compute only every mth pixel</li>
+  <li>downsampling
+    <ul>
+      <li>max pooling - backprop error back to neuron w/ max value</li>
+      <li>average pooling - backprop splits error equally among input neurons</li>
+    </ul>
+  </li>
+  <li>data augmentation - random rotations, flips, shifts, recolorings</li>
+  <li>siamese networks - extract features twice with same net then put layer on top
+    <ul>
+      <li>ex. find how similar to representations are</li>
+    </ul>
+  </li>
+  <li>famous cnns
+    <ul>
+      <li>LeNet (1998)
+        <ul>
+          <li>first, used on MNIST</li>
+        </ul>
+      </li>
+      <li>AlexNet (2012)
+        <ul>
+          <li>landmark (5 conv layers, some pooling/dropout)</li>
+        </ul>
+      </li>
+      <li>ZFNet (2013)
+        <ul>
+          <li>fine tuning and deconvnet</li>
+        </ul>
+      </li>
+      <li>VGGNet (2014)
+        <ul>
+          <li>19 layers, all 3x3 conv layers and 2x2 maxpooling</li>
+        </ul>
+      </li>
+      <li>GoogLeNet (2015)
+        <ul>
+          <li>lots of parallel elements (called <em>Inception module</em>)</li>
+          <li>Msft ResNet (2015)
+            <ul>
+              <li>very deep - 152 layers
+                <ul>
+                  <li>connections straight from initial layers to end</li>
+                  <li>only learn “residual” from top to bottom</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Region Based CNNs (R-CNN - 2013, Fast R-CNN - 2015, Faster R-CNN - 2015)
+            <ul>
+              <li>object detection</li>
+            </ul>
+          </li>
+          <li>Karpathy Generating image descriptions (2014)
+            <ul>
+              <li>RNN+CNN</li>
+            </ul>
+          </li>
+          <li>Spatial transformer networks (2015)
+            <ul>
+              <li>transformations within the network</li>
+            </ul>
+          </li>
+          <li>Segnet (2015)
+            <ul>
+              <li>encoder-decoder network</li>
+            </ul>
+          </li>
+          <li>Unet (2015)
+            <ul>
+              <li>Ronneberger - applies to biomedical segmentation</li>
+            </ul>
+          </li>
+          <li>Pixelnet (2017)
+            <ul>
+              <li>predicts pixel-level for different tasks with the same architecture</li>
+              <li>convolutional layers then 3 FC layers which use outputs from all convolutional layrs together</li>
+            </ul>
+          </li>
+          <li>Squeezenet</li>
+          <li>Yolonet</li>
+          <li>Wavenet</li>
+          <li>Densenet</li>
+          <li>NASNET</li>
+          <li><a href="https://arxiv.org/pdf/1905.11946.pdf">Efficientnet (2019)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="rnns">RNNs</h1>
+
+<ul>
+  <li>feedforward NNs have no memory so we introduce recurrent NNs</li>
+  <li>able to have memory</li>
+  <li>could theoretically unfold the network and train with backprop</li>
+  <li>truncated - limit number of times you unfold</li>
+  <li>$state_{new} = f(state_{old},input_t)$</li>
+  <li>ex. $h_t = tanh(W h_{t-1}+W_2 x_t)$</li>
+  <li>train with backpropagation through time (unfold through time)
+    <ul>
+      <li>truncated backprop through time - only run every k time steps</li>
+    </ul>
+  </li>
+  <li>error gradients vanish exponentially quickly with time lag</li>
+  <li><strong>LSTMS</strong>
+    <ul>
+      <li>have gates for forgetting, input, output</li>
+      <li>easy to let hidden state flow through time, unchanged</li>
+      <li>gate $\sigma$ - pointwise multiplication
+        <ul>
+          <li>multiply by 0 - let nothing through</li>
+          <li>multiply by 1 - let everything through</li>
+        </ul>
+      </li>
+      <li>forget gate - conditionally discard previously remembered info</li>
+      <li>input gate - conditionally remember new info</li>
+      <li>output gate - conditionally output a relevant part of memory</li>
+      <li>GRUs - similar, merge input / forget units into a single update unit</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="transformers">transformers</h1>
+
+<ul>
+  <li>transformers <a href="https://arxiv.org/pdf/1706.03762.pdf">original paper</a>
+    <ul>
+      <li><a href="https://papers.nips.cc/paper/5854-spatial-transformer-networks.pdf">spatial transformers</a></li>
+    </ul>
+  </li>
+  <li>http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/</li>
+</ul>
+
+<h1 id="graph-neural-networks">graph neural networks</h1>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=uF53xsT7mjc">Theoretical Foundations of Graph Neural Networks</a>
+    <ul>
+      <li>inputs are graphs</li>
+      <li>e.g. molecule input to classification
+        <ul>
+          <li>one big study: “a deep learning appraoch to antibiotic discovery” - using GNN classification of antibiotic resistance, came up with 100 candidate antibiotics and were able to test them</li>
+        </ul>
+      </li>
+      <li>e.g. traffic maps - nodes are intersections</li>
+      <li>invariances in CNNs: translational, neighbor pixels relate a lot more</li>
+      <li>simplest setup: no edges, each node $i$ has a feature vector $x_i$ (really a set not a graph)
+        <ul>
+          <li>X is a matrix where each row is a feature vector</li>
+          <li>note that permuting rows of X shouldn’t change anything</li>
+          <li><strong>permutation invariant</strong>: $f(PX) = f(X)$ for all permutation matrices $P$
+            <ul>
+              <li>e.g. $\mathbf{P}<em>{(2,4,1,3)} \mathbf{X}=\left[\begin{array}{llll}0 &amp; 1 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; 1 \ 1 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 1 &amp; 0\end{array}\right]\left[\begin{array}{lll}- &amp; \mathbf{x}</em>{1} &amp; - \ - &amp; \mathbf{x}<em>{2} &amp; - \ - &amp; \mathbf{x}</em>{3} &amp; - \ - &amp; \mathbf{x}<em>{4} &amp; -\end{array}\right]=\left[\begin{array}{lll}- &amp; \mathbf{x}</em>{2} &amp; - \ - &amp; \mathbf{x}<em>{4} &amp; - \ - &amp; \mathbf{x}</em>{1} &amp; - \ - &amp; \mathbf{x}_{3} &amp; -\end{array}\right]$</li>
+              <li>ex. <em>Deep Sets</em> model (zaheer et al. ‘17): $f(X) = \phi \left (\sum_k \psi(x_i) \right)$</li>
+            </ul>
+          </li>
+          <li><strong>permutation equivariant</strong>: $f(PX) = P f(X)$ - useful for when we want answers at the node level</li>
+        </ul>
+      </li>
+      <li>graph: augment set of nodes with edges between them (store as an adjacency matrix)
+        <ul>
+          <li>permuting permutation matrix to A requires operating on both rows and cols: $PAP^T$</li>
+          <li>permutation invariance: $ f\left(\mathbf{P X}, \mathbf{P A P}^{\top}\right)=f(\mathbf{X}, \mathbf{A})$</li>
+          <li>permutation equivariance: $f\left(\mathbf{P X}, \mathbf{P A P}^{\top}\right)=\mathbf{P} f(\mathbf{X}, \mathbf{A})$</li>
+          <li>can now write an equivariant function that is extracts features not only of X, but also its neighbors: $g(x_b, X_{\mathcal N_b})$
+            <ul>
+              <li>tasks: node classification, graph classification, link (edge) prediction)</li>
+            </ul>
+          </li>
+          <li>3 flavors of GNN layers for extracting features from nodes / neighbors: simplest to most complex
+            <ul>
+              <li>message-passing actually passes vectors to be sent across edges</li>
+              <li><img src="../assets/gnn_layers.png" alt="gnn_layers" /></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>previous approaches map on to gnns well
+        <ul>
+          <li>GNNs explicitly construct local features, much like previous works
+            <ul>
+              <li>local objectives: features of nodes i and j should predict existence of edge $(i, j)$</li>
+              <li>random-walk objectives: features should be similar if i and j co-occur on a short random walk (e.g. deepwalk, node2vec, line)</li>
+            </ul>
+          </li>
+          <li>similarities to NLP if we think of words as nodes and sentences as walks
+            <ul>
+              <li>we can think of transformers as fully-connect graph networks with attentional form of GNN layers
+                <ul>
+                  <li>one big difference: positional embeddings often used, making the input not clearly a graph
+                    <ul>
+                      <li>these postitional embeddings often take the form of sin/cos - very similar to DFT eigenvectors of a graph</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>spectral gnns
+            <ul>
+              <li>operate on graph laplacian matrix $L = D - A$ where $D$ is degree matrix and $A$ is adjacency matrix - more mathematically convenient</li>
+            </ul>
+          </li>
+          <li>probabilistic modeling - e.g. assome markov random field and try to learn parameters
+            <ul>
+              <li>this connects well to a message-passing GNN</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>GNN limitations
+    <ul>
+      <li>ex. can we tell whether 2 graphs are isomorphic - often no?</li>
+      <li>cank make GNNs more powerful by adding positional features, etc.</li>
+      <li>can also embed sugraphs together</li>
+      <li>things are more difficult in continuous case…</li>
+    </ul>
+  </li>
+  <li>geometric deep learning: invariances and equivariances can be appllied generally to get a large calss of architectures between convolutions and graphs</li>
+</ul>
+
+<h1 id="misc-architectural-components">misc architectural components</h1>
+
+<ul>
+  <li><strong>coordconv</strong> - break translation equivariance by passing in i, j coords as extra filters</li>
+  <li><strong>deconvolution</strong> = transposed convolution = fractionally-strided convolution - like upsampling</li>
+  <li><strong>attention</strong> = vector of importance weights: in order to predict or infer one element, such as a pixel in an image or a word in a sentence, we estimate using the attention vector how strongly it is correlated with (or “<em>attends to</em>” as you may have read in many papers) other elements and take the sum of their values weighted by the attention vector as the approximation of the target</li>
+</ul>
+
+<h1 id="misc">misc</h1>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/2201.00650">Deep Learning Interviews: Hundreds of fully solved job interview questions from a wide range of key topics in AI</a></li>
+  <li>adaptive pooling can help deal with different sizes</li>
+  <li><a href="https://arxiv.org/abs/2003.08934">NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis</a>
+    <ul>
+      <li>given multiple views, generate depth map + continuous volumetric repr.</li>
+      <li>dnn is overfit to only one scene</li>
+      <li>inputs: a position and viewing direction</li>
+      <li>output: for that position, density (is there smth at this location) + color (if there is smth at this location)</li>
+      <li>then, given new location / angle, send a ray through for each pixel and see color when it hits smth</li>
+      <li><a href="https://vsitzmann.github.io/siren/">Implicit Neural Representations with Periodic Activation Functions</a>
+        <ul>
+          <li>similar paper</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>architecture search: learning to learn</li>
+  <li><em>optimal brain damage</em> - starts with fully connected and weeds out connections (Lecun)</li>
+  <li><em>tiling</em> - train networks on the error of previous networks</li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

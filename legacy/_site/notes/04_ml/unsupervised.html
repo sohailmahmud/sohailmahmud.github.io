@@ -1,0 +1,1317 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/04_ml/unsupervised.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | Unsupervised</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> unsupervised </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/04_ml/unsupervised.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/04_ml/unsupervised.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<h1 id="clustering">clustering</h1>
+
+<ul>
+  <li>labels are not given</li>
+  <li>intra-cluster distances are minimized, inter-cluster distances are maximized</li>
+  <li>distance measures
+    <ul>
+      <li>symmetric D(A,B)=D(B,A)</li>
+      <li>self-similarity D(A,A)=0</li>
+      <li>positivity separation D(A,B)=0 iff A=B</li>
+      <li>triangular inequality D(A,B) &lt;= D(A,C)+D(B,C)</li>
+      <li>ex. Minkowski Metrics $d(x,y)=\sqrt[r]{\sum \vert x_i-y_i\vert ^r}$
+        <ul>
+          <li>r=1 Manhattan distance</li>
+          <li>r=1 when y is binary -&gt; Hamming distance</li>
+          <li>r=2 Euclidean</li>
+          <li>r=$\infty$ “sup” distance</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>correlation coefficient - unit independent</li>
+  <li>edit distance</li>
+</ul>
+
+<h2 id="hierarchical">hierarchical</h2>
+
+<ul>
+  <li>two approaches:
+    <ol>
+      <li>bottom-up agglomerative clustering - starts with each object in separate cluster then joins</li>
+      <li>top-down divisive - starts with 1 cluster then separates</li>
+    </ol>
+  </li>
+  <li>ex. starting with each item in its own cluster, find best pair to merge into a new cluster
+    <ul>
+      <li>repeatedly do this to make a tree (dendrogram)</li>
+    </ul>
+  </li>
+  <li>distances between clusters defined by <em>linkage function</em>
+    <ul>
+      <li>single-link - closest members (long, skinny clusters)</li>
+      <li>complete-link - furthest members  (tight clusters)</li>
+      <li>average - most widely used</li>
+    </ul>
+  </li>
+  <li>ex. MST - keep linking shortest link</li>
+  <li><em>ultrametric distance</em> - tighter than triangle inequality
+    <ul>
+      <li>$d(x, y) \leq \max[d(x,z), d(y,z)]$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="partitional">partitional</h2>
+
+<ul>
+  <li>partition n objects into a set of K clusters (must be specified)</li>
+  <li>globally optimal: exhaustively enumerate all partitions</li>
+  <li>minimize sum of squared distances from cluster centroid</li>
+  <li>evaluation w/ labels - purity - ratio between dominant class in cluster and size of cluster</li>
+  <li>k-means++ - better at not getting stuck in local minima
+    <ul>
+      <li>randomly move centers apart</li>
+    </ul>
+  </li>
+  <li>Complexity: $O(n^2p)$ for first iteration and then can only get worse</li>
+</ul>
+
+<h2 id="statistical-clustering-j-10">statistical clustering (j 10)</h2>
+
+<ul>
+  <li><em>latent vars</em> - values not specified in the observed data</li>
+  <li>
+    <p><img src="../assets/j10_1.png" alt="" /></p>
+  </li>
+  <li><em>K-Means</em>
+    <ul>
+      <li>start with random centers</li>
+      <li>E: assign everything to nearest center: $O(|\text{clusters}|*np) $</li>
+      <li>M: recompute centers $O(np)$ and repeat until nothing changes</li>
+      <li>partition amounts to Voronoi diagram</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>can be viewed as minimizing <em>distortion measure</em> $J=\sum_n \sum_i z_n^i</td>
+              <td> </td>
+              <td>x_n - \mu_i</td>
+              <td> </td>
+              <td>^2$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><em>GMMs</em>: $p(x</td>
+          <td>\theta) = \underset{i}{\Sigma} \pi_i \mathcal{N}(x</td>
+          <td>\mu_i, \Sigma_i)$</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$l(\theta</td>
+              <td>x) = \sum_n \log : p(x_n</td>
+              <td>\theta) \ = \sum_n \log \sum_i \pi_i \mathcal{N}(x_n</td>
+              <td>\mu_i, \Sigma_i)$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>hard to maximize bcause log acts on a sum</p>
+      </li>
+      <li>“soft” version of K-means - update means as weighted sums of data instead of just normal mean</li>
+      <li>sometimes initialize K-means w/ GMMs</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="conditional-mixture-models---regressionclassification-j-10">conditional mixture models - regression/classification (j 10)</h2>
+
+<pre><code class="language-mermaid">graph LR;
+  X--&gt;Y;
+  X --&gt; Z
+  Z --&gt; Y
+</code></pre>
+
+<ul>
+  <li>ex. <img src="../assets/j5_16.png" alt="" /></li>
+  <li>latent variable Z has multinomial distr.
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td><em>mixing proportions</em>: $P(Z^i=1</td>
+              <td>x, \xi)$</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>ex. $ \frac{e^{\xi_i^Tx}}{\sum_je^{\xi_j^Tx}}$</li>
+        </ul>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td><em>mixture components</em>: $p(y</td>
+              <td>Z^i=1, x, \theta_i)$ ~ different choices</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>ex. mixture of linear regressions
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>$p(y</td>
+                  <td>x, \theta) = \sum_i \underbrace{\pi_i (x, \xi)}_{\text{mixing prop.}} \cdot \underbrace{\mathcal{N}(y</td>
+                  <td>\beta_i^Tx, \sigma_i^2)}_{\text{mixture comp.}}$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>ex. mixtures of logistic regressions
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>$p(y</td>
+                  <td>x, \theta_i) = \underbrace{\pi_i (x, \xi)}<em>{\text{mixing prop.}} \cdot \underbrace{\mu(\theta_i^Tx)^y\cdot[1-\mu(\theta_i^Tx)]^{1-y}}</em>{\text{mixture comp.}}$ where $\mu$ is the logistic function</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>also, nonlinear optimization for this (including EM)</li>
+</ul>
+
+<h1 id="dim-reduction">dim reduction</h1>
+
+<p>In general there is some tension between preserving global properties (e.g. PCA) and local peroperties (e.g. nearest neighborhoods)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Analysis objective</th>
+      <th>Temporal smoothing</th>
+      <th>Explicit noise model</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PCA</td>
+      <td>Covariance</td>
+      <td>No</td>
+      <td>No</td>
+      <td>orthogonality</td>
+    </tr>
+    <tr>
+      <td>FA</td>
+      <td>Covariance</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>like PCA, but with errors (not biased by variance)</td>
+    </tr>
+    <tr>
+      <td>LDS/GPFA</td>
+      <td>Dynamics</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>NLDS</td>
+      <td>Dynamics</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LDA</td>
+      <td>Classification</td>
+      <td>No</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Demixed</td>
+      <td>Regression</td>
+      <td>No</td>
+      <td>Yes/No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Isomap/LLE</td>
+      <td>Manifold discovery</td>
+      <td>No</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>T-SNE</td>
+      <td>….</td>
+      <td>….</td>
+      <td>…</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UMAP</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>NMF - $\min_{D \geq 0, A \geq 0} ||X-DA||_F^2$
+    <ul>
+      <li>SEQNMF</li>
+    </ul>
+  </li>
+  <li>ICA
+    <ul>
+      <li>remove correlations and higher order dependence</li>
+      <li>all components are equally important</li>
+      <li>like PCA, but instead of the dot product between components being 0, the mutual info between components is 0</li>
+      <li>goals
+        <ul>
+          <li>minimize statistical dependence between components</li>
+          <li>maximize information transferred in a network of non-linear units</li>
+          <li>uses information theoretic unsupervised learning rules for neural networks</li>
+        </ul>
+      </li>
+      <li>problem - doesn’t rank features for us</li>
+    </ul>
+  </li>
+  <li>LDA/QDA - finds basis that separates classes
+    <ul>
+      <li>reduced to axes which separate classes (perpendicular to the boundaries)</li>
+    </ul>
+  </li>
+  <li>K-means - can be viewed as a linear decomposition</li>
+</ul>
+
+<h2 id="spectral-clustering">spectral clustering</h2>
+
+<ul>
+  <li><em>spectral</em> clustering - does dim reduction on eigenvalues (spectrum) of similarity matrix before clustering in few dims
+    <ul>
+      <li>uses adjacency matrix</li>
+      <li>basically like PCA then k-means</li>
+      <li>performs better with regularization - add small constant to the adjacency matrix</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="pca">pca</h2>
+
+<ul>
+  <li>want new set of axes (linearly combine original axes) in the direction of greatest variability
+    <ul>
+      <li>this is best for visualization, reduction, classification, noise reduction</li>
+      <li>assume $X$ (nxp) has zero mean</li>
+    </ul>
+  </li>
+  <li>
+    <p>derivation:</p>
+
+    <ul>
+      <li>minimize variance of X projection onto a unit vector v
+        <ul>
+          <li>$\frac{1}{n} \sum (x_i^Tv)^2 = \frac{1}{n}v^TX^TXv$ subject to $v^T v=1$</li>
+          <li>$\implies v^T(X^TXv-\lambda v)=0$: solution is achieved when $v$ is eigenvector corresponding to largest eigenvalue</li>
+        </ul>
+      </li>
+      <li>like minimizing perpendicular distance between data points and subspace onto which we project</li>
+    </ul>
+  </li>
+  <li>
+    <p>SVD: let $U D V^T = SVD(Cov(X))$</p>
+
+    <ul>
+      <li>$Cov(X) = \frac{1}{n}X^TX$, where X has been demeaned</li>
+    </ul>
+  </li>
+  <li>equivalently, eigenvalue decomposition of covariance matrix $\Sigma = X^TX$
+    <ul>
+      <li>
+        <p>each eigenvalue represents prop. of explained variance: $\sum \lambda_i = tr(\Sigma) = \sum Var(X_i)$</p>
+      </li>
+      <li>
+        <p><em>screeplot</em>  - eigenvalues in decreasing order, look for num dims with kink</p>
+        <ul>
+          <li>don’t automatically center/normalize, especially for positive data</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>SVD is easier to solve than eigenvalue decomposition, can also solve other ways
+    <ol>
+      <li>multidimensional scaling (MDS)
+        <ul>
+          <li>based on eigenvalue decomposition</li>
+        </ul>
+      </li>
+      <li>adaptive PCA
+        <ul>
+          <li>extract components sequentially, starting with highest variance so you don’t have to extract them all</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>good PCA code: http://cs231n.github.io/neural-networks-2/
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">-=</span> <span class="n">np</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># zero-center data (nxd)
+</span><span class="n">cov</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="o">/</span> <span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># get cov. matrix (dxd)
+</span><span class="n">U</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">svd</span><span class="p">(</span><span class="n">cov</span><span class="p">)</span> <span class="c1"># compute svd, (all dxd)
+</span><span class="n">Xrot_reduced</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># project onto first 2 dimensions (n x 2)
+</span></code></pre></div>    </div>
+  </li>
+  <li>nonlinear pca
+    <ul>
+      <li>usually uses an auto-associative neural network</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="topic-modeling">topic modeling</h2>
+
+<ul>
+  <li>
+    <p>similar, try to discover topics in a model (which maybe can be linearly combined to produce the original document)</p>
+  </li>
+  <li>
+    <p>ex. LDA - generative model: posits that each document is a mixture of a <strong>small number of topics</strong> and that <strong>each word’s presence is attributable to one of the document’s topics</strong></p>
+  </li>
+</ul>
+
+<h2 id="sparse-coding--sparse-dictionary-learning">sparse coding = sparse dictionary learning</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[\underset {\mathbf{D}} \min \underset t \sum \underset {\mathbf{a^{(t)}}} \min</td>
+      <td> </td>
+      <td>\mathbf{x^{(t)}} - \mathbf{Da^{(t)}}</td>
+      <td> </td>
+      <td>_2^2 + \lambda</td>
+      <td> </td>
+      <td>\mathbf{a^{(t)}}</td>
+      <td> </td>
+      <td>_1]</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>D is like autoencoder output weight matrix</li>
+  <li>$a$ is more complicated - requires solving inner minimization problem</li>
+  <li>outer loop is not quite lasso - weights are not what is penalized</li>
+  <li>impose norm $D$ not too big</li>
+  <li>algorithms
+    <ul>
+      <li>thresholding (simplest) - do $D^Ty$ and then threshold this</li>
+      <li>basis pursuit - change $l_0$ to $l_1$
+        <ul>
+          <li>this will work under certain conditions (with theoretical guarantees)</li>
+        </ul>
+      </li>
+      <li>matching purusuit - greedy, find support one at a time, then look for the next one</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="ica">ica</h2>
+
+<ul>
+  <li>goal: want to decompose $X$ into $z$, where we assume $X = Az$
+    <ul>
+      <li>assumptions
+        <ul>
+          <li>independence: $P(z) = \prod_i P(z_i)$</li>
+          <li>non-gaussianity of $z$</li>
+        </ul>
+      </li>
+      <li>2 ways to get $z$ which matches these assumptions
+        <ol>
+          <li>maximize non-gaussianity of $z$ - use kurtosis, negentropy</li>
+          <li>minimize mutual info between components of $z$ - use KL, max entropy
+            <ol>
+              <li>often equivalent</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>identifiability: $z$ is identifiable up to a permutation ans scaling of sources when
+        <ul>
+          <li>at most one of the sources $z_k$ is gaussian</li>
+          <li>$A$ is full-rank</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>ICA learns components which are completely independent, whereas PCA learns orthogonal components</li>
+  <li><strong>non-linear ica</strong>: $X \approx f(z)$, where assumptions on $s$ are the same, and $f$ can be nonlinear
+    <ul>
+      <li>to obtain identifiability, we need to restrict $f$ and/or constrain the distr of the sources $s$</li>
+    </ul>
+  </li>
+  <li>bell &amp; sejnowski 1995 original formulation (slightly different)
+    <ul>
+      <li>entropy maximization - try to find a nonlinear function $g(x)$ which lets you map that distr $f(x)$ to uniform
+        <ul>
+          <li>then, that function $g(x)$ is the cdf of $f(x)$</li>
+        </ul>
+      </li>
+      <li>in ICA, we do this for higher dims - want to map distr of $x_1, …, x_p$ to $y_1, …, y_p$ where distr over $y_i$’s is uniform (implying that they are independent)
+        <ul>
+          <li>additionally we want the map to be information preserving</li>
+        </ul>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>mathematically: $\underset{W} \max I(x; y) = \underset{W} \max H(y)$ since $H(y</td>
+              <td>x)$ is zero (there is no randomness)</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>assume $y = \sigma (W x)$ where $\sigma$ is elementwise</li>
+          <li>(then S = WX, $W=A^{-1}$)</li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>requires certain assumptions so that $p(y)$ is still a distr: $p(y) = p(x) /</td>
+                  <td>J</td>
+                  <td>$ where J is Jacobian</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>learn W via gradient ascent $\Delta W \propto \partial / \partial W (\log</td>
+              <td>J</td>
+              <td>)$</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>there is now something faster called fast ICA</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>topographic ICA (make nearby coefficient like each other)</li>
+  <li>interestingly, some types of self-supervised learning perform ICA assuming certain data structure (e.g. time-contrastive learning (hyvarinen et al. 2016))</li>
+</ul>
+
+<h2 id="topological">topological</h2>
+
+<ul>
+  <li><strong>multidimensional scaling (MDS)</strong>
+    <ul>
+      <li>given a a distance matrix, MDS tries to recover low-dim coordinates s.t. distances are preserved</li>
+      <li>minimizes goodness-of-fit measure called <em>stress</em> = $\sqrt{\sum (d_{ij} - \hat{d}<em>{ij})^2 / \sum d</em>{ij}^2}$</li>
+      <li>visualize in low dims the similarity between individial points in high-dim dataset</li>
+      <li>classical MDS assumes Euclidean distances and uses eigenvalues
+        <ul>
+          <li>constructing configuration of n points using distances between n objects</li>
+          <li>uses distance matrix
+            <ul>
+              <li>$d_{rr} = 0$</li>
+              <li>$d_{rs} \geq 0$</li>
+            </ul>
+          </li>
+          <li>solns are invariant to translation, rotation, relfection</li>
+          <li>solutions types
+            <ol>
+              <li>non-metric methods - use rank orders of distances
+                <ul>
+                  <li>invariant to uniform expansion / contraction</li>
+                </ul>
+              </li>
+              <li>metric methods - use values</li>
+            </ol>
+          </li>
+          <li>D is <em>Euclidean</em> if there exists points s.t. D gives interpoint Euclidean distances
+            <ul>
+              <li>define B = HAH
+                <ul>
+                  <li>D Euclidean iff B is psd</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>t-sne</strong> preserves pairwise neighbors
+    <ul>
+      <li><a href="https://distill.pub/2016/misread-tsne/">t-sne tutorial</a></li>
+      <li>t-sne tries to match pairwise distances between the original data and the latent space data: <img src="../assets/tsne.png" alt="Screen Shot 2020-09-11 at 12.35.35 AM" /></li>
+      <li>original data
+        <ul>
+          <li>distances are converted to probabilities by assuming points are means of Gaussians, then normalizing over all pairs
+            <ul>
+              <li>variance of each Gaussian is scaled depending on the desired perplexity</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>latent data
+        <ul>
+          <li>distances are calculated using some kernel function
+            <ul>
+              <li>t-SNE uses heavy-tailed Student’s t-distr kernel (van der Maaten &amp; Hinton, 2008)</li>
+              <li>SNE use Gausian kernel (Hinton &amp; Roweis, 2003)</li>
+            </ul>
+          </li>
+          <li>kernels have some parameters that can be picked or learned</li>
+          <li><strong>perplexity</strong> - how to balance between local/global aspects of data</li>
+        </ul>
+      </li>
+      <li>optimization - for optimization purposes, this can be decomposed into attractive/repulsive forces</li>
+    </ul>
+  </li>
+  <li><strong>umap</strong>: Uniform Manifold Approximation and Projection for Dimension Reduction
+    <ul>
+      <li><a href="https://umap-learn.readthedocs.io/en/latest/how_umap_works.html">umap tutorial</a></li>
+    </ul>
+  </li>
+  <li><strong>pacmap</strong>
+    <ul>
+      <li><img src="../assets/pacmap.png" alt="pacmap" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="misc">misc</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2110.08212">NNK-Means: Dictionary Learning using Non-Negative Kernel regression</a> (shekkizhar &amp; ortega, 2021)
+    <ul>
+      <li>data summarization - represent large datasets by a small set of elements (e.g. k-means)</li>
+      <li>here, use dictionary learning instead of k-means to summarize data
+        <ul>
+          <li>each dictionary element is a sparse combination of inputs</li>
+          <li>use non-negative kernel regesion (NNK) to measure distances when designing the dictionary (<a href="https://ieeexplore.ieee.org/abstract/document/9054425/">shekkizar &amp; ortega, 2020</a>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="generative-models">generative models</h1>
+
+<ul>
+  <li>overview: https://blog.openai.com/generative-models/</li>
+  <li>notes for <a href="https://sites.google.com/view/berkeley-cs294-158-sp20/home">deep unsupervised learning</a></li>
+  <li>MLE equivalent to minimizing KL for density estimation:
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$\min_\theta KL(p</td>
+              <td> </td>
+              <td>p_\theta) =\ \min_\theta-H(p) + \mathbb E_{x\sim p}[-\log p_\theta(x)] \ \max_\theta E_p[\log p_\theta(x)]$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="autoregressive-models">autoregressive models</h2>
+
+<ul>
+  <li>model input based on input
+    <ul>
+      <li>$p(x_1)$ is a histogram (learned prior)</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$p(x_2</td>
+              <td>x_1)$ is a distr. ouptut by a neural net (output is logits, followed by softmax)</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>all conditional distrs. can be given by neural net</li>
+    </ul>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>can model using an RNN: e.g. char-rnn (karpathy, 2015): $\log p(x) - \sum_i \log p(x_i</td>
+          <td>x_{1:i-1})$, where each $x_i$ is a character</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>can also use masks
+    <ul>
+      <li>masked autoencoder for distr. estimation - mask some weights so that autoencoder output is a factorized distr
+        <ul>
+          <li>pick an odering for the pixels to be conditioned on</li>
+        </ul>
+      </li>
+      <li>ex. 1d masked convolution on wavenet (use past points to predict future points)</li>
+      <li>ex. pixelcnn - use masking for pixels to the topleft</li>
+      <li>ex. gated pixelcnn - fixes issue with blindspot</li>
+      <li>ex. pixelcnn++ - nearby pixel values are likely to cooccur</li>
+      <li>ex. pixelSNAIL - uses attention and can get wider receptive field</li>
+      <li><strong>attention:</strong>$A(q, K, V) = \sum_i \frac{\exp(q \cdot k_i)}{\sum_j \exp (q \cdot k_j)} v_i$
+        <ul>
+          <li>masked attention can be more flexible than masked convolution</li>
+        </ul>
+      </li>
+      <li>can do super resolution, hierarchical autoregressive model</li>
+    </ul>
+  </li>
+  <li>problems
+    <ul>
+      <li>slow - have to sample each pixel (can speed up by caching activations)
+        <ul>
+          <li>can also speed up by assuming some pixels conditionally independent</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>hard to get a latent reprsentation
+    <ul>
+      <li>can use <strong>Fisher score</strong> $\nabla_\theta \log p_\theta (x)$</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="flow-models">flow models</h3>
+
+<ul>
+  <li>good intro to implementing invertible neural networks: https://hci.iwr.uni-heidelberg.de/vislearn/inverse-problems-invertible-neural-networks/
+    <ul>
+      <li>input / output dimension need to have same dimension</li>
+      <li>we can get around this by padding one of the dimensions with noise variables (and we might want to penalize these slightly during training)</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/pdf/1908.09257.pdf">normalizing flows</a></li>
+  <li>ultimate goal: a likelihood-based model with
+    <ul>
+      <li>fast sampling</li>
+      <li>fast inference (evaluating the likelihood)</li>
+      <li>fast training</li>
+      <li>good samples</li>
+      <li>good compression</li>
+    </ul>
+  </li>
+  <li>transform some $p(x)$ to some $p(z)$
+    <ul>
+      <li>$x \to z = f_\theta (x)$, where $z \sim p_Z(z)$</li>
+      <li>$p_\theta (x) dx = p(z)dz$</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$p_\theta(x) = p(f_\theta(x))</td>
+              <td>\frac {\partial f_\theta (x)}{\partial x}</td>
+              <td>$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>autoregressive flows
+    <ul>
+      <li>map $x\to z$ invertible
+        <ul>
+          <li>$x \to z$ is same as log-likelihood computation</li>
+          <li>$z\to x$ is like sampling</li>
+        </ul>
+      </li>
+      <li>end up being as deep as the number of variables</li>
+    </ul>
+  </li>
+  <li>realnvp (dinh et al. 2017) - can couple layers to preserve invertibility but still be tractable
+    <ul>
+      <li>downsample things and have different latents at different spatial scales</li>
+    </ul>
+  </li>
+  <li>other flows
+    <ul>
+      <li>flow++</li>
+      <li>glow</li>
+      <li>FFJORD - continuous time flows</li>
+    </ul>
+  </li>
+  <li>discrete data can be harder to model
+    <ul>
+      <li><strong>dequantization</strong> - add noise (uniform) to discrete data</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="vaes">vaes</h2>
+
+<ul>
+  <li><a href="https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf">intuitively understanding vae</a></li>
+  <li><a href="https://jaan.io/what-is-variational-autoencoder-vae-tutorial/">VAE tutorial</a>
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>minimize $\mathbb E_{q_\phi(z</td>
+              <td>x)}[\log p_\theta(x</td>
+              <td>z)- D_{KL}(q_\phi(z</td>
+              <td>x):</td>
+              <td> </td>
+              <td>:p(z))]$</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>want latent $z$ to be standard normal - keeps the space smooth</li>
+        </ul>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>hard to directly calculate $p(z</td>
+              <td>x)$, since it includes $p(x)$, so we approximate it with the variational posterior $q_\phi (z</td>
+              <td>x)$, which we assume to be Gaussian</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>goal: $\text{argmin}<em>\phi KL(q</em>\phi(z</td>
+              <td>x) :</td>
+              <td> </td>
+              <td>:p(z</td>
+              <td>x))$</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>still don’t have acess to $p(x)$, so rewrite $\log p(x) = ELBO(\phi) + KL(q_\phi(z</td>
+                  <td>x) :</td>
+                  <td> </td>
+                  <td>: p(z</td>
+                  <td>x))$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>instead of minimizing $KL$, we can just maximize the $ELBO=\mathbb E_q [\log p(x, z)] - \mathbb E_q[\log q_\phi (z</td>
+                  <td>x)]$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li><strong>mean-field variational inference</strong> - each point has its own params (e.g. different encoder DNN) vs <strong>amortized inference</strong> - same encoder for all points</li>
+    </ul>
+  </li>
+  <li><a href="https://pyro.ai/examples/vae.html">pyro explanation</a>
+    <ul>
+      <li>want large evidence $\log p_\theta (\mathbf x)$ (means model is a good fit to the data)</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>want good fit to the posterior $q_\phi(z</td>
+              <td>x)$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>just an autoencoder where the middle hidden layer is supposed to be unit gaussian
+    <ul>
+      <li>add a kl loss to measure how well it maches a unit gaussian
+        <ul>
+          <li>for calculation purposes, encoder actually produces means / vars of gaussians in hidden layer rather than the continuous values….</li>
+        </ul>
+      </li>
+      <li>this kl loss is not too complicated…https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf</li>
+    </ul>
+  </li>
+  <li>generally less sharp than GANs
+    <ul>
+      <li>uses mse loss instead of gan loss…</li>
+      <li>intuition: vaes put mass between modes while GANs push mass towards modes</li>
+    </ul>
+  </li>
+  <li>constraint forces the encoder to be very efficient, creating information-rich latent variables. This improves generalization, so latent variables that we either randomly generated, or we got from encoding non-training images, will produce a nicer result when decoded.</li>
+</ul>
+
+<h2 id="gans">gans</h2>
+
+<ul>
+  <li>evaluating gans
+    <ul>
+      <li>don’t have explicit objective like likelihood anymore</li>
+      <li>kernel density = parzen-window density based on samples yields likelihood</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>inception score $IS(\mathbf x) = \exp(\underbrace{H(\mathbf y)}_{\text{want to generate diversity of classes}} - \underbrace{H(\mathbf y</td>
+              <td>\mathbf x)}_{\text{each image should be distinctly recognizable}})$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><strong>FID</strong> - Frechet inception score works directly on embedded features from inception v3 model
+        <ul>
+          <li>embed population of images and calculate mean + variance in embedding space</li>
+          <li>measure distance between these means / variances for real/synthetic images using Frechet distance = Wasseterstein-2 distance</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>infogan
+    <ul>
+      <li><img src="../assets/infogan.png" alt="infogan" /></li>
+    </ul>
+  </li>
+  <li>problems
+    <ul>
+      <li>mode collapse - pick just one mode in the distr.</li>
+    </ul>
+  </li>
+  <li>
+    <p>train network to be loss function</p>
+  </li>
+  <li>
+    <p>original gan paper (2014)</p>
+  </li>
+  <li>
+    <p><em>generative adversarial network</em></p>
+  </li>
+  <li>goal: want G to generate distribution that follows data
+    <ul>
+      <li>ex. generate good images</li>
+    </ul>
+  </li>
+  <li>two models
+    <ul>
+      <li><em>G</em> - generative</li>
+      <li><em>D</em> - discriminative</li>
+    </ul>
+  </li>
+  <li>G generates adversarial sample x for D
+    <ul>
+      <li>G has prior z</li>
+      <li>D gives probability p that x comes from data, not G
+        <ul>
+          <li>like a binary classifier: 1 if from data, 0 from G</li>
+        </ul>
+      </li>
+      <li><em>adversarial sample</em> - from G, but tricks D to predicting 1</li>
+    </ul>
+  </li>
+  <li>training goals
+    <ul>
+      <li>G wants D(G(z)) = 1</li>
+      <li>D wants D(G(z)) = 0
+        <ul>
+          <li>D(x) = 1</li>
+        </ul>
+      </li>
+      <li>converge when D(G(z)) = 1/2</li>
+      <li>G loss function: $G = argmin_G log(1-D(G(Z))$</li>
+      <li>overall $\min_g \max_D$ log(1-D(G(Z))</li>
+    </ul>
+  </li>
+  <li>training algorithm
+    <ul>
+      <li>in the beginning, since G is bad, only train  my minimizing G loss function</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>projecting into gan latent space (=gan inversion)</strong></p>
+
+    <ul>
+      <li>2 general approaches
+        <ol>
+          <li>learn an encoder to go image -&gt; latent space
+            <ul>
+              <li><a href="https://arxiv.org/pdf/2004.00049.pdf">In-Domain GAN Inversion for Real Image Editing</a> (zhu et al. 2020)</li>
+              <li>learn encoder to project image into latent space, with regularizer to make sure it follows the right distr.</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ul>
+
+    <ol>
+      <li>optimize latent code wrt image directly
+        <ol>
+          <li>can also learn an encoder to initialize this optimization</li>
+        </ol>
+      </li>
+      <li>some work designing GANs that are intrinsically invertible</li>
+      <li>stylegan-specific - some works which exploit layer-wise noises
+        <ol>
+          <li>stylegan2 paper: optimize w along with noise maps - need to make sure noise maps don’t include signal</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="diffusion--energy-based-models">diffusion / energy-based models</h2>
+
+<ul>
+  <li><a href="https://benanne.github.io/2022/01/31/diffusion.html">blog post</a></li>
+  <li>seminal paper: <a href="https://arxiv.org/abs/1907.05600">Generative Modeling by Estimating Gradients of the Data Distribution</a> (song &amp; ermon, 2019)
+    <ul>
+      <li>first describe a procedure for gradually turning data into noise</li>
+      <li>then training a DNN to invert this procedure step-by-step
+        <ul>
+          <li>single model handles many different noise levels with shared parameters</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>really started earlier: <a href="https://arxiv.org/abs/1503.03585">Deep Unsupervised Learning using Nonequilibrium Thermodynamics</a> (sohl-dickstein, …, ganguli, 2015)</li>
+</ul>
+
+<h1 id="selfsemi-supervised">self/semi-supervised</h1>
+
+<h2 id="self-supervised">self-supervised</h2>
+
+<ul>
+  <li>basics: predict some part of the input (e.g. present from past, bottom from top, etc.)
+    <ul>
+      <li>ex. denoising autoencoder</li>
+      <li>ex. in-painting (can use adversarial loss)</li>
+      <li>ex. colorization, split-brain autoencoder
+        <ul>
+          <li>colorization in video given first frame (helps learn tracking)</li>
+        </ul>
+      </li>
+      <li>ex. relative patch prediction</li>
+      <li>ex. orientation prediction</li>
+      <li>ex. nlp
+        <ul>
+          <li>word2vec</li>
+          <li>bert - predict blank word</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>contrastive predictive coding - translates generative modeling into classification
+    <ul>
+      <li><em>contrastive loss</em> = <em>InfoNCE loss</em> uses cross-entropy loss to measure how well the model can classify the “future” representation amongst a set of unrelated “negative” samples</li>
+      <li>negative samples may be from other batches or other parts of the input</li>
+    </ul>
+  </li>
+  <li>momentum contrast - queue of previous embeddings are “keys”
+    <ul>
+      <li>match new embedding (query) against keys and use contrastive loss</li>
+      <li>similar idea as memory bank</li>
+    </ul>
+  </li>
+  <li><a href="https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Doersch_Unsupervised_Visual_Representation_ICCV_2015_paper.html">Unsupervised Visual Representation Learning by Context Prediction</a> (efros 15)
+    <ul>
+      <li>predict relative location of different patches</li>
+    </ul>
+  </li>
+  <li><strong>SimCLR</strong> (<a href="https://arxiv.org/abs/2002.05709">Chen et al, 2020</a>)
+    <ul>
+      <li>maximize agreement for different points after some augmentation (contrastive loss)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="semi-supervised">semi-supervised</h2>
+
+<ul>
+  <li>make the classifier more confident
+    <ul>
+      <li>entropy minimization - try to minimize the entropy of output predictions (like making confident predictions labels)</li>
+      <li>pseudo labeling - just take argmax pred as if it were the label</li>
+    </ul>
+  </li>
+  <li>label consistency with data augmentation</li>
+  <li><a href="https://arxiv.org/pdf/1905.00546.pdf">Billion-scale semi-supervised learning for image classification</a> (fair 19)
+    <ul>
+      <li>unsupervised learning + model distillation succeeds on imagenet</li>
+    </ul>
+  </li>
+  <li>ensembling
+    <ul>
+      <li>temporal ensembling - ensemble multiple models at different training epochs</li>
+      <li>mean teachers - learn from exponential moving average of students</li>
+    </ul>
+  </li>
+  <li>unsupervised data augmentation - augment and ensure prediction is the same</li>
+  <li>distribution alignment - ex. cyclegan - enforce  cycle consistency = dual learning = back translation
+    <ul>
+      <li>simpler is marginal matching</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="compression">compression</h2>
+
+<ul>
+  <li>simplest - fixed-length code</li>
+  <li>variable-length code
+    <ul>
+      <li>could append stop char to each codeword</li>
+      <li>general prefix-free code = binary tries
+        <ul>
+          <li>codeword is path from froot to leaf</li>
+          <li><img src="../assets/trie.png" alt="Screen Shot 2020-04-20 at 8.50.07 PM" /></li>
+        </ul>
+      </li>
+      <li>huffman code - higher prob = shorter</li>
+    </ul>
+  </li>
+  <li><strong>arithmetic coding</strong>
+    <ul>
+      <li>motivation: coding one symbol at a time incurs penalty of +1 per symbol - more efficient to encode groups of things</li>
+      <li>can be improved with good autoregressive model</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="contrastive-learning">contrastive learning</h2>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/2005.10243">What makes for good views for contrastive learning</a> (tian et al. 2020)
+    <ul>
+      <li>how to select views (e.g. transformations we want to be invariant to)?</li>
+      <li>reduce the mutual information (MI) between views while keeping task-relevant information intact</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/2004.11362">Supervised Contrastive Learning</a> (khosla et al. 2020)</li>
+  <li><a href="https://arxiv.org/pdf/1905.09272.pdf">Data-Efficient Image Recognition with Contrastive Predictive Coding</a>
+    <ul>
+      <li>pre-training with CPC on ImageNet yields super good results</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/pdf/2002.05714.pdf">Automatically Discovering and Learning New Visual Categories with Ranking Statistics</a></li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

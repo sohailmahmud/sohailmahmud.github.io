@@ -1,0 +1,715 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/08_web3/economics.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | defi vs. sde</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> defi vs. sde </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/08_web3/economics.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/08_web3/economics.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<h1 id="misc-fun">misc fun</h1>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Winner%27s_curse">winner’s curse</a> - a phenomenon that may occur in <a href="https://en.wikipedia.org/wiki/Common_value_auction">common value auctions</a>, where all bidders have the same (<em><a href="https://en.wikipedia.org/wiki/Ex_post">ex post</a></em>) value for an item but receive different private (<em><a href="https://en.wikipedia.org/wiki/Ex-ante">ex ante</a></em>) signals about this value and wherein the winner is the bidder with the most optimistic evaluation of the asset and therefore will tend to overestimate and overpay</li>
+</ul>
+
+<h1 id="stock-basics">stock basics</h1>
+
+<ul>
+  <li>stock basics
+    <ul>
+      <li>stocks prices fluctuate</li>
+      <li>stocks can pay dividends quarterly
+        <ul>
+          <li>common stocks may or may not pay dividends</li>
+          <li>preferred stocks typically pay fixed dividends</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>stock-market basics
+    <ul>
+      <li>ETF = exchange-traded fund - tracks a specific index / sector of the market</li>
+      <li>bear market - stock prices are falling</li>
+      <li>bull market - stock prices are rising</li>
+      <li>S &amp; P averages 7% / year</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="individual-events">individual events</h1>
+
+<ul>
+  <li><a href="https://www.bloomberg.com/opinion/articles/2021-01-25/the-game-never-stops">The GameStop Game Never Stops - Bloomberg</a>
+    <ul>
+      <li>3 explanations: stock fundamentals, short squeeze + gamma trap make feedback loop, meme</li>
+      <li><strong>focal point</strong> (or <strong>Schelling point</strong>) is a solution that people tend to choose by default in the absence of communication</li>
+      <li>there is a mass of retail buyers who like to all buy the same stock, and Musk’s tweet gave them a <a href="https://en.wikipedia.org/wiki/Focal_point_(game_theory)">Schelling point</a> to coordinate around</li>
+      <li>SEC shut down Hertz selling shares after bankruptcy (stocks would become worthless)</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="economic-measures">economic measures</h1>
+
+<ul>
+  <li>
+    <p><a href="https://www.currentaffairs.org/2020/08/the-case-for-degrowth">The Case For Degrowth - Current Affairs</a></p>
+
+    <ul>
+      <li>GDP Is Not a Measure of Human Well-Being</li>
+      <li>if people are unusually healthy, the market value of medical services will go down</li>
+      <li>even incredibly destructive pollution can improve GDP</li>
+      <li>doesn’t measure inequality, or non-revenue value (e.g. firefighters)</li>
+      <li>mainstream economics is premised on the idea that we all have “unlimited wants”</li>
+      <li><em>Defending the Undefendable</em> (Walter Block ) - there’s a market for what they do, therefore what they do is good - slumlords, blackmailers, corrupt cops, and drug pusher</li>
+      <li>Hickel asks us to think of the growth of economies the way we would think of the growth of a human - a human needs to grow, but “growth” is not treated as the end goal</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="progress">progress</h2>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[The World’s Most Annoying Man</td>
+          <td>Current Affairs](https://www.currentaffairs.org/2019/05/the-worlds-most-annoying-man)</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>Steven pinker’s enlightment now argues that much progress has been made technologically to better mankind</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="ml-in-stock-market">ml in stock market</h1>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/2007.04082">Uncertainty-Aware Lookahead Factor Models for Quantitative Investing</a> (chauhan, alberg, &amp; lipton 2020)
+    <ul>
+      <li><em>fundamentals</em> - publicly traded companies report these periodically, e.g. revenue, earnings, debt, among others
+        <ul>
+          <li>fundamentals forecasting - use LSTM to forecast fundamentals
+            <ul>
+              <li>use model uncertainty to avert risk (scale the earnings forecast in inverse proportion to the modeled earnings variance)</li>
+              <li>main fundamental to forecast is <em>EBIT</em>, but also forecast others for multi-task benefit</li>
+              <li>given past januaries, predict next january</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><em>factors</em> - functions of the reported data that correlate with stock market performance
+        <ul>
+          <li>stock selection part - given future fundamentals, can select stocks better than human-selected factors</li>
+        </ul>
+      </li>
+      <li><em>value investing</em> - base investment on long-term fundamentals
+        <ul>
+          <li>in this case, rank all stocks acording to factor and invest equal amounts into top 50, re-balancing monthly</li>
+        </ul>
+      </li>
+      <li>final improvement: compound annualized return of 17.7% vs 14.0% (standard factor model), CV on held-out stocks, test on held-out time period
+        <ul>
+          <li>previous works have been limited to few stocks / short time periods</li>
+        </ul>
+      </li>
+      <li>uncertainty
+        <ul>
+          <li>data uncertainty (aleatoric): DNN predicts mean + var as separate outputs
+            <ul>
+              <li>both are used to calculate loss</li>
+            </ul>
+          </li>
+          <li>model uncertainty (epistemic): use MC dropout w/ 10 reps</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="quant-finance">quant finance</h1>
+
+<p><strong>based on book by mazzoni</strong></p>
+
+<h2 id="basic-background">basic background</h2>
+
+<ul>
+  <li><em>Wiener</em>-process = <em>Brownian</em> motion: $W_t$
+    <ul>
+      <li>$W_0=0$</li>
+      <li>$W_t$ has independent increments (i.e. is Markov process)</li>
+      <li>$W_t - W_s \sim N(0, t-s)$ for $0 \leq s &lt; t$</li>
+      <li>this implies $f(w)=\frac{1}{\sqrt{2 \pi(t-s)}} e^{-\frac{1}{2} \frac{w^{2}}{t-s}}$</li>
+    </ul>
+  </li>
+  <li>can use fourier analysis to easily compute things about sums of random variables</li>
+</ul>
+
+<h2 id="utility-theory-see-notes-in-decisions">utility theory: see notes in <a href="https://csinva.io/notes/ai/decisions.html">decisions</a></h2>
+
+<ul>
+  <li>economic theory assumes agents maximix their personal utility, aims to provide framework for rational behavior</li>
+</ul>
+
+<h2 id="architecture-of-financial-markets">architecture of financial markets</h2>
+
+<ul>
+  <li><em>arrow-debreu</em> problem (1954): maximize expected utility under wealth constraint
+    <ul>
+      <li>must assume utility function</li>
+      <li>lets us derive marginal rate of substitution MRS: tradeoff in utility between consumption today and consumption in the future</li>
+    </ul>
+  </li>
+  <li><em>portfolio selection problem</em>
+    <ul>
+      <li>payoff matrix $X$ is a $N x P$ matrix, with $P$ securities, each which takes on $N$ possible values and we ewant to find a vector $\theta \in \mathbb R^P$ that maximizes payoff subject to constraint</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="markowitz-portfolio-theory">markowitz portfolio theory</h2>
+
+<ul>
+  <li>everything is embedded in Gaussian distributions
+    <ul>
+      <li>assume in short term that different returns are independent (then their sums are normal)</li>
+    </ul>
+  </li>
+  <li>focuses on mean and variance of return distr. of risky assets over intermediate / long-term horizons</li>
+</ul>
+
+<h2 id="capital-asset-pricing-model-capm--arbitrage-pricing-theory-apt">capital asset pricing model (CAPM) + arbitrage pricing theory (APT)</h2>
+
+<ul>
+  <li>CAPM - used to determine theoretical rate of return of an asset
+    <ul>
+      <li>$E\left(R_{i}\right)=R_{f}+\beta_{i}\left(E\left(R_{m}\right)-R_{f}\right)
+$
+        <ul>
+          <li>$E\left(R_{i}\right)$ is the expected return on the capital asset</li>
+          <li>$R_{f}$ is the risk-free rate of interest such as interest arising from government bonds</li>
+          <li>$\beta_{i}$ is the sensitivity of the expected excess asset returns to the expected excess market returns, or also $\beta_{i}=\frac{\operatorname{Cov}\left(R_{i}, R_{m}\right)}{\operatorname{Var}\left(R_{m}\right)}=\rho_{i, m} \frac{\sigma_{i}}{\sigma_{m}}$
+            <ul>
+              <li>$\rho_{i, m}$ denotes the correlation coefficient between the investment $i$ and the market $m$</li>
+              <li>$\sigma_{i}$ is the standard deviation for the investment $i$</li>
+              <li>$\sigma_{m}$ is the standard deviation for the market $m$.</li>
+            </ul>
+          </li>
+          <li>$E\left(R_{m}\right)$ is the expected return of the market</li>
+          <li>overly simple</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>APT - expected return is a linear function of various factors</p>
+
+    <ul>
+      <li>
+        <p>$ \mathbb{E}\left(r<em>{j}\right)=r</em>{f}+\lambda<em>{j 1} R P</em>{1}+\lambda<em>{j 2} R P</em>{2}+\cdots+\lambda<em>{j n} R P</em>{n}$</p>
+
+        <ul>
+          <li>$R P_{n}$ is the risk premium of the factor,</li>
+          <li>$r_{f}$ is the risk-free rate,</li>
+          <li>$ r<em>{j}=a</em>{j}+\lambda<em>{j 1} f</em>{1}+\lambda<em>{j 2} f</em>{2}+\cdots+\lambda<em>{j n} f</em>{n}+\epsilon<em>{j}$
+where
+$a</em>{j}$ is a constant for asset $j$
+$ f<em>{n}$ is a systematic factor
+$\lambda</em>{j n}$ is the sensitivity of the $j$ th asset to factor $n,$ also called factor loading,</li>
+          <li>and $\epsilon_{j}$ is the risky asset’s idiosyncratic random shock with mean zero.I diosyncratic shocks are assumed to be uncorrelated across assets and uncorrelated with the factors.</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Arbitrage</strong> = practice of taking positive expected return from overvalued or undervalued securities in the inefficient market without any incremental risk and zero additional investments.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="portfolio-performance-and-management">portfolio performance and management</h2>
+
+<ul>
+  <li>measure of portfolio performance
+    <ul>
+      <li><strong>Sharpe ratio</strong> $S_a = \frac{\mathbb E [R_a - R_b]}{\sigma_a}$: performance compared to a risk-free asset, adjusted for risk
+        <ul>
+          <li>$R_a$ is asset return</li>
+          <li>$R_b$ is risk-free benchmark return (e.g. U.S. Treasury security)</li>
+          <li>$\sigma_a$ is the stddev of the excess return</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>management
+    <ul>
+      <li>what proportion should be invested in risky part of portfolio?</li>
+      <li>Kelly criterion - very good formula for bet sizing in long-term</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="financial-economics">financial economics</h2>
+
+<ul>
+  <li>explains how markets and prices of risky investments evolve</li>
+</ul>
+
+<h2 id="behavioral-finance">behavioral finance</h2>
+
+<ul>
+  <li>deviates from utility theory by factoring in psychological considerations and deviations from rationality</li>
+</ul>
+
+<h2 id="forwards-futures-and-options">forwards, futures, and options</h2>
+
+<ul>
+  <li>derivatives are contracts whose value depends on the value of other securities, commodities, rates, or derivatives</li>
+  <li><strong>forwards</strong> - over-the-counter, settlement is at expiry or shortly after</li>
+  <li><strong>futures</strong> - standardized contract traded in an organized markets
+    <ul>
+      <li>need to account for change in price over time (e.g. interest)</li>
+    </ul>
+  </li>
+  <li><strong>options</strong>
+    <ul>
+      <li>gives you option to buy a stock, but bounds losses</li>
+      <li>call is analog of long (normal buying)</li>
+      <li>put is analog of short</li>
+      <li><img src="../assets/what-are-call-options.gif" alt="what-are-call-options" /></li>
+    </ul>
+  </li>
+  <li>compound positions
+    <ul>
+      <li><img src="../assets/compound_positions.png" alt="compound_positions" /></li>
+      <li><img src="../assets/bull_bear_spread.png" alt="bull_bear_spread" /></li>
+      <li><strong>protective put buying</strong> - limits dowside risk of a security/portfolio</li>
+      <li><strong>covered call writing</strong> -</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="binomial-crr-model">binomial (CRR) model</h3>
+
+<ul>
+  <li>Cox-Ross-Rubeinstein model (CRR)
+    <ul>
+      <li>simplification of brevious black-scholes model (1973)</li>
+    </ul>
+  </li>
+  <li>numerical method for valuation of options</li>
+  <li>simulates discrete-time model of the varying price over time</li>
+</ul>
+
+<h3 id="black-scholes-theory">black-scholes theory</h3>
+
+<ul>
+  <li>PDE for evolution of derivatives</li>
+  <li>can derive closed-form</li>
+</ul>
+
+<h3 id="volatility-deterministic--stochastic">volatility (deterministic / stochastic)</h3>
+
+<h2 id="processes-with-jumps">processes with jumps</h2>
+
+<h2 id="basic-fixed-income-instruments">basic fixed-income instruments</h2>
+
+<ul>
+  <li>fixed-income instruments don’t have the option to have a risk-free asset as san alternative (e.g. putting money in a bank)</li>
+</ul>
+
+<h3 id="plain-fixed-income-derivatives">plain fixed-income derivatives</h3>
+
+<h2 id="term-structure-models">term structure models</h2>
+
+<h2 id="libor-market-model">LIBOR market model</h2>
+
+<h1 id="private-equity">private equity</h1>
+
+<p><em><a href="https://www.investopedia.com/terms/p/privateequity.asp#:~:text=Private%20equity%20is%20an%20alternative,the%20delisting%20of%20public%20equity.">Private Equity</a> is an alternative investment class of capital for things not on public exchange (e.g. private companies, or buyouts of public companies). Can be nicer for entrepeneurs</em></p>
+
+<ul>
+  <li>private equity firms make money by charging management and performance fees from investors in a fund
+    <ul>
+      <li>like a hedge fund, managing partners take basic fees + profit percentage</li>
+      <li>differs in that private equity invests directly in companies or buys a controlling interest (usually more long-term, lower risk)</li>
+    </ul>
+  </li>
+  <li>types
+    <ul>
+      <li><strong>venture capital</strong> is a type of private equity</li>
+      <li>leveraged buyouts - most popular - buy company to improve it then resell it (to individual or in IPO)</li>
+      <li>distressed funding - money given to struggling company to turn it around</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="misc-books">misc books</h1>
+
+<h2 id="bullshit-jobs-by-david-graeber">bullshit jobs (by david graeber)</h2>
+
+<ul>
+  <li>“In the year 1930, John Maynard Keynes predicted that, by century’s end, technology would have adavanced sufficiently that counties like the US would have achieved a fifteen-hour work week”</li>
+  <li>“layoffs and speed-ups invariably fall on that class of people who are actually making, moving, fixing, and maintaining things”</li>
+  <li>“If 1 percent of the population controls most of the displosable wealth, what we call “the market” reflects what they think is useful or important”</li>
+  <li>defining bullshit jobs
+    <ul>
+      <li>“what would happen were this entire class of people to simply disappear?”</li>
+      <li>survey question: “does your job ‘make a meaningful contribution to the world’? Astonishingly, more than a third–37 percent–said they believed that it did not”</li>
+      <li>“a bullshit job is a form of paid employment that is so completely pointless, unnecessary, or pernicious that even the employee cannot justify its existence even though, as part of the conditions of employment, the employee feels obliged to pretend that this is not the case”</li>
+    </ul>
+  </li>
+  <li>bullshit jobs categorization
+    <ul>
+      <li>flunkies - exist only or primarily to make someone else look or feel important
+        <ul>
+          <li>e.g. unneeded doorman, receptionist, administrative assistants</li>
+          <li>higher-ups’ importance will almost invariably be measured by total num employees working upder them</li>
+        </ul>
+      </li>
+      <li>goons - people whose jobs have an aggressive element but exist only bc other people employ them
+        <ul>
+          <li>if no one had an army, armies would not be needed: same for lobbyists, PR specialists, telemarketers, corporate lawyers</li>
+        </ul>
+      </li>
+      <li>duct tapers - jobs exist only bc of a fault in the organization - solve a problem which shouldn’t exist
+        <ul>
+          <li>ex. software dev for internal unused software</li>
+        </ul>
+      </li>
+      <li>box tickers - allow an organization to claim it is doing something it is not
+        <ul>
+          <li>ex. fact-finding commision, gov. bureaucracy, making nice-looking reports</li>
+        </ul>
+      </li>
+      <li>taskmasters
+        <ul>
+          <li>type 1 - assign work to others</li>
+          <li>type 2 - create fake tasks for others to do</li>
+          <li>managerialist ideologies in complex organizations require staff to keep the managerialist plates spinning</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>misc
+    <ul>
+      <li>one ex. “this is all just greed propped up by inflated prices of necessities”</li>
+      <li>“most people who do a great deal of harm in the world are protected against the knowledge that they do so”</li>
+      <li>at least in the traditional workplace, there was someone against whom you could direct your rage</li>
+      <li>like Olympic endurance boredom for its own sake</li>
+    </ul>
+  </li>
+  <li>psychology
+    <ul>
+      <li>when in a bullshit job, hard not to feel you’re being pressured/manipulated, with the added indignity that you’re also betraying the trust of someone whose side you should be on
+        <ul>
+          <li>people who win lotteries rarely quit their jobs, and if they do regret it</li>
+          <li>in priosns where inmates are not required to work, denying them work is often used as punishment</li>
+        </ul>
+      </li>
+      <li>childeren learn largely by understanding they can cause things to happen
+        <ul>
+          <li>when causality is taken away in simple experiments, children become very upset</li>
+          <li>schiller argued that the desire to create art is simply a manifestation of the urge to play as the exercise of freedom for its own sake as well</li>
+        </ul>
+      </li>
+      <li><strong>scriptlessness</strong> - like guilt - people who had unrequited love during adolescence usually got overt it, but people who were the object of unrequited love often didn’t</li>
+    </ul>
+  </li>
+  <li>moral logic
+    <ul>
+      <li>idleness is not dangerous - idleness is theft</li>
+      <li><strong>in places without clocks, time is measured by actions rather than action being measured by time</strong></li>
+      <li>The Nuer have no expression equivalent to “time” in our language, and they cannot speak of time as though it were something actual</li>
+      <li>the discipline of economics itself emerged out of moral philosophy (Adam Smith was a professor of moral philisophy) + moral philosophy came from theology</li>
+    </ul>
+  </li>
+  <li>politics
+    <ul>
+      <li>“The main political reaction to our awareness that half the time we are engaged in utterly meaningless or even counterproductive activities–usually under the orders of a person we dislike–is to rankle with resentment over the fact there might be others out there who are not in the same trap”
+        <ul>
+          <li>“as a result, hatred resentment, and suspicion have become the glue that holds society together”</li>
+        </ul>
+      </li>
+      <li><strong>rights-scolding</strong>
+        <ul>
+          <li>right-wing: criticize others for thinking the world owes them a living, medical treatment, maternity leave</li>
+          <li>left-wing: check your privilege</li>
+        </ul>
+      </li>
+      <li>frightening monsters in popular do not simply threaten to hurt you but to turn you into a monster yourself (e.g. vampire, zombie)</li>
+      <li>the joke under the soviet union was “we pretend to work; they pretend to pay us”</li>
+      <li>“Puratinanism: the haunting fear that someone, somewhere, may be happy. – H.L. Menchken”</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="the-lords-of-easy-money-how-the-federal-reserve-broke-the-american-economy-chrisopher-leonard">the lords of easy money: how the federal reserve broke the american economy (chrisopher leonard)</h2>
+
+<h3 id="basics">basics</h3>
+
+<ul>
+  <li>what they were doing was something much more like math than like politics.</li>
+  <li>it is really a network of regional banks</li>
+  <li>Progressive vision: dont hurt savers (so keep inflation low, interest rates high)
+    <ul>
+      <li>Central banks cause inflation when they keep interest rates too low for too long.</li>
+    </ul>
+  </li>
+  <li>The basic system works like this: When the Fed raises interest rates, it slows the economy. When the Fed lowers interest rates, it speeds up the economy.
+    <ul>
+      <li>this money would widen the gap between the very rich and everybody else.</li>
+    </ul>
+  </li>
+  <li>The Fed directly bought mortgage debt to stabilize the mortgage market.
+    <ul>
+      <li>This is how the Fed creates money—it buys things from the primary dealers, and it does so by simply creating money inside their reserve accounts.</li>
+      <li>By announcing quantitative easing in Jackson Hole, he had raised expectations that the plan would happen. This prompted speculators to start trading as if the program were a certain thing, driving up prices for some assets. Within a few months, the market might have fallen if the Fed didn’t follow through.</li>
+      <li>the ways that capitalism, democracy, and regulation might be mutually supportive.</li>
+    </ul>
+  </li>
+  <li>historical
+    <ul>
+      <li>Between 1776 and 1912, the United States twice created and then destroyed a central bank.</li>
+      <li>Between 1913 and 2008, the Fed gradually increased the money supply from about 5 billion to 847 billion. This increase in the monetary base happened slowly, in a gently uprising slope. Then, between late 2008 and early 2010, the Fed printed $1.2 trillion.</li>
+      <li>“You shall not crucify mankind upon a cross of gold!”</li>
+      <li>Asset inflation was the force behind the dot-com crash of 2000, the housing market crash of 2008, and the unprecedented market crash of 2020, which was precipitated by the coronavirus outbreak.</li>
+      <li>His verdict on the inflation of the 1970s was stark: It was monetary policy, set by the Fed, that primarily created the problem.</li>
+      <li>We have a new kind of bank. It is called too big to fail.”</li>
+      <li>The curious thing about these statements is that they seemed more opaque and difficult to understand than the things that Greenspan said during FOMC meetings, when he was surrounded by PhD economists.</li>
+      <li>fiscal policy, which belongs to the democratically controlled institutions like Congress, the White House, and state governments. Fiscal policy involves the collection of taxes, the spending of public money, and regulation.</li>
+      <li>Asset inflation, however, was out of control by 1998. But this didn’t raise much public concern. When asset inflation gets out of hand, people don’t call it inflation. They call it a boom.</li>
+      <li>The fiscal authorities were exposed as slow and ineffective, while the monetary authority of the Federal Reserve emerged as robust, keenly maintained, and fast-moving.</li>
+      <li>quantitative easing and 0 percent interest rates were the most important economic policy of the decade, while also being one of the least discussed.</li>
+      <li>The FOMC sets a target for the short-term rates. It is the traders at the New York Fed who make that target a reality.</li>
+      <li>For many decades, they did it by buying and selling securities at exactly the right amount to make the cost of money exactly what the FOMC wanted it to be.</li>
+      <li>was entirely clear to senior leaders at the Fed that to achieve the wealth effect, ZIRP must first and foremost benefit the very richest people in the country. That’s because assets are not broadly owned in America,</li>
+      <li>One of the unspoken rules of Wall Street, in fact, is that those who know, don’t show.</li>
+      <li>company had just borrowed $1.5 billion in cheap debt, but it didn’t plan to use the cash to build a factory, invest in research, or hire workers. Instead, the company used the money to buy back shares of its own stock. This made sense because the stocks paid a dividend of 2.5 percent,</li>
+      <li>“The shortcoming of most macro models is that the vast majority of them make the assumption that over time conditions will revert to a prevailing ‘norm,’ ”</li>
+      <li>Carlyle specialized in buying and selling businesses that relied on government spending, and it hired former government officials to help.</li>
+      <li>When it’s easier to borrow money, companies use the debt for mergers or private equity takeovers. These activities benefit the people with access to capital, but they rarely spark innovation, create new jobs, or give pay raises to working people.</li>
+      <li>Investors were buying loans that they knew were crummy, but they operated on the belief that they could sell them when they needed to.</li>
+      <li>Stock buybacks were made legal in 1982,
+        <ul>
+          <li>Buybacks almost always increase a company’s indebtedness, which weakens it.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>The key idea behind the Hoenig rule was breaking the riskier parts of banking away from the economically vital parts (like making business loans), so that the riskier banks could fail without taking down the rest of the system if they made bad bets.</li>
+</ul>
+
+<h1 id="cryptography">cryptography</h1>
+
+<h2 id="crypto-arbitrage">crypto arbitrage</h2>
+
+<ul>
+  <li>nice ref: <a href="https://decrypt.co/resources/what-is-crypto-arbitrage-and-how-does-it-work">What is Crypto Arbitrage and How Does It Work? (2021) - Decrypt</a></li>
+  <li><strong>arbitrage</strong> - buy in one market and immediately sell in another for profit
+    <ul>
+      <li>crypto arbitrage takes advantage of the fact that cryptocurrencies can be priced differently on different exchanges</li>
+    </ul>
+  </li>
+  <li>different crypto arbitrage types
+    <ul>
+      <li>spatial arbitrage - buy from one exchange, immediately sell on another</li>
+      <li>convergence arbitrage - buy on one exchange and sell on another</li>
+      <li><a href="https://www.coygo.app/blog/posts/cryptocurrency-triangular-arbitrage-how-does-it-work/">triangular arbitrage</a>: trade difference between 3 cryptos on same exchange
+        <ul>
+          <li>may convert $X \to Y$, then $Y \to Z$ , then $Z \to X$, and potentially end up with more $X$</li>
+          <li>simple ex. is with exchange rates for different countries</li>
+        </ul>
+      </li>
+      <li>statistical arbitrage….use data models of arbitrage</li>
+    </ul>
+  </li>
+  <li>risks: include slippage, price movement and transfer fees
+    <ul>
+      <li>slippage - order is larger than cheapest offer on order book, so order ‘slips’ and costs more than expected</li>
+      <li>price movement - must take advantage of spreads before they disappear
+        <ul>
+          <li>spreads usually exist only for seconds but transferring between exchanges can take minutes (soln: hold currency on both exchanges + simultaneously buy and sell)</li>
+        </ul>
+      </li>
+      <li>transferral/transaction fees - must make more than this on a trade</li>
+    </ul>
+  </li>
+  <li>pricing
+    <ul>
+      <li>each crypto exchange sets price based on most recent trade (e.g. buy+sell)</li>
+    </ul>
+  </li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

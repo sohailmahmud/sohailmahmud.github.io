@@ -1,0 +1,752 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/research_ovws/ovw_disentanglement.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | disentanglement</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> disentanglement </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/research_ovws/ovw_disentanglement.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/research_ovws/ovw_disentanglement.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                <div class="iframe-box" style="margin-top: 0px">
+<iframe class="iframe" src="https://csinva.github.io/notes/cheat_sheets/disentanglement_cheat_sheet#/" frameborder="0" width="100%" height="auto" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+<h1 id="vaes">VAEs</h1>
+
+<p><em>Some good disentangled VAE implementations are <a href="https://github.com/YannDubs/disentangling-vae">here</a> and more general VAE implementations are <a href="https://github.com/AntixK/PyTorch-VAE">here</a></em>. Tensorflow implementations available <a href="https://github.com/google-research/disentanglement_lib">here</a></p>
+
+<p>The goal is to obtain a nice latent representation $\mathbf z$ for our inputs $\mathbf x$. To do this, we learn parameters $\phi$ for the encoder $p_\phi( \mathbf z\vert \mathbf x)$ and $\theta$ for the decoder $q_{\mathbf \theta} ( \mathbf x\vert \mathbf z)$. We do this with the standard vae setup, whereby a code $z$ is sampled, using the output of the encoder (intro to VAEs <a href="https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf">here</a>).</p>
+
+<h2 id="disentangled-vae-losses">disentangled vae losses</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>reconstruction loss</th>
+      <th>compactness prior loss</th>
+      <th style="text-align: center">total correlation loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>encourages accurate reconstruction of the input</td>
+      <td>encourages points to be compactly placed in space</td>
+      <td style="text-align: center">encourages latent variables to be independent</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>summarizing the losses
+    <ul>
+      <li><strong>reconstruction loss</strong> - measures the quality of the reconstruction, the form of the loss changes based on the assumed distribution of the likelihood of each pixel
+        <ul>
+          <li><em>binary cross entropy loss</em> - corresopnds to bernoulli distr., most common - doesn’t penalize (0.1, 0.2) and (0.4, 0.5) the same way, which might be problematic</li>
+          <li><em>mse loss</em> - gaussian distr. - tends to focus on a fex pixels that are very wrong</li>
+          <li><em>l1 loss</em> - laplace distr.</li>
+        </ul>
+      </li>
+      <li><strong>compactness prior loss</strong>
+        <ul>
+          <li>doesn’t use the extra injected latent noise</li>
+          <li>tries to push all the points to the same place</li>
+          <li>emphasises smoothness of z, using as few dimensions of z as possible, and the main axes of z to capture most of the data variability</li>
+          <li>usually assume prior is standard normal, resulting in pushing the code means to 0 and code variance to 1</li>
+          <li>we can again split this term $\sum_i \underbrace{\text{KL} \left(p_\phi( \mathbf z_i\vert \mathbf x):\vert\vert:prior(\mathbf z_i) \right)}<em>{\text{compactness prior loss}} = \underbrace{\sum_i I(x; z)}</em>{\text{mutual info}} + \underbrace{\text{KL} \left(p_\phi( \mathbf z_i):\vert\vert:prior(\mathbf z_i) \right)}_{\text{factorial prior loss}}$
+            <ul>
+              <li>(see <a href="https://arxiv.org/pdf/1802.05983.pdf">factor-vae paper for proof</a>)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>total correlation loss</strong> - encourages factors to be independent
+        <ul>
+          <li>measures dependence between marginals of the latent vars</li>
+          <li>intractable (requires pass through the whole dset)</li>
+          <li>instead sample $dec_\phi(\mathbf z\vert \mathbf x)$ and create $\prod_j dec_\phi( \mathbf z_i\vert \mathbf x) $ by permuting across the batch dimension
+            <ul>
+              <li>now, calculate the kl with the <em>density-ratio trick</em> - train a classifier to approximate the ratio from these terms</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="disentangled-vae-in-code">disentangled vae in code</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Reconstruction + KL divergence losses summed over all elements and batch
+</span><span class="k">def</span> <span class="nf">loss_function</span><span class="p">(</span><span class="n">x_reconstructed</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+  <span class="sh">'''</span><span class="s">
+  Params
+  ------
+  x_reconstructed: torch.Tensor
+		Reconstructed input, with values between 0-1
+	x: torch.Tensor
+		input, values unrestricted
+  </span><span class="sh">'''</span>
+  
+  <span class="c1"># reconstruction loss (assuming bernoulli distr.)
+</span>  <span class="c1"># BCE = sum_i [x_rec_i * log(x_i) + (1 - x_rec_i) * log(1-x_i)]
+</span>	<span class="n">rec_loss</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">binary_cross_entropy</span><span class="p">(</span><span class="n">x_reconstructed</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="sh">'</span><span class="s">sum</span><span class="sh">'</span><span class="p">)</span>
+
+  <span class="c1"># compactness prior loss
+</span>	<span class="c1"># 0.5 * sum(1 + log(sigma^2) - mu^2 - sigma^2)
+</span>	<span class="n">KLD</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">torch</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">logvar</span> <span class="o">-</span> <span class="n">mu</span><span class="p">.</span><span class="nf">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">logvar</span><span class="p">.</span><span class="nf">exp</span><span class="p">())</span>
+  
+  <span class="c1"># total correlation loss (calculate tc-vae way)
+</span>	<span class="n">z_sample</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randn_like</span><span class="p">(</span><span class="nf">exp</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">logvar</span><span class="p">))</span>
+	<span class="n">log_pz</span><span class="p">,</span> <span class="n">log_qz</span><span class="p">,</span> <span class="n">log_prod_qzi</span><span class="p">,</span> <span class="n">log_q_zCx</span> <span class="o">=</span> <span class="nf">func</span><span class="p">(</span><span class="n">z_sample</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span><span class="p">)</span>
+  <span class="c1"># I[z;x] = KL[q(z,x)\vert\vertq(x)q(z)] = E_x[KL[q(z\vertx)\vert\vertq(z)]]
+</span>  <span class="n">mi_loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">log_q_zCx</span> <span class="o">-</span> <span class="n">log_qz</span><span class="p">).</span><span class="nf">mean</span><span class="p">()</span>
+  <span class="c1"># TC[z] = KL[q(z)\vert\vert\prod_i z_i]
+</span>  <span class="n">tc_loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">log_qz</span> <span class="o">-</span> <span class="n">log_prod_qzi</span><span class="p">).</span><span class="nf">mean</span><span class="p">()</span>
+  <span class="c1"># dw_kl_loss is KL[q(z)\vert\vertp(z)] instead of usual KL[q(z\vertx)\vert\vertp(z))]
+</span>  <span class="n">dw_kl_loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">log_prod_qzi</span> <span class="o">-</span> <span class="n">log_pz</span><span class="p">).</span><span class="nf">mean</span><span class="p">()</span>
+  
+	<span class="k">return</span> <span class="n">rec_loss</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">KLD</span>
+</code></pre></div></div>
+
+<h2 id="vaes-for-interpretation">vaes for interpretation</h2>
+
+<ul>
+  <li><a href="https://proceedings.neurips.cc/paper/2020/file/56f9f88906aebf4ad985aaec7fa01313-Paper.pdf">icam</a> (bass et al. 2020) - learn disentangled repr using vae with adv loss to make repr class-relevant
+    <ul>
+      <li><a href="https://openaccess.thecvf.com/content_cvpr_2018/html/Baumgartner_Visual_Feature_Attribution_CVPR_2018_paper.html">va-gan</a> (baumgartner et al. 2018) - interpret features in GAN space</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="various-vaes">various vaes</h2>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/1312.6114">vae</a> (kingma &amp; welling, 2013)</li>
+  <li><a href="https://openreview.net/references/pdf?id=Sy2fzU9gl">beta-vae</a> (higgins et al. 2017) - add hyperparameter $\beta$ to weight the compactness prior term</li>
+  <li><a href="https://arxiv.org/pdf/1804.03599.pdf">beta-vae H</a> (burgess et al. 2018) - add parameter $C$ to control the contribution of the compactness prior term
+    <ul>
+      <li>$\overbrace{\mathbb  E_{p_\phi(\mathbf z\vert \mathbf x)}}^{\text{samples}} [ \underbrace{-\log q_{\mathbf \theta} ( \mathbf x\vert \mathbf z)}<em>{\text{reconstruction loss}} ]      		+ \textcolor{teal}{\beta}\; \vert\sum_i \underbrace{\text{KL} \left(p</em>\phi( \mathbf z_i\vert \mathbf x):\vert\vert:prior(\mathbf z_i) \right)}_{\text{compactness prior loss}} -C\vert$</li>
+      <li>C is gradually increased from zero (allowing for a larger compactness prior loss) until good quality reconstruction is achieved</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1802.05983">factor-vae</a> (kim &amp; minh 2018) - adds total correlation loss term
+    <ul>
+      <li>computes <em>total correlation loss term</em> using discriminator (can we discriminate between the samples when we shuffle over the batch dimension or not?)</li>
+      <li><a href="https://arxiv.org/abs/1802.04942">beta-TC-VAE = beta-total-correlation VAE</a> (chen et al. 2018) - same objective but computed without need for discriminator
+        <ul>
+          <li>use minibatch-weighted sampling to compute each of the 3 terms that make up the original VAE <em>compactness prior loss</em></li>
+          <li>main idea is to better approximate $q(z)$ by weighting samples appropriately - biased, but easier to compute</li>
+        </ul>
+      </li>
+      <li><a href="https://arxiv.org/abs/1802.06765">Interpretable VAEs for nonlinear group factor analysis</a></li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/pdf/1711.01558.pdf">Wasserstein Auto-Encoders</a> (tolstikhin et al.) - removes the mutual info part of the loss
+    <ul>
+      <li>wasserstein distance = earth-movers distance, how far apart are 2 distrs</li>
+      <li>minimizes wasserstein distance + penalty which is similar to auto-encoding penalty,  without the mutual info term</li>
+      <li>another intuition: rather than map each point to a ball (since VAE adds noise to each latent repr), we only constraint the overall distr of Z, potentially making reconstructions less blurry (but potentially making latent space less smooth)</li>
+      <li><img src="../assets/wae.png" alt="wae" /></li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/pdf/2004.04467.pdf">Adversarial Latent Autoencoder</a> (pidhorskyi et al. 2020)
+    <ul>
+      <li>improve quality of generated VAE reconstructions by using a different setup which allows for using a GAN loss</li>
+      <li><img src="../assets/alae.png" alt="alae" /></li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/pdf/1812.06775.pdf">Variational Autoencoders Pursue PCA Directions (by Accident)</a>
+    <ul>
+      <li>local orthogonality of the embedding transformation</li>
+      <li>prior $p(z)$ is standard normal, so encoder is assumed to be Gaussian with a certain mean, and <strong>diagonal covariance</strong></li>
+      <li>disentanglement is sensitive to rotations of the latent embeddings but reconstruction err doesn’t care</li>
+      <li>for linear autoencoder w/ square-error as reconstruction loss, we recover PCA decomp</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/pdf/1812.02833.pdf">Disentangling Disentanglement in Variational Autoencoders</a> (2019)
+    <ul>
+      <li>independence can be too simplistic, instead 2 things:
+        <ul>
+          <li>the latent encodings of data having an appropriate level of overlap
+            <ul>
+              <li>keeps encodings from just being a lookup table</li>
+              <li>when encoder is unimodal, $I(x; z)$ gives us a good handle on this</li>
+            </ul>
+          </li>
+          <li>prior structure on the latents (e.g. independence, sparsity)</li>
+        </ul>
+      </li>
+      <li>to trade these off, can penalize divergence between $q_\phi(z)$ and $p(z)$</li>
+      <li>nonisotropic priors -  isotropic priors are only good up to rotation in the latent space
+        <ul>
+          <li>by chossing a nonisotropic prior (e.g. nonisotropic gaussian), can learn certain directions more easily</li>
+        </ul>
+      </li>
+      <li>sparse prior - can help do clustering</li>
+    </ul>
+  </li>
+  <li><a href="https://www.biorxiv.org/content/10.1101/2020.07.17.207993v1.full.pdf">VAE-SNE: a deep generative model for simultaneous dimensionality reduction and clustering</a> (graving &amp; couzin 2020) - reduce dims + cluster without specifying number of clusters
+    <ul>
+      <li><img src="../assets/sne_eq.png" alt="Screen Shot 2020-09-10 at 11.40.10 PM" /></li>
+      <li><strong>stochastic neighbor regularizer</strong> that optimizes pairwise similarity kernels between original and latent distrs. to strengthen local neighborhood preservation
+        <ul>
+          <li>can use different neighbor kernels, e.g. t-SNE similarity (van der Maaten &amp; Hinton, 2008) or Gaussian SNE kernel (Hinton &amp; Roweis, 2003)</li>
+          <li>perplexity annealing technique (Kobak and Berens, 2019) - decay the size of local neighborhoods during training (helps to preserve structure at multiple scales)</li>
+        </ul>
+      </li>
+      <li><strong>Gaussian mixture prior</strong> for learning latent distr. (with very large number of clusters)
+        <ul>
+          <li>at the end, merge clusters using a sparse watershed (see <a href="https://iopscience.iop.org/article/10.1088/1478-3975/14/1/015002/meta">todd et al. 2017</a>)</li>
+        </ul>
+      </li>
+      <li>extensive evaluation - test several datasets / methods and evaluate how well the first 2 dimensions preserve the following:
+        <ul>
+          <li>global - correlation between pairwise distances in orig/latent spaces</li>
+          <li>local - both metric (distance- or radius-based) and topological (neighbor-based) neighborhoods which are 1% of total embedding size</li>
+          <li>fine-scale - neighborhoods which are &lt;1% of total embedding size</li>
+          <li>temporal info (for time-series data only) - correlation between latent and original temporal derivatives</li>
+          <li><strong>likelihood</strong> on out-of-sample data</li>
+        </ul>
+      </li>
+      <li>further advancements
+        <ul>
+          <li>embed into polar coordinates (rather than Euclidean) helps a lot</li>
+          <li>convolutional VAE-SNE - extract features from images using some pre-trained net and then run VAE-SNE on these features</li>
+        </ul>
+      </li>
+      <li>background: earlier works also used SNE objective for regularization - starts with van der Maaten 2009 (parametric t-SNE)</li>
+      <li>future work: density-preserving versions of t-SNE, modeling hierarchical structure in vae, conditional t-SNE kernel</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1612.05299">A Survey of Inductive Biases for Factorial Representation-Learning</a> (ridgeway 2016)
+    <ul>
+      <li>desiderata
+        <ul>
+          <li><strong>compact</strong></li>
+          <li><strong>faithful</strong> - preserve info required for task</li>
+          <li><strong>explicitly</strong> represent the attributes required for the task at hand</li>
+          <li><strong>interpretable</strong> by humans</li>
+        </ul>
+      </li>
+      <li>factorial representation - attributes are statistically independent and can provide a userful bias for learning
+        <ul>
+          <li>“compete” - factors are more orthogonal</li>
+          <li>“cooperate” - factors are more similar</li>
+          <li>bias on distribution of factors
+            <ul>
+              <li>PCA - minimize reconstruction err. subject to orthogonal weights</li>
+              <li>ICA - maximize non-Gaussianity (can also have sparse ICA)</li>
+            </ul>
+          </li>
+          <li>bias on factors being invariant to certain types of changes
+            <ul>
+              <li>ISA (independent subspace analysis) - 2 layer model where first layer is linear, 2nd layer pools first layer (not maxpool, more like avgpool), sparsity at second layer
+                <ul>
+                  <li>i.e. 1st layer cooperates, 2nd layer competes</li>
+                </ul>
+              </li>
+              <li>VQ - vector quantizer - like ISA but first layer filters now compete and 2nd layer cooperates</li>
+              <li>SOM - encourages topographic map by enforcing nearby filters to be similar</li>
+            </ul>
+          </li>
+          <li>bias in how factors are combined
+            <ul>
+              <li>linear combination - PCA/ICA</li>
+              <li>multilinear models - multiplicative interactions between factors (e.g on top of ISA)</li>
+              <li>functional parts - factor components are combined to construct the output
+                <ul>
+                  <li>ex. NMF - parts can only add, not substract to total output</li>
+                  <li>ex. have each pixel in the output be represented by only one factor in a VQ</li>
+                </ul>
+              </li>
+              <li>hierarchical layers
+                <ul>
+                  <li>ex. R-ICA - recursive ICA - run ICA on coefficients from previous layer (after some transformation)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>supervision bias
+        <ul>
+          <li>constraints on some examples
+            <ul>
+              <li>e.g. some groups have same value for a factor</li>
+              <li>e.g. some examples have similar distances (basis for MDS = multidimensional scaling)</li>
+              <li>e.g. analogies between examples</li>
+              <li>can do all of these things with auto-encoders</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>more papers
+    <ul>
+      <li><a href="https://arxiv.org/abs/1706.02262">infoVAE</a></li>
+      <li><a href="https://arxiv.org/abs/1711.00848">dipVAE</a></li>
+      <li><a href="https://arxiv.org/abs/1711.00937">vq-vae</a> - latent var is discrete, prior is learned</li>
+      <li><a href="http://papers.nips.cc/paper/7174-learning-disentangled-representations-with-semi-supervised-deep-generative-models">Learning Disentangled Representations with Semi-Supervised Deep Generative Models</a>
+        <ul>
+          <li>specify graph structure for some of the vars and learn the rest</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="gans">GANs</h1>
+
+<h2 id="model-based-disentangle-during-training">model-based (disentangle during training)</h2>
+
+<ul>
+  <li>disentangling architectures
+    <ul>
+      <li><a href="https://arxiv.org/abs/1606.03657">InfoGAN: Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets</a> (chen et al. 2016)
+        <ul>
+          <li>encourages $I(x; c)$ to be high for a subset of the latent variables $z$
+            <ul>
+              <li>slightly different than vae - defined under the distribution $p(c) p(x\vert c)$ whereas vae uses $p_{data}(x)enc(z\vert x)$</li>
+            </ul>
+          </li>
+          <li>mutual info is intractable so optimizes a lower bound</li>
+        </ul>
+      </li>
+      <li><a href="https://arxiv.org/abs/1812.04948">Stylegan</a> (karras et al. 2018)
+        <ul>
+          <li>introduced perceptual path length and linear separability to measure the disentanglement property of latent space</li>
+          <li><img src="../assets/stylegan.png" alt="stylegan" /></li>
+          <li><a href="https://arxiv.org/abs/1912.04958">Stylegan2</a> (karras et al. 2019): <img src="../assets/stylegan2.png" alt="stylegan2" />
+            <ul>
+              <li>$\psi$ scales the deviation of <em>w</em> from the average - $\psi=1$ is original, moving towards 0 improves quality but reduces variety</li>
+              <li>also has jacobian penalty on mapping from style space $w$ to output image $y$</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1711.05415">DNA-GAN: Learning Disentangled Representations from Multi-Attribute Images</a></li>
+  <li><a href="https://arxiv.org/abs/1911.05210">Clustering by Directly Disentangling Latent Space</a> - clustering in the latent space of a gan</li>
+  <li><a href="https://arxiv.org/abs/2003.03461">Semi-Supervised StyleGAN for Disentanglement Learning</a> - further improvements on StyleGAN using labels in the training data</li>
+  <li><a href="https://arxiv.org/abs/2008.10599">The Hessian Penalty: A Weak Prior for Unsupervised Disentanglement</a> (peebles et al. 2020)
+    <ul>
+      <li>if we perturb a single component of a network’s input, then we would like the change in the output to be independent of the other input components</li>
+      <li>minimize off-diagonal entries of Hessian matrix (can be obtained with finite differences)
+        <ul>
+          <li>smoother + more disentangled + shrinkage in latent space</li>
+        </ul>
+      </li>
+      <li>Hessian penalty is for a scalar - they define penalty as max penalty over Hessian over all pixels in the generator</li>
+      <li>unbiased stochastic estimator for the Hessian penalty (Hutchinson estimator)</li>
+      <li>they apply this penalty with $z$ as input, but different intermediate activations as output</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="post-hoc-disentangle-after-training">post-hoc (disentangle after training)</h2>
+
+<ul>
+  <li>mapping latent space
+    <ul>
+      <li><a href="https://arxiv.org/pdf/2005.09635.pdf">InterFaceGAN: Interpreting the Disentangled Face Representation Learned by GANs</a> (shen et al. 2020)</li>
+      <li><a href="https://arxiv.org/abs/1907.10786">Interpreting the Latent Space of GANs for Semantic Face Editing</a> (shen et al. 2020)
+        <ul>
+          <li>find latent directions for each binary attribute, as directions which separate the classes using linear svm
+            <ul>
+              <li>validation accuracies in tab 1 are high…much higher for all data (because they have high confidence level on attribute scores maybe) - for PGGAN but not StyleGAN</li>
+            </ul>
+          </li>
+          <li>intro of this paper gives good survey of how people have studied GAN latent space</li>
+          <li>few papers posthoc analyze learned latent repr.</li>
+        </ul>
+      </li>
+      <li><a href="https://arxiv.org/abs/1907.07171">On the “steerability” of generative adversarial networks</a> (jahanian et al. 2020)
+        <ul>
+          <li>learn to approximate edits to images, such as zooms
+            <ul>
+              <li>linear walk is as effective as more complex non-linear walks for learning this</li>
+              <li>nonlinear setting - learn a neural network which applies a small perturbation in a specific direction (e.g. zooming)
+                <ul>
+                  <li>to move further in this space, repeatedly apply the function</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="https://arxiv.org/abs/2004.13166">A Disentangling Invertible Interpretation Network for Explaining Latent Representations</a> (esser et al. 2020) - map latent space to interpretable space, with invertible neural network
+        <ul>
+          <li>interpretable space factorizes, so is disentangled</li>
+          <li>individual concepts (e.g. color) can use multiple interpretable latent dims</li>
+          <li>instead of user-supplied interpretable concepts, user supplies two sketches which demonstrate a change in a concept - these sketches are used w/ style transfer to create data points which describe the concept</li>
+          <li>alternatively, with no user-supplied concepts, try to get independent components in unsupervised way</li>
+        </ul>
+      </li>
+      <li><a href="https://arxiv.org/abs/2005.07728">Disentangling in Latent Space by Harnessing a Pretrained Generator</a> (nitzan et al. 2020)
+        <ul>
+          <li>learn to map attributes onto latent space of stylegan</li>
+          <li>works using two images at a time and 2 encoders
+            <ul>
+              <li>for each image, predict attributes + identity, then mix the attributes</li>
+            </ul>
+          </li>
+          <li>results look realy good, but can’t vary one attribute at a time (have to transfer all attributes from the new image)</li>
+        </ul>
+      </li>
+      <li><a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Taihong_Xiao_ELEGANT_Exchanging_Latent_ECCV_2018_paper.pdf">ELEGANT: Exchanging Latent Encodings with GAN for Transferring Multiple Face Attributes</a> (xiao et al. 2018)
+        <ul>
+          <li>trains 2 images at a time - swap an attribute that differs between the images and reconstruct images that have the transferred attribute</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>bias
+    <ul>
+      <li><a href="https://www.overleaf.com/project/5e6aa80234ed3e0001b9ac23">Towards causal benchmarking of bias in computer vision algorithms</a> (balakrishnan et al. 2020) - use human annotations to disentangle latent space
+        <ul>
+          <li>synthesis approach can alter multiple attributes at a time to produce grid-like matched samples of images we call <em>transects</em></li>
+          <li>find directions + orthogonalize same as shen et al. 2020</li>
+        </ul>
+      </li>
+      <li><a href="https://arxiv.org/abs/1906.06439">Detecting Bias with Generative Counterfactual Face Attribute Augmentation</a> (denton et al. 2019) - identify latent dims by training a classifier in the latent space on groundtruth attributes of the training images</li>
+      <li><a href="https://arxiv.org/abs/1907.07165">Explaining Classifiers with Causal Concept Effect (CaCE)</a> (goyal et al. 2020) - use vae to disentangle / alter concepts to probe classifier</li>
+    </ul>
+  </li>
+  <li>post-hoc
+    <ul>
+      <li><a href="https://arxiv.org/abs/1911.00483">Explanation by Progressive Exaggeration</a> (singla et al. 2019)
+        <ul>
+          <li>progressively change image to negate the prediction, keeping most features fixed
+            <ul>
+              <li>want to learn mapping $I(x, \delta)$ which produces realistic image that changes features by $\delta$</li>
+            </ul>
+          </li>
+          <li>3 losses: <strong>data consistency</strong> (perturbed samples should look real), <strong>prediction changes</strong> (perturbed samples should appropriately alter prediction), <strong>self-consistency</strong> (applying reverse perturbatino should bring x back to original, and $\delta=0$ should return identity)</li>
+          <li>moving finds ways to generate images that do change the wanted attribute (and don’t change the others too much)</li>
+          <li>minor
+            <ul>
+              <li>used human experiments</li>
+              <li>limited to binary classification</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><a href="https://arxiv.org/abs/1711.05611">Interpreting Deep Visual Representations via Network Dissection</a> (zhou et al. 2017)</p>
+
+        <ul>
+          <li>obtain image attributes for each z (using classifier, not human labels)
+            <ul>
+              <li>this classifier may put bias back in</li>
+            </ul>
+          </li>
+          <li>to find directions representing an attribute, train a linear model to predict it from z</li>
+        </ul>
+      </li>
+      <li><a href="https://arxiv.org/abs/1811.10597">GAN Dissection: Visualizing and Understanding Generative Adversarial Networks</a> (bau et al. 2018) - identify group of interpretable units based on segmentation of training images
+        <ul>
+          <li>find directions which allow for altering the attributes</li>
+        </ul>
+      </li>
+      <li><a href="https://arxiv.org/abs/2004.02546">GANSpace: Discovering Interpretable GAN Controls</a> - use PCA in the latent space (w for styleGAN, activation-space at a specific layer for BigGAN) to select directions</li>
+      <li><a href="https://arxiv.org/abs/2004.14367">Editing in Style: Uncovering the Local Semantics of GANs</a> (collins et al. 2020) - use k-means on gan activations to find meaningful clusters (with quick human annotation)
+        <ul>
+          <li>add style transfer using target/source image</li>
+        </ul>
+      </li>
+      <li><a href="https://arxiv.org/abs/2002.03754">Unsupervised Discovery of Interpretable Directions in the GAN Latent Space</a> - loss function which tries to recover random shifts made to the latent space</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="misc">misc</h1>
+<ul>
+  <li><a href="https://arxiv.org/abs/2006.08558">Learning Diverse and Discriminative Representations via the Principle of Maximal Coding Rate Reduction</a> (yu, …, &amp; ma, 2020)
+    <ul>
+      <li>goal: learn low-dimensional structure from high-dim (labeled or unlabeled) data</li>
+      <li>approach: instead of cross-entropy loss, use <strong>maximal coding rate reduction</strong> = MCR loss function to learn linear feature space where:
+        <ul>
+          <li><em>inter-class discriminative</em> - features of samples from different classes/clusters are uncorrelated + different low-dim linear subspaces</li>
+          <li><em>intra-class compressible</em> - features of samples from same class/cluster are correlated (i.e. belong to low-dim linear subspace)</li>
+          <li><em>maximally diverse</em> - dimension (or variance) of features for each class/cluster should be as large as possible as long as uncorrelated from other classes/clusters</li>
+        </ul>
+      </li>
+      <li>related to nonlinear generalized PCA</li>
+      <li>given random variable $z$ and precision $\epsilon$, rate distortion $R(z, \epsilon)$ is minimal number of bits to encode $z$ such that expected decoding err is less than $\epsilon$
+        <ul>
+          <li>can compute from finite samples</li>
+          <li>can compute for each class (diagonal matrices represent class/cluster membership in loss function)</li>
+          <li>MCR maximizes (rate distortion for all features) - (rate distortion for all data separated into classes)
+            <ul>
+              <li>like a generalization of information gain</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>evaluation
+        <ul>
+          <li>with label corruption performs better</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/2011.05787">Learned Equivariant Rendering without Transformation Supervision</a> - separate foreground / background using video</li>
+</ul>
+
+<h1 id="semi-supervised-disentanglement">(semi)-supervised disentanglement</h1>
+
+<p><strong>these papers use some form of supervision for the latent space when disentangling</strong></p>
+
+<ul>
+  <li><a href="https://arxiv.org/pdf/2003.06581.pdf">Semi-supervised Disentanglement with Independent Vector Variational Autoencoders</a>
+    <ul>
+      <li><img src="../assets/semi_supervised_vae.png" alt="Screen Shot 2020-05-21 at 12.47.22 PM" /></li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1706.00400">Learning Disentangled Representations with Semi-Supervised Deep Generative Models</a> - put priors on interpretable variables during training and learn the rest</li>
+  <li><a href="https://arxiv.org/abs/1910.09772">Weakly Supervised Disentanglement with Guarantees</a>
+    <ul>
+      <li>prove results on disentanglement for rank pairing</li>
+      <li>different types of available supervision<img src="../assets/unsupervised_settings.png" alt="Screen Shot 2020-05-21 at 1.05.19 PM" />
+        <ul>
+          <li><strong>restricted labeling</strong> - given labels for some groundtruth factors (e.g. label “glasses”, “gender” for all images)</li>
+          <li>match pairing - given pairs or groups (e.g. these images all have glasses)</li>
+          <li>rank pairing - label whether a feature is greater than another (e.g. this image has darker skin tone than this one)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1906.01044">Weakly Supervised Disentanglement by Pairwise Similarities</a> - use pairwise supervision</li>
+</ul>
+
+<h1 id="evaluating-disentanglement">evaluating disentanglement</h1>
+
+<ul>
+  <li><a href="http://proceedings.mlr.press/v97/locatello19a/locatello19a.pdf">Challenging Common Assumptions in the Unsupervised Learning of Disentangled Representations</a> (locatello et al. 2019)
+    <ul>
+      <li>state of disentanglement is very poor…depends a lot on architecture/hyperparameters</li>
+      <li>good way to evaluate: make explicit inductive biases, investigate benefits of this disentanglement</li>
+      <li>defining disentanglement - compact, interpretable, independent, helpful for downstream tasks, causal inference
+        <ul>
+          <li>a change in one <em>factor of variation</em> should lead to a change in a single factor in the learned repr.</li>
+        </ul>
+      </li>
+      <li>unsupervised learning of disentangled reprs. is impossible without inductive biases</li>
+    </ul>
+  </li>
+  <li><em>note</em> - vae’s come with reconstruction loss + compactness prior loss which can be looked at on their own</li>
+  <li>
+    <p>data</p>
+
+    <ul>
+      <li><a href="https://github.com/deepmind/dsprites-dataset/">dsprites dataset</a> has known latent factors we try to recover</li>
+    </ul>
+  </li>
+  <li><a href="https://medium.com/uci-nlp/summary-beta-vae-learning-basic-visual-concepts-with-a-constrained-variational-framework-91ad843b49e8">beta-vae <strong>disentanglement metric score</strong> = higgins metric</a> - see if we can capture known disentangled repr. using pairs of things where only one thing changes
+    <ul>
+      <li>start with a known generative model that has an observed set of independent and interpretable factors (e.g. scale, color, etc.) that can be used to simulate data.</li>
+      <li>create a dataset comprised of pairs of generated data for which a single factor is held constant (e.g. a pair of images which have objects with the same color).</li>
+      <li>use the inference network to map each pair of images to a pair of latent variables.</li>
+      <li>train a linear classifier to predict which interpretable factor was held constant based on the latent representations. The accuracy of this predictor is the disentanglement metric score.</li>
+    </ul>
+  </li>
+  <li><a href="https://arxiv.org/abs/1910.05587">Evaluating Disentangled Representations</a> (sepliarskaia et al. 2019)
+    <ul>
+      <li>defn 1  (Higgins et al., 2017; Kim and Mnih, 2018; Eastwood and Williams, 2018) = <strong>factorVAE metric</strong>: A disentangled representation is a representation where a change in one latent dimension corresponds to a change in one generative factor while being relatively invariant to changes in other generative factors.</li>
+      <li>defn 2 (Locatello et al., 2018; Kumar et al., 2017): A disentangled representation is a representation where a change in a single generative factor leads to a change in a single factor in the learned representation.</li>
+      <li>metrics
+        <ul>
+          <li><strong>DCI</strong>: Eastwood and Williams (2018) - informativeness based on predicting gt factors using latent factors</li>
+          <li><strong>SAP</strong>: Kumar et al. (2017) - how much does top latent factor match gt more than 2nd latent factor</li>
+          <li><strong>mutual info gap MIG</strong>: Chen et al. 2018 - mutual info to compute the same thing</li>
+          <li><strong>modularity</strong> (ridgeway &amp; mozer, 2018) - if each dimension of r(x) depends on at most a factor of variation using their mutual info</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="non-deep-methods">non-deep methods</h1>
+
+<ul>
+  <li><a href="https://arxiv.org/pdf/1907.04809.pdf">unifying vae and nonlinear ica</a> (khemakhem et al. 2020)
+    <ul>
+      <li>ICA
+        <ul>
+          <li>maximize non-gaussianity of $z$ - use kurtosis, negentropy</li>
+          <li>minimize mutual info between components of $z$ - use KL, max entropyd</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>

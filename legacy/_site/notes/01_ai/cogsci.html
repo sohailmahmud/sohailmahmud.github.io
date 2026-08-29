@@ -1,0 +1,703 @@
+<head>
+    <!--<head>-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Let's do good with tech"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content="Machine Learning, Sohail Mahmud, UCTC, Software Engineer, Research, Development, Interpretability, Explainability, Causal Inference"/>
+    <link rel="canonical" href="http://localhost:4000/notes/01_ai/cogsci.html">
+    <link rel='icon' href='https://avatars.githubusercontent.com/u/46453392?v=4' type='image/x-icon'/>
+    <title>Sohail Mahmud  | cogsci</title>
+    
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    
+    
+    
+    <!-- Custom CSS -->
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="/assets/css/sohail.css" rel="stylesheet">
+    <link href="/assets/css/carousel.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Styling Tables -->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/sohail_tables.css" rel="stylesheet">
+    
+    <!--</head>-->
+    
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                    <a class="navbar-brand page-scroll" href="http://localhost:4000" style="font-weight:italic">
+                        Sohail Mahmud
+                    </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    
+                        <li><a class="page-scroll" href="/#research">Research</a></li>
+                        <li><a class="page-scroll" href="/#notes_main">Resources</a></li>
+                        <li><a class="page-scroll" href="/#projects">Projects</a></li>
+                        <li><a class="page-scroll" href="/#experience">Experience</a></li>
+
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1XB5VFGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YP1XB5VFGM');
+</script>
+
+    
+<script src="/assets/js/jquery.js"></script> <!-- jQuery -->
+<script src="/assets/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script> <!-- Plugin JavaScript -->
+<script src="/assets/js/grayscale.js"></script> <!-- Custom Theme JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+
+
+
+<script src="/assets/js/scrollreveal.min.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.timeline-panel');
+    sr.reveal('.timeline-image');
+</script>
+
+
+<script src="/assets/js/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', '/assets/js/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+    <link href="/assets/css/notes.css" rel="stylesheet">
+    <link href="/assets/css/highlight_androidstudio.css" rel="stylesheet">
+    <script src="/assets/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body data-spy="scroll" data-target=".sidebar">
+    <div class="wrapper">
+        <div class="sidenav navbar">
+            <div id="toc"></div>
+        </div>
+
+        <div class="main" style="margin-right: 15%;">
+            <div id="content" class="markdown">
+                <p class="title" style="font-size: 60px"> cogsci </p>
+                <div style="width:25px; display:inline-block; height:auto;"></div>
+                <a class="btn btn-success" style="float:left;   text-transform: lowercase;"
+                   href="https://github.com/sohailmahmud/sohailmahmud.github.io/blob/master/_notes/01_ai/cogsci.md">view markdown <i class="fa fa-github fa-fw"></i></a>
+
+<!--                <a class="btn btn-info" style="float:left;   text-transform: lowercase;"-->
+<!--                   href="https://twitter.com/intent/tweet?url=http://csinva.github.io/notes/01_ai/cogsci.html">share <i class="fa fa-twitter fa-fw"></i></a>-->
+                <br/>
+                <br/>
+<!--                <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 50px; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>-->
+                <hr>
+                
+<p>Some notes on a computational perspective on cognitive science.</p>
+
+<h1 id="nativism-empiricism">nativism, empiricism</h1>
+
+<ul>
+  <li>
+    <p>cogsci “inverse problem” - give world, how do we form representations</p>
+
+    <ul>
+      <li>like cv, given pixels, how do we understand world?</li>
+    </ul>
+  </li>
+  <li>historical cognitive dev: how do we form representations?
+    <ul>
+      <li><strong>nativism</strong> - plato - representation w/out learning</li>
+      <li><strong>empiricism</strong> - aristotle - learning w/out representation</li>
+      <li><strong>constructivism</strong> - jean piaget - cognitive development
+        <ul>
+          <li>types
+            <ul>
+              <li>assimilation - start with schema, which tells you how to act</li>
+              <li>accomodation - adjust schema based on what you see</li>
+              <li>equilibration - everything set</li>
+            </ul>
+          </li>
+          <li>periods
+| sensorimotor  | preoperational      | concrete operational  | formal operational     |
+| ————- | ——————- | ——————— | ———————- |
+| 0 - 18 months | 18 months - 5 years | 5 years - adolescence | adolescence and beyond |</li>
+          <li>problems
+            <ul>
+              <li>dev. is domain-specific and variable</li>
+              <li>when measured better, children show earlier competence</li>
+              <li>doesn’t specify learning methods</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>contemporary theories
+    <ul>
+      <li><strong>nativism</strong> - core knowledge or modules
+        <ul>
+          <li>plato, descartes</li>
+          <li>chomsky - language acuquisition device</li>
+          <li>spelke, tenenbaum - core knowledge of domains</li>
+          <li>constraint nativism vs. starting-state nativism</li>
+        </ul>
+      </li>
+      <li><strong>empiricism</strong> - connectionism, dynamic systems, associationism
+        <ul>
+          <li>aristotle, david hume</li>
+          <li>behaviorism - led to rl</li>
+          <li>connectionists - mclelland, karmiloff-smith</li>
+          <li>dynamic systems - thelen and smith</li>
+          <li><strong>emergentist appproach</strong> - complex behavior is emergent from simple neural properties</li>
+          <li>john locke</li>
+          <li>deep learning</li>
+        </ul>
+      </li>
+      <li><strong>constructivism</strong> - “the theory theory” (children are scientists), probabilistic models
+        <ul>
+          <li>carey, wellman, gelman, gopnik</li>
+          <li>structural features: abstract, coherent, causal, hierarchical</li>
+          <li>theories change in response to evidence</li>
+          <li>changes may take place at multiple levels</li>
+          <li>playing</li>
+          <li>perhaps bayesian learning</li>
+        </ul>
+      </li>
+      <li>information-processing - memory changes over time etc.
+        <ul>
+          <li>siegler</li>
+        </ul>
+      </li>
+      <li>socio-cultural influences - children learn from society / culture
+        <ul>
+          <li>vyogotsky</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>unanswered questions</p>
+
+    <ul>
+      <li>search problem: how do children search through all possible hypotheses? sampling?</li>
+      <li>conceptual change problem: how is radical change in representations possible</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>counterfactual</strong> - relating to or expressing what has not happened or is not the case</p>
+
+    <ul>
+      <li>e.g. If kangaroos had no tails, they would topple over</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="probabalistic-causal-models">probabalistic causal models</h1>
+
+<ul>
+  <li>abstract representations that provide computational accounts of causal inference
+    <ul>
+      <li>at marr’s highest level: computation</li>
+    </ul>
+  </li>
+  <li>how much do we need to build in?
+    <ul>
+      <li>dna can build in things that are hard to learn</li>
+      <li>start with nothing built in, ex. deep learning (connectionism)</li>
+      <li>start with best possible learning algorithm and ask what you need to build in (bayesian modeling)</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>bayes rule Bayesian: $\overbrace{p(\theta</td>
+              <td>x)}^{\text{posterior}} = \frac{\overbrace{p(x</td>
+              <td>\theta)}^{\text{likelihood}} \overbrace{p(\theta)}^{\text{prior}}}{p(x)}$ where x is data and $\theta$ are hypotheses</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>ask what priors explain people’s inferences</li>
+          <li>humans make very causal priors - restricts hypothesis space of possible bayesian networks</li>
+          <li>hierarhical model - get prior from something (e.g. know all bags contain same color)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>what develops over time?
+    <ul>
+      <li>bayesian doesn’t really tell us this - just has probabilities evolve over time</li>
+      <li>real life we come up with new hypotheses</li>
+    </ul>
+  </li>
+  <li>what representations do we use?</li>
+</ul>
+
+<h1 id="deep-rl">deep rl</h1>
+
+<h2 id="dl-basics">dl basics</h2>
+
+<ul>
+  <li>what does an NN do?
+    <ul>
+      <li>universal function approximator</li>
+      <li>feature learning view - learn features that separate classes linearly</li>
+    </ul>
+  </li>
+  <li>saxe….ng 2010 compared statistics of primary cortical receptive fields and receptive field plasticity
+    <ul>
+      <li>vision + audio + somatosensory - statistics seem to line up with neuroscience</li>
+    </ul>
+  </li>
+  <li>a single algorithm?
+    <ul>
+      <li>ex. seeing with your tongue</li>
+      <li>ex. blind people echolocating</li>
+      <li>ex. ferret optic nerve rewired to auditory system and they learn to still see</li>
+    </ul>
+  </li>
+  <li>lots of inductive bias? or lack of bias?
+    <ul>
+      <li>gabor filters come from deep learning, ica, sparse coding, k-means - come from data, not necessarily algorithm
+        <ul>
+          <li>maybe this is only true for gabor filters though</li>
+        </ul>
+      </li>
+      <li>bigger and simpler with residuals seems to work best
+        <ul>
+          <li>sequence tasks - lstm started being replaced with “attention is all you need” (attention is basically a dot product)</li>
+          <li>differentiable neural computer didn’t seem to work all that well - tried to build in too much</li>
+          <li>some inductive bias has worked: cnn, lstm</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>structure
+    <ul>
+      <li>structure is very dependent on optimization</li>
+    </ul>
+  </li>
+  <li>depth seems to help
+    <ul>
+      <li>compositionality</li>
+      <li>increase in representational power?</li>
+      <li>information theoretic arguments</li>
+    </ul>
+  </li>
+  <li>low-data regimes: few-shot recognition doesn’t work (see Lake, Salakhutidinov, Tenenbaum 2013)
+    <ul>
+      <li>one type of meta-learning for few-shot learning
+        <ul>
+          <li>split data set into tiny train / test blocks and learn to do few-shot learning on these</li>
+          <li>got really good at this (especially for omniglot)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>deep learning: less structure + more data = better results</li>
+  <li>alternative view - not necessarily dl
+    <ul>
+      <li>very unconstrained function class + right learning algorithm + right supervision = better results</li>
+      <li>optimization methods master (is sgd “conveniently” Bayesian?)
+        <ul>
+          <li>ex. everything that works works because it’s Bayesian blog post</li>
+        </ul>
+      </li>
+      <li>structure of natural dat amatters
+        <ul>
+          <li>source of supervision really matters</li>
+        </ul>
+      </li>
+      <li>maybe function class doesn’t really matter</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="supervision">supervision</h2>
+
+<ul>
+  <li>unsupervised learning: learn $p_\theta (x)$
+    <ul>
+      <li>overview
+        <ul>
+          <li>pull out features/representation and use them for other tasks</li>
+          <li>recognize novel / unexpected events</li>
+          <li>hallucinate</li>
+          <li>can use all available data</li>
+          <li>often has principled, prob. interpretation</li>
+          <li>hard to use effectively</li>
+        </ul>
+      </li>
+      <li>deep belief networks (~2006) - built on restricted Boltzmann machine (both a NN and a graphical model)
+        <ul>
+          <li>RBM = markov field with binary variables and connections between but not within layers</li>
+          <li>originally trained layerwise</li>
+          <li>properties
+            <ul>
+              <li>each neuron is (binary) random variable, so we can sample</li>
+              <li>hard to train</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>unsupervised gd (2012-2014) - sparse/denoising/bottleneck autoencoder
+        <ul>
+          <li>ex. if you have linear encoder/decoder with bottleneck, then you get pca</li>
+          <li>ex. denoising - blur image and ask it to learn to clean it up
+            <ul>
+              <li>learns something about the manifold that represents a class / the correct data</li>
+            </ul>
+          </li>
+          <li>ex. variational autoencders (Kingma &amp; Welling 2013)
+            <ul>
+              <li>network encoder x-&gt;z &amp; decoder z-&gt;x</li>
+              <li>force z to be spherical Gaussian (ex. add noise to make it spherical Gaussian (with learned variance) - KL divergence regularizer between output and spherical Gaussian)</li>
+              <li>then, we can sample z from spherical Gaussian and decoder will give us nice looking x</li>
+            </ul>
+          </li>
+          <li>ex. GANs (Goodfewllow 2014)
+            <ul>
+              <li>“implicit” density model</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>supervised learning
+    <ul>
+      <li>representations are surprisingly good
+        <ul>
+          <li>labels provide good semantic knowledge</li>
+          <li>simple backprop training</li>
+        </ul>
+      </li>
+      <li>semi-supervised = self-supervised learning
+        <ul>
+          <li>ex. given patches, tell where they are placed relative to each other (context prediction doersch et al. 2015)</li>
+          <li>prediction supervised learning (time series)
+            <ul>
+              <li>ex. predict video frames from past video frames</li>
+            </ul>
+          </li>
+          <li>reakes some artistry to figure out objective</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>reinforcement learning
+    <ul>
+      <li>non-differentiable reward function - doesn’t access to output supervision</li>
+      <li>supervised learning is a subset of this</li>
+      <li>3 types (often we do a combination of these together)
+        <ul>
+          <li>direct policy search</li>
+          <li>prediction of value functions</li>
+          <li>prediction of future states</li>
+        </ul>
+      </li>
+      <li>can collect data by just exploring world</li>
+      <li>rl needs more generalization
+        <ul>
+          <li>want more exploration algorithms</li>
+          <li>train in more settings</li>
+          <li>ex. approximate bayesian experiment design</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="objects">objects</h1>
+
+<ul>
+  <li><em>deep deep cnns</em> - not just a chain, combine different layers and maybe represent semantic concepts
+    <ul>
+      <li><em>iterative deep aggregation</em> - generalizes skip connections - new layers for the skips</li>
+    </ul>
+  </li>
+  <li><em>adaptive learning</em> - too much dataset bias - imagenet things only work on imagenet
+    <ul>
+      <li>need to know about discrepancy between distributions</li>
+      <li>GAN - learn adversarial that decides whether a point comes from one domain or another</li>
+      <li>goal: want both domains to be separable with domains for only one</li>
+    </ul>
+  </li>
+  <li><em>explainable vision and language agents</em>
+    <ul>
+      <li>image captioning doesn’t mean it actually understands scene</li>
+      <li>now, people focused on visual question answering
+        <ul>
+          <li>maybe even provide interpretable explanation</li>
+        </ul>
+      </li>
+      <li>preprogram 5 types of modules (ex. find, relate, count, …)</li>
+    </ul>
+  </li>
+  <li>concept vs. category learning
+    <ul>
+      <li>except for NN, need negative examples</li>
+      <li>learning nouns
+        <ul>
+          <li>strong sampling - pick key examples instead of lots of random examples</li>
+        </ul>
+      </li>
+      <li>bayesian learning can figure out what classes to generalize to
+        <ul>
+          <li>need to assume some ontology</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>it’s all about the data
+    <ul>
+      <li>face detection - made things really work</li>
+      <li>learning spectrum: <em>extrapolation</em> (low samples) -&gt; <em>interpolation</em> (high samples - where we are)
+        <ul>
+          <li>extrapolation = linear reg.  -&gt; interpolation = nearest neighbor / neural network</li>
+          <li>nearest neighbors started to work better with more data</li>
+        </ul>
+      </li>
+      <li>explainability doesn’t work if system is fundamentally complicated</li>
+      <li>natural world has too many examples for interpolation</li>
+      <li>brain doing nearest neighbors?
+        <ul>
+          <li>capacity of visual long term memory - standing 1973: 10k images, 83% recognition</li>
+          <li>clap if you see a repetition - you can really remember a lot</li>
+          <li>AB testing at end - check if you seaw things or not</li>
+          <li>novel objects: 92%, different examples of same thing: 88%, different states of same thing: 87%</li>
+          <li>we can’t do this with just textured images though</li>
+          <li>big boosts come from data, not necessarily the algorithm</li>
+          <li>word2vec works about same as nearest neighbors embedding</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>top-down vs bottom-up concept learning
+    <ul>
+      <li>problems with top-down / using labels
+        <ul>
+          <li>can’t ask computer about semantic stuff - it only sees pixels</li>
+          <li>cool ex. can see a chair by just looking at silhouette of person sitting in it</li>
+          <li>humans don’t categorize things in binary ways
+            <ul>
+              <li>solns: hierarchy, levels of categories…</li>
+            </ul>
+          </li>
+          <li>used to have to do this (ex. books in a library), but computers don’t have to do this (ex. amazon)</li>
+          <li>still problematic
+            <ul>
+              <li>intransitivity - car seat is chair, chair is furniture, …</li>
+              <li>multiple category membership</li>
+              <li>“ontologies are overrated” blog post</li>
+            </ul>
+          </li>
+          <li>this helps with interpretability, but might be worse overal</li>
+        </ul>
+      </li>
+      <li>start from image (bottom) - use association not categorization
+        <ul>
+          <li>make graph - edges are associations</li>
+          <li>task: predict what’s behind some blurred out box in an image</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="language-development">language development</h1>
+
+<ul>
+  <li>language is interesting problem, lots of children have language difficulties, language might be unique to humans</li>
+  <li>language is somewhat instinctual
+    <ul>
+      <li>learned via association (John Locke) or by reading people’s intentions (St. Augustine)</li>
+    </ul>
+  </li>
+  <li>behaviorist approach (Skinner) - conditioning, children learn because of adult reinforcement
+    <ul>
+      <li>ex. bird turning to get reward</li>
+      <li>“meaning” - an association between stimulus and response</li>
+      <li>progressilve taught more complex utterances</li>
+    </ul>
+  </li>
+  <li>noam chomsky’s ciritique of skinner review (1959)
+    <ul>
+      <li>parents correct truth of utterance, not its grammar</li>
+      <li>stimulus doesn’t completely determine response</li>
+      <li>children say things they’ve never heard (e.g. mommy eated the apple)</li>
+      <li>grammar isn’t a chain of associated words</li>
+    </ul>
+  </li>
+  <li>chomsky: children have innate knowledge
+    <ul>
+      <li>introduces “cognitive revolution” - explain language you need
+        <ul>
+          <li>mental representations</li>
+          <li>rules that operate on those representations</li>
+        </ul>
+      </li>
+      <li>figure out what is common between all languages
+        <ul>
+          <li>ex. verb agrees with subject</li>
+          <li>mostly part of speaker’s unconscious knowledge of language</li>
+        </ul>
+      </li>
+      <li>focus on ideal speaker’s competence, not their performance</li>
+    </ul>
+  </li>
+  <li>ex. question formation
+    <ul>
+      <li><em>poverty of the stimulus</em> - children get this info which doesn’t seem to be in the stimulus</li>
+    </ul>
+  </li>
+  <li>chomsky theory of universal grammar
+    <ul>
+      <li>fixed invariant structural principles because human brain is wired to understand them</li>
+    </ul>
+  </li>
+  <li><em>nativists</em> - children guided by universal grammar</li>
+  <li><em>constructivists</em> - innate <strong>general learning mechanisms</strong> operate on experience</li>
+  <li>children use babbling</li>
+  <li>children use pre-linguistic communication for sharing attention</li>
+  <li>some children have crib speech - talking to themselves, seems systematic</li>
+  <li>children have U-curves - use ate, then eated, then back to ate</li>
+</ul>
+
+<h1 id="theory-of-mind">theory of mind</h1>
+
+<ul>
+  <li>theory of mind - human understanding of agents’ mental states and how they shape actions
+    <ul>
+      <li>understand intentional actions - like dots, understand evil, purpose</li>
+      <li>we can track this month by month</li>
+    </ul>
+  </li>
+  <li>Theory of mind
+    <ul>
+      <li>is rapidly acquired in the normal case</li>
+      <li>is acquired in an extended series of developmental accomplishments</li>
+      <li>encompasses several basic insights that are acquired world-wide on a roughly similar trajectory (but not timetable), (4) requires considerable learning and development based on an infant set of specialized abilities to attend to and represent persons,  (5) is severely impaired in autism, (6) is severely delayed in deaf children of hearing parents, and (6) results from but also contributes to specialized neural substrates associated with reasoning about agency, experience, and mind</li>
+    </ul>
+  </li>
+  <li>Preschool Theory of Mind, Part 1:  Universal Belief-Desire Understanding</li>
+</ul>
+
+<h1 id="lesswrong">lesswrong</h1>
+
+<ul>
+  <li><a href="https://www.lesswrong.com/s/5g5TkQTe9rmPS5vvM/p/ptxnyfLWqRZ98wnYi">biases</a>
+    <ul>
+      <li>cognitive bias can be thought of like statistical bias</li>
+      <li><em>base rate neglect</em>: grounding one’s judgments in how well sets of characteristics feel like they fit together, and neglecting how common each characteristic is in the population at large
+        <ul>
+          <li>e.g. if you meet a shy person, are they more likely to be a salesperson or a librarian?</li>
+        </ul>
+      </li>
+      <li><em>sunk cost fallacy</em></li>
+      <li><em>scope neglect</em> - the number of birds saved—the <em>scope</em> of the altruistic action—had little effect on willingness to pay (<a href="https://www.lesswrong.com/s/5g5TkQTe9rmPS5vvM/p/2ftJ38y9SRBCBsCzy">post</a>)</li>
+      <li><em>availability heuristic</em> - judging the frequency or probability of an event by the ease with which examples of the event come to mind.
+        <ul>
+          <li><a href="https://www.lesswrong.com/lw/j4/absurdity_heuristic_absurdity_bias/">absurdity bias</a>; events that have never happened are not recalled, and hence deemed to have probability zero.</li>
+        </ul>
+      </li>
+      <li><em>conjunction fallacy</em> - humans assign a higher probability to a proposition of the form “A and B” than to one of the propositions “A” or “B” in isolation
+        <ul>
+          <li>The implausibility of one claim is compensated by the plausibility of the other; they “average out.”</li>
+        </ul>
+      </li>
+      <li><em>planning fallacy</em> - people think they can plan e.g. “best guess” scenarios are same as “best case” scenarios</li>
+    </ul>
+  </li>
+  <li>rationality
+    <ul>
+      <li><strong>epistemic rationality</strong> - systematically improving the accuracy of your beliefs.</li>
+      <li><strong>instrumental rationality</strong> - systematically achieving your values.</li>
+    </ul>
+  </li>
+  <li><em>probability theory</em>, and <em>decision theory</em></li>
+  <li>System 1 and System 2—fast perceptual judgments versus slow deliberative judgments. System 2’s deliberative judgments aren’t always true, and System 1’s perceptual judgments aren’t always false; so it is very important to distinguish that dichotomy from “rationality.”</li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<style>
+.markdown p, li, ul{
+    font-size: large;
+}
+
+#markdown-toc{
+    display: none;
+}
+</style>
+
+<!--js-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+    MathJax.Hub.Config({
+        tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         processEscapes: true
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc();
+});
+</script>
+
+<style>
+.highlight{
+    background-color: black;
+    border-color: black;
+}
+</style>
