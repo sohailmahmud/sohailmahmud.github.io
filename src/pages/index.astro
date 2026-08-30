@@ -35,7 +35,7 @@ import Layout from '../layouts/Layout.astro';
             <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>
           <a 
-            href="#selected-work" 
+            href="#featured-projects" 
             class="bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-200 font-semibold text-sm px-6 py-3.5 rounded-xl inline-flex items-center gap-2 transition-all shadow-sm hover:no-underline"
           >
             View My Work
@@ -112,10 +112,11 @@ import Layout from '../layouts/Layout.astro';
           <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[92%] sm:w-auto min-w-[280px] sm:min-w-[300px] bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border border-zinc-200/80 shadow-xl flex items-center gap-3.5 z-10">
             <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0 text-emerald-600">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                <path d="M5 3v4"></path>
+                <path d="M19 17v4"></path>
+                <path d="M3 5h4"></path>
+                <path d="M17 19h4"></path>
               </svg>
             </div>
             <div>
@@ -136,9 +137,8 @@ import Layout from '../layouts/Layout.astro';
       <div class="py-6 pr-6 lg:py-8 lg:pr-8 flex flex-col xl:flex-row items-start gap-4 relative after:absolute after:right-0 after:top-6 lg:after:top-8 after:bottom-6 lg:after:bottom-8 after:w-px after:bg-zinc-200/60">
         <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
+            <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            <rect width="20" height="14" x="2" y="6" rx="2"></rect>
           </svg>
         </div>
         <div>
@@ -152,11 +152,10 @@ import Layout from '../layouts/Layout.astro';
       <div class="p-6 lg:p-8 flex flex-col xl:flex-row items-start gap-4 relative after:hidden lg:after:block after:absolute after:right-0 after:top-6 lg:after:top-8 after:bottom-6 lg:after:bottom-8 after:w-px after:bg-zinc-200/60">
         <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 12 20 22 4 22 4 12"></polyline>
-            <rect x="2" y="7" width="20" height="5"></rect>
-            <line x1="12" y1="22" x2="12" y2="7"></line>
-            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
           </svg>
         </div>
         <div>
@@ -170,10 +169,9 @@ import Layout from '../layouts/Layout.astro';
       <div class="p-6 lg:p-8 flex flex-col xl:flex-row items-start gap-4 relative after:absolute after:right-0 after:top-6 lg:after:top-8 after:bottom-6 lg:after:bottom-8 after:w-px after:bg-zinc-200/60 border-t border-zinc-200/60 lg:border-t-0">
         <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+            <path d="M2 12h20"></path>
           </svg>
         </div>
         <div>
@@ -189,7 +187,8 @@ import Layout from '../layouts/Layout.astro';
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
-            <polyline points="16 11 18 13 22 9"></polyline>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
         </div>
         <div>
@@ -201,13 +200,16 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Selected Work Section -->
-  <section id="selected-work" class="py-12 sm:py-16">
-    <div class="flex items-center justify-between mb-8">
-      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">Selected Work</h2>
+  <!-- Featured Projects Section -->
+  <section id="featured-projects" class="py-12 sm:py-16">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">Featured Projects</h2>
+        <p class="text-xs sm:text-sm text-zinc-500 mt-1">Production mobile apps, scalable backend systems, and real-time architectures.</p>
+      </div>
       <a 
         href="/projects" 
-        class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 hover:no-underline group"
+        class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 hover:no-underline group shrink-0"
       >
         <span>View all projects</span>
         <span class="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
@@ -325,7 +327,7 @@ import Layout from '../layouts/Layout.astro';
         <!-- Middle: Description -->
         <div class="sm:w-[42%] flex-grow">
           <p class="text-[12px] sm:text-[13px] text-zinc-600 leading-relaxed">
-            Led and integrated the Retail module for VALT POS, migrating the legacy Java system to Kotlin and establishing complex order interconnections.
+            Led and integrated the Retail module for VALT POS, migrating the legacy Java system to Kotlin and optimizing complex order interconnections.
           </p>
         </div>
 
@@ -397,7 +399,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Writing Section -->
-  <section class="py-12 sm:py-16">
+  <section class="py-12 sm:py-16 border-b border-zinc-200/60">
     <div class="flex items-center justify-between mb-10">
       <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">Writing</h2>
       <a 

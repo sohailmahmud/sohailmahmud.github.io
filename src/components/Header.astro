@@ -26,47 +26,50 @@ function isActive(href: string) {
         <span class="font-bold text-zinc-900 text-base sm:text-lg tracking-tight">Sohail Mahmud</span>
       </a>
 
-      <!-- Navigation links -->
-      <nav class="hidden md:flex items-center h-full gap-6 lg:gap-8">
-        {navItems.map(item => {
-          const active = isActive(item.href);
-          return (
-            <a 
-              href={item.href} 
-              class:list={[
-                "h-full flex items-center text-[13px] font-semibold transition-all hover:no-underline border-b-2 -mb-[2px]",
-                active 
-                  ? "text-emerald-500 border-emerald-500" 
-                  : "text-zinc-600 hover:text-zinc-900 border-transparent hover:border-zinc-300"
-              ]}
-            >
-              {item.label}
-            </a>
-          );
-        })}
-      </nav>
+      <!-- Right Section: Navigation Links & Resume Action Button -->
+      <div class="flex items-center h-full gap-6 lg:gap-8">
+        <!-- Navigation links -->
+        <nav class="hidden md:flex items-center h-full gap-6 lg:gap-8">
+          {navItems.map(item => {
+            const active = isActive(item.href);
+            return (
+              <a 
+                href={item.href} 
+                class:list={[
+                  "h-full flex items-center text-[13px] font-semibold transition-all hover:no-underline border-b-2 -mb-[2px]",
+                  active 
+                    ? "text-emerald-500 border-emerald-500" 
+                    : "text-zinc-600 hover:text-zinc-900 border-transparent hover:border-zinc-300"
+                ]}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
 
-      <!-- Resume Action Button -->
-      <div class="flex items-center h-full gap-3">
-        <a 
-          href="https://linkedin.com/in/sohailmahmud" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-semibold px-4 py-2.5 rounded-lg inline-flex items-center gap-1.5 transition-all shadow-xs hover:no-underline group"
-        >
-          <span>Resume</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
-        </a>
+        <!-- Resume Action Button -->
+        <div class="flex items-center h-full">
+          <a 
+            href="https://linkedin.com/in/sohailmahmud" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-semibold px-4 py-2.5 rounded-lg inline-flex items-center gap-1.5 transition-all shadow-xs hover:no-underline group"
+          >
+            <span>Resume</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Mobile Nav Menu -->
   <div class="flex md:hidden items-center justify-center gap-4 h-12 border-t border-zinc-200/50 px-4 overflow-x-auto">
-    {navItems.slice(0, 4).map(item => {
+    {navItems.map(item => {
       const active = isActive(item.href);
       return (
         <a 
